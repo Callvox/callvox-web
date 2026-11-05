@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { HeroBackdrop } from '@/components/sections/HeroBackdrop'
 
 const fadeUpVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -13,8 +14,9 @@ const fadeUpVariants = {
 
 export default function ResellersHero() {
   return (
-    <section className="bg-navy-DEFAULT py-24">
-      <div className="hero-inner">
+    <section className="relative bg-navy-DEFAULT py-24 overflow-hidden surface-ink">
+      <HeroBackdrop />
+      <div className="hero-inner relative z-10">
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -28,7 +30,7 @@ export default function ResellersHero() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.1, duration: 0.5 }}
-          className="inline-block bg-cyan-DEFAULT/20 text-cyan-DEFAULT px-4 py-2 rounded-full text-sm font-semibold mb-8"
+          className="inline-block bg-cyan-DEFAULT/20 text-cyan-DEFAULT px-4 py-2 rounded-sm text-sm font-semibold mb-8"
         >
           FOR RESELLERS & AGGREGATORS
         </motion.div>
@@ -40,7 +42,7 @@ export default function ResellersHero() {
           animate="visible"
           className="font-sans font-bold text-white mb-6"
           style={{
-            fontSize: 'clamp(36px, 8vw, 52px)',
+            fontSize: 'clamp(41px, 10.0vw, 68px)',
             lineHeight: 1.2,
           }}
         >

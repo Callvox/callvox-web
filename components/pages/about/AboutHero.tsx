@@ -1,13 +1,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { HeroBackdrop } from '@/components/sections/HeroBackdrop'
 
 export default function AboutHero() {
   return (
-    <section className="relative bg-navy-DEFAULT min-h-screen flex items-center justify-center py-20 overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 right-20 w-64 h-64 bg-cyan-DEFAULT rounded-full blur-3xl"></div>
-      </div>
+    <section className="relative bg-navy-DEFAULT min-h-screen flex items-center justify-center py-20 overflow-hidden surface-ink">
+      <HeroBackdrop />
 
       <div className="hero-inner relative z-10">
         <motion.div
@@ -17,12 +16,12 @@ export default function AboutHero() {
           className="text-center"
         >
           <div className="flex justify-center mb-8">
-            <span className="inline-block px-4 py-2 rounded-full bg-cyan-DEFAULT/20 border border-cyan-DEFAULT/40 text-cyan-DEFAULT text-xs font-semibold uppercase tracking-wider">
+            <span className="inline-block px-4 py-2 rounded-sm bg-cyan-DEFAULT/20 border border-cyan-DEFAULT/40 text-cyan-DEFAULT text-xs font-semibold uppercase tracking-wider">
               About Callvox
             </span>
           </div>
 
-          <h1 className="text-white font-bold mb-6" style={{ fontSize: 'clamp(36px, 8vw, 52px)' }}>
+          <h1 className="text-white font-bold mb-6" style={{ fontSize: 'clamp(41px, 10.0vw, 68px)' }}>
             2 decades in the markets others treat as afterthoughts.
           </h1>
 

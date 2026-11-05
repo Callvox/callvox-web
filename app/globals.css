@@ -4,30 +4,30 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Callvox design tokens — "ink & paper" with a signal accent.
-     Token names are kept (navy-*, cyan-*) so existing pages inherit the new look. */
-  --navy-DEFAULT: #0b1424;   /* ink */
-  --navy-900: #070d19;
-  --navy-800: #111d33;
-  --navy-700: #1b2a45;
-  --navy-600: #46566f;       /* body text on paper (AA) */
-  --navy-500: #5d6c84;
-  --navy-400: #67768d;       /* labels on paper (AA at 13px+) */
-  --navy-300: #9aa6b8;
-  --navy-200: #b9c2d0;       /* body text on ink */
-  --navy-100: #dcd9cf;       /* hairlines on paper */
-  --navy-50:  #efece4;       /* muted paper */
-  --cyan-DEFAULT: #0c7a5c;   /* signal, deep — accent on paper (AA) */
-  --cyan-light: #e3efe7;
-  --signal: #c6f24e;         /* signal, bright — accent on ink */
-  --paper: #f6f4ee;
-  --ink: #0b1424;
+  /* Callvox design tokens — navy & sky, tuned for contrast.
+     Token names are kept (navy-*, cyan-*) so existing pages inherit the palette. */
+  --navy-DEFAULT: #0d2b4e;
+  --navy-900: #061d38;
+  --navy-800: #0c3a68;
+  --navy-700: #12457a;
+  --navy-600: #185fa5;       /* body text on light (AA) */
+  --navy-500: #2a6aab;
+  --navy-400: #2c76c0;       /* labels on light (AA) */
+  --navy-300: #6fa6dc;
+  --navy-200: #a4c6ee;       /* body text on navy */
+  --navy-100: #d3e2f2;       /* hairlines on light */
+  --navy-50:  #eaf2fb;
+  --cyan-DEFAULT: #0284c7;   /* sky, deep — accent on light (AA) */
+  --cyan-light: #e0f2fe;
+  --signal: #38bdf8;         /* sky, bright — accent on navy */
+  --paper: #f4f8fc;
+  --ink: #0d2b4e;
 
-  --background: var(--paper);
+  --background: #ffffff;
   --foreground: var(--navy-DEFAULT);
-  --card: #fbfaf6;
+  --card: #ffffff;
   --card-foreground: var(--navy-DEFAULT);
-  --popover: #fbfaf6;
+  --popover: #ffffff;
   --popover-foreground: var(--navy-DEFAULT);
   --primary: var(--navy-DEFAULT);
   --primary-foreground: #ffffff;
@@ -113,6 +113,7 @@
     font-family: var(--font-instrument), Georgia, 'Times New Roman', serif;
     font-weight: 400;
     letter-spacing: -0.02em;
+    line-height: 1.05;
   }
 
   /* Inner pages set font-semibold/bold on headings; the serif has one weight. */

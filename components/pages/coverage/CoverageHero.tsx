@@ -3,15 +3,14 @@
 import { motion } from 'framer-motion';
 import { MapPin, MagnifyingGlass } from '@phosphor-icons/react';
 import { useState } from 'react';
+import { HeroBackdrop } from '@/components/sections/HeroBackdrop'
 
 export default function CoverageHero() {
   const [searchValue, setSearchValue] = useState('');
 
   return (
-    <section className="bg-navy-DEFAULT py-20 md:py-24 overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 right-10 w-40 h-40 bg-cyan-DEFAULT rounded-full blur-3xl"></div>
-      </div>
+    <section className="relative bg-navy-DEFAULT py-20 md:py-24 overflow-hidden surface-ink">
+      <HeroBackdrop />
 
       <div className="hero-inner relative z-10">
         <motion.div
@@ -20,7 +19,7 @@ export default function CoverageHero() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <h1 className="text-white font-bold mb-6" style={{ fontSize: 'clamp(36px, 6vw, 56px)', lineHeight: 1.1 }}>
+          <h1 className="text-white font-bold mb-6" style={{ fontSize: 'clamp(41px, 7.5vw, 73px)', lineHeight: 1.1 }}>
             Global coverage. Emerging-market depth.
           </h1>
 

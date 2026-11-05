@@ -27,7 +27,7 @@ export function Hero() {
         <NetworkMap className="w-[170%] max-w-none sm:w-[130%] lg:w-[112%]" />
       </div>
       <div
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_45%,rgba(11,20,36,0.94)_0%,rgba(11,20,36,0.7)_32%,rgba(11,20,36,0)_62%)]"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_45%,rgba(13,43,78,0.94)_0%,rgba(13,43,78,0.7)_32%,rgba(13,43,78,0)_62%)]"
         aria-hidden
       />
 

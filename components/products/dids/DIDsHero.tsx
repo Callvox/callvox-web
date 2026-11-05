@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from '@phosphor-icons/react';
 import { Button } from '@/components/callvox-ui/Button';
+import { HeroBackdrop } from '@/components/sections/HeroBackdrop'
 
 export default function DIDsHero() {
   const containerVariants = {
@@ -22,10 +23,8 @@ export default function DIDsHero() {
   };
 
   return (
-    <section className="relative min-h-[60vh] bg-navy-DEFAULT pt-32 pb-20 overflow-hidden">
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 right-10 w-96 h-96 bg-cyan-DEFAULT rounded-full blur-3xl"></div>
-      </div>
+    <section className="relative min-h-[60vh] bg-navy-DEFAULT pt-32 pb-20 overflow-hidden surface-ink">
+      <HeroBackdrop />
 
       <div className="hero-inner relative z-10">
         <motion.div
@@ -39,7 +38,7 @@ export default function DIDsHero() {
           </motion.div>
 
           <motion.div variants={itemVariants} className="mb-8 flex items-center gap-2">
-            <span className="px-3 py-1 rounded-full bg-cyan-DEFAULT/20 border border-cyan-DEFAULT text-cyan-DEFAULT text-xs font-semibold">
+            <span className="px-3 py-1 rounded-sm bg-cyan-DEFAULT/20 border border-cyan-DEFAULT text-cyan-DEFAULT text-xs font-semibold">
               VIRTUAL PHONE NUMBERS & DIDs
             </span>
           </motion.div>
@@ -47,7 +46,7 @@ export default function DIDsHero() {
           <motion.h1
             variants={itemVariants}
             className="text-white font-bold mb-8 leading-tight"
-            style={{ fontSize: 'clamp(36px, 8vw, 56px)' }}
+            style={{ fontSize: 'clamp(41px, 10.0vw, 73px)' }}
           >
             90+ countries. Any number type. Instant provisioning.
           </motion.h1>

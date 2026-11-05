@@ -3,18 +3,17 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Button } from '@/components/callvox-ui/Button';
+import { HeroBackdrop } from '@/components/sections/HeroBackdrop'
 
 export default function MVNOsHero() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section ref={ref} className="relative bg-navy-DEFAULT py-20 md:py-24 lg:min-h-[55vh] flex items-center overflow-hidden">
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-20 right-0 w-96 h-96 bg-cyan-DEFAULT rounded-full mix-blend-screen blur-3xl" />
-      </div>
+    <section ref={ref} className="relative bg-navy-DEFAULT py-20 md:py-24 lg:min-h-[55vh] flex items-center overflow-hidden surface-ink">
+      <HeroBackdrop />
 
-      <div className="relative hero-inner w-full">
+      <div className="relative z-10 hero-inner w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -26,12 +25,12 @@ export default function MVNOsHero() {
           </div>
 
           <div className="mb-6 flex justify-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-DEFAULT/20 border border-cyan-DEFAULT/50">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-sm bg-cyan-DEFAULT/20 border border-cyan-DEFAULT/50">
               <span className="text-xs font-bold uppercase tracking-wider text-cyan-DEFAULT">For Mobile Virtual Network Operators</span>
             </div>
           </div>
 
-          <h1 className="text-white font-bold mb-6" style={{ fontSize: 'clamp(36px, 5vw, 52px)' }}>
+          <h1 className="text-white font-bold mb-6" style={{ fontSize: 'clamp(41px, 6.2vw, 68px)' }}>
             Launch faster. Scale without lock-in.
           </h1>
 

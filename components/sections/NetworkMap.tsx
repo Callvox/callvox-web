@@ -90,7 +90,7 @@ export function NetworkMap({ className = '' }: { className?: string }) {
       // land dots
       const cell = (w / DOT_COLS)
       const rad = Math.max(0.7, cell * 0.2)
-      ctx.fillStyle = 'rgba(185, 194, 208, 0.5)'
+      ctx.fillStyle = 'rgba(164, 198, 238, 0.5)'
       for (const [c, r] of dots) {
         const x = c * (w / DOT_COLS)
         const y = (r / (DOT_ROWS - 1)) * h
@@ -109,7 +109,7 @@ export function NetworkMap({ className = '' }: { className?: string }) {
         ctx.beginPath()
         ctx.moveTo(a[0], a[1])
         ctx.quadraticCurveTo(c.cx, c.cy, b[0], b[1])
-        ctx.strokeStyle = 'rgba(198, 242, 78, 0.28)'
+        ctx.strokeStyle = 'rgba(56, 189, 248, 0.28)'
         ctx.lineWidth = 1
         ctx.stroke()
 
@@ -122,7 +122,7 @@ export function NetworkMap({ className = '' }: { className?: string }) {
           const [x, y] = quad(a, c, b, tt)
           ctx.beginPath()
           ctx.arc(x, y, Math.max(0.6, 2 - k * 0.22), 0, Math.PI * 2)
-          ctx.fillStyle = `rgba(198, 242, 78, ${0.95 - k * 0.11})`
+          ctx.fillStyle = `rgba(56, 189, 248, ${0.95 - k * 0.11})`
           ctx.fill()
         }
       })
@@ -132,11 +132,11 @@ export function NetworkMap({ className = '' }: { className?: string }) {
         const pulse = reduced ? 0.5 : (Math.sin(t * 1.6 + i) + 1) / 2
         ctx.beginPath()
         ctx.arc(x, y, 4 + pulse * 6, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(198, 242, 78, ${0.1 * (1 - pulse) + 0.03})`
+        ctx.fillStyle = `rgba(56, 189, 248, ${0.1 * (1 - pulse) + 0.03})`
         ctx.fill()
         ctx.beginPath()
         ctx.arc(x, y, 2.6, 0, Math.PI * 2)
-        ctx.fillStyle = '#c6f24e'
+        ctx.fillStyle = '#38bdf8'
         ctx.fill()
       })
     }

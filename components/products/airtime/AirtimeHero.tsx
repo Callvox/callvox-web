@@ -4,10 +4,12 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ArrowRight } from '@phosphor-icons/react'
 import { Button } from '@/components/callvox-ui/Button'
+import { HeroBackdrop } from '@/components/sections/HeroBackdrop'
 
 export default function AirtimeHero() {
   return (
-    <section className="relative min-h-[60vh] bg-navy-DEFAULT px-4 py-20 md:py-32 lg:py-40 flex items-center overflow-hidden">
+    <section className="relative min-h-[60vh] bg-navy-DEFAULT px-4 py-20 md:py-32 lg:py-40 flex items-center overflow-hidden surface-ink">
+      <HeroBackdrop />
       {/* Animated world map background - CSS only */}
       <div className="absolute right-0 top-0 w-1/2 h-full opacity-10 pointer-events-none">
         <svg viewBox="0 0 1000 600" className="w-full h-full">
@@ -56,7 +58,7 @@ export default function AirtimeHero() {
           transition={{ delay: 0.2 }}
           className="inline-block mb-6"
         >
-          <div className="px-4 py-2 rounded-full bg-cyan-DEFAULT/10 border border-cyan-DEFAULT/30">
+          <div className="px-4 py-2 rounded-sm bg-cyan-DEFAULT/10 border border-cyan-DEFAULT/30">
             <span className="text-xs font-semibold tracking-widest text-cyan-DEFAULT">INTERNATIONAL MOBILE RECHARGE</span>
           </div>
         </motion.div>
@@ -67,7 +69,7 @@ export default function AirtimeHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
           className="text-white font-bold leading-tight mb-4 text-balance"
-          style={{ fontSize: 'clamp(36px, 5vw, 56px)' }}
+          style={{ fontSize: 'clamp(41px, 6.2vw, 73px)' }}
         >
           800+ operators. Sub-3-second delivery. Built for remittance corridors.
         </motion.h1>

@@ -11,28 +11,28 @@ interface Region {
   items: string[];
 }
 
-const voiceRoutes: Record<string, Region> = {
+export const voiceRoutes: Record<string, Region> = {
   Africa: { name: 'Africa', count: 40, items: ['Nigeria', 'Kenya', 'South Africa', 'Ghana', 'Uganda'] },
   'South Asia': { name: 'South Asia', count: 15, items: ['India', 'Pakistan', 'Bangladesh', 'Sri Lanka'] },
   'Latin America': { name: 'Latin America', count: 25, items: ['Mexico', 'Brazil', 'Colombia', 'Argentina', 'Chile'] },
   'Middle East': { name: 'Middle East', count: 20, items: ['UAE', 'Saudi Arabia', 'Egypt', 'Israel', 'Morocco'] }
 };
 
-const smsCarriers: Record<string, Region> = {
+export const smsCarriers: Record<string, Region> = {
   Africa: { name: 'Africa', count: 35, items: ['Vodafone', 'MTN', 'Airtel', 'Orange', 'Etisalat'] },
   'South Asia': { name: 'South Asia', count: 18, items: ['BSNL', 'Jio', 'Vodafone IN', 'Airtel IN', 'PTCL'] },
   'Latin America': { name: 'Latin America', count: 22, items: ['Telcel', 'Vivo', 'Claro', 'Personal', 'Entel'] },
   'Middle East': { name: 'Middle East', count: 16, items: ['Etisalat', 'Zain', 'STC', 'Vodafone ME', 'Maroc Telecom'] }
 };
 
-const airtimeOperators: Record<string, Region> = {
+export const airtimeOperators: Record<string, Region> = {
   Africa: { name: 'Africa', count: 30, items: ['MTN', 'Airtel', 'Glo', '9mobile', 'Vodafone'] },
   'South Asia': { name: 'South Asia', count: 12, items: ['Jio', 'Airtel', 'Vodafone', 'Idea', 'BSNL'] },
   'Latin America': { name: 'Latin America', count: 20, items: ['Telcel', 'Vivo', 'Claro', 'Movistar', 'Personal'] },
   'Middle East': { name: 'Middle East', count: 14, items: ['Zain', 'STC', 'Etisalat', 'Ooredoo', 'Virgin'] }
 };
 
-const didCountries: Record<string, Region> = {
+export const didCountries: Record<string, Region> = {
   Africa: { name: 'Africa', count: 12, items: ['Nigeria', 'Kenya', 'South Africa', 'Ghana', 'Ivory Coast'] },
   'South Asia': { name: 'South Asia', count: 8, items: ['India', 'Bangladesh', 'Pakistan', 'Sri Lanka'] },
   'Latin America': { name: 'Latin America', count: 18, items: ['Mexico', 'Brazil', 'Colombia', 'Argentina', 'Chile'] },

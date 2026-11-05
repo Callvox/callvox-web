@@ -2,13 +2,12 @@
 
 import { motion } from 'framer-motion';
 import { Button } from '@/components/callvox-ui/Button';
+import { HeroBackdrop } from '@/components/sections/HeroBackdrop'
 
 export default function EnterprisesHero() {
   return (
-    <section className="relative bg-navy-DEFAULT py-20 md:py-24 lg:py-28 overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 right-10 w-40 h-40 bg-cyan-DEFAULT rounded-full blur-3xl"></div>
-      </div>
+    <section className="relative bg-navy-DEFAULT py-20 md:py-24 lg:py-28 overflow-hidden surface-ink">
+      <HeroBackdrop />
 
       <div className="hero-inner relative z-10">
         <motion.div
@@ -24,12 +23,12 @@ export default function EnterprisesHero() {
           </div>
 
           <div className="flex justify-center mb-6">
-            <span className="inline-block px-4 py-2 rounded-full bg-cyan-DEFAULT/20 border border-cyan-DEFAULT/40 text-cyan-DEFAULT text-xs font-semibold uppercase tracking-wider">
+            <span className="inline-block px-4 py-2 rounded-sm bg-cyan-DEFAULT/20 border border-cyan-DEFAULT/40 text-cyan-DEFAULT text-xs font-semibold uppercase tracking-wider">
               For Enterprise Businesses
             </span>
           </div>
 
-          <h1 className="text-white font-bold mb-6" style={{ fontSize: 'clamp(36px, 8vw, 52px)' }}>
+          <h1 className="text-white font-bold mb-6" style={{ fontSize: 'clamp(41px, 10.0vw, 68px)' }}>
             Enterprise-grade voice and numbers. Without enterprise procurement cycles.
           </h1>
 

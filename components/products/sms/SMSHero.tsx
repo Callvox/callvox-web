@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from '@phosphor-icons/react';
 import { Button } from '@/components/callvox-ui/Button';
 import { useEffect, useState } from 'react';
+import { HeroBackdrop } from '@/components/sections/HeroBackdrop'
 
 export default function SMSHero() {
   const [count, setCount] = useState(0);
@@ -28,10 +29,8 @@ export default function SMSHero() {
   }, []);
 
   return (
-    <section className="relative min-h-[60vh] bg-navy-DEFAULT overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 right-0 w-96 h-96 bg-cyan-DEFAULT rounded-full blur-3xl" />
-      </div>
+    <section className="relative min-h-[60vh] bg-navy-DEFAULT overflow-hidden surface-ink">
+      <HeroBackdrop />
 
       <div className="relative z-10 hero-inner py-20 lg:py-32">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -43,14 +42,14 @@ export default function SMSHero() {
           >
             <div>
               <div className="inline-block mb-4">
-                <div className="px-3 py-1.5 bg-cyan-DEFAULT/10 border border-cyan-DEFAULT/30 rounded-full">
+                <div className="px-3 py-1.5 bg-cyan-DEFAULT/10 border border-cyan-DEFAULT/30 rounded-sm">
                   <span className="text-cyan-DEFAULT text-xs font-semibold uppercase tracking-wider">
                     A2P SMS & MESSAGING
                   </span>
                 </div>
               </div>
 
-              <h1 className="text-white font-semibold text-balance" style={{ fontSize: 'clamp(36px, 7vw, 56px)' }}>
+              <h1 className="text-white font-semibold text-balance" style={{ fontSize: 'clamp(41px, 8.8vw, 73px)' }}>
                 98%+ delivery. Zero grey routes. Full compliance.
               </h1>
             </div>

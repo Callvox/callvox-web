@@ -3,13 +3,12 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from '@phosphor-icons/react';
 import { Button } from '@/components/callvox-ui/Button';
+import { HeroBackdrop } from '@/components/sections/HeroBackdrop'
 
 export default function DeveloperHero() {
   return (
-    <section className="relative bg-[#042C53] min-h-[70vh] flex items-center justify-center py-20 overflow-hidden">
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 right-20 w-96 h-96 bg-cyan-DEFAULT rounded-full blur-3xl"></div>
-      </div>
+    <section className="relative bg-[#042C53] min-h-[70vh] flex items-center justify-center py-20 overflow-hidden surface-ink">
+      <HeroBackdrop />
 
       <div className="hero-inner relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -24,7 +23,7 @@ export default function DeveloperHero() {
               </span>
             </div>
 
-            <h1 className="text-white font-bold text-5xl md:text-6xl mb-6 leading-tight">
+            <h1 className="text-white font-bold text-6xl md:text-7xl mb-6 leading-tight">
               One API. Five services. Zero friction.
             </h1>
 

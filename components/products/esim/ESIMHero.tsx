@@ -2,10 +2,12 @@
 
 import { motion } from 'framer-motion';
 import { Check } from '@phosphor-icons/react';
+import { HeroBackdrop } from '@/components/sections/HeroBackdrop'
 
 export function ESIMHero() {
   return (
-    <section className="relative min-h-[60vh] bg-navy-DEFAULT px-4 sm:px-6 lg:px-8 py-16 flex items-center overflow-hidden">
+    <section className="relative min-h-[60vh] bg-navy-DEFAULT px-4 sm:px-6 lg:px-8 py-16 flex items-center overflow-hidden surface-ink">
+      <HeroBackdrop />
       <div className="absolute inset-0 opacity-5">
         <svg className="w-full h-full" viewBox="0 0 1000 1000">
           <circle cx="800" cy="200" r="150" fill="currentColor" className="text-cyan-DEFAULT" />
@@ -13,7 +15,7 @@ export function ESIMHero() {
         </svg>
       </div>
 
-      <div className="relative hero-inner grid md:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 hero-inner grid md:grid-cols-2 gap-12 items-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -21,11 +23,11 @@ export function ESIMHero() {
         >
           <div className="text-sm text-navy-200 mb-4">Products → eSIM</div>
           
-          <div className="inline-flex items-center gap-2 bg-navy-50 px-3 py-1 rounded-full mb-6">
+          <div className="inline-flex items-center gap-2 bg-navy-50 px-3 py-1 rounded-sm mb-6">
             <span className="text-xs font-semibold text-cyan-DEFAULT">WHOLESALE ESIM PROVISIONING</span>
           </div>
 
-          <h1 className="text-white font-bold mb-6" style={{ fontSize: 'clamp(36px, 8vw, 56px)' }}>
+          <h1 className="text-white font-bold mb-6" style={{ fontSize: 'clamp(41px, 10.0vw, 73px)' }}>
             Remote provisioning at scale. No SIM cards. No logistics.
           </h1>
 
