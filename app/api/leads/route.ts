@@ -1,17 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
 
-// LEAD CAPTURE — INTERIM WIRING
+// LEAD CAPTURE
 // ------------------------------------------------------------------
-// This route validates and accepts submissions from lead-capture forms
-// (rate deck download, "talk to a specialist", generic quote requests).
+// Validates submissions from lead-capture forms and emails them to the
+// sales inbox through Resend (https://resend.com/docs/api-reference/emails/send-email).
 //
-// It does NOT currently connect to a real CRM or send real email — that
-// integration point is `deliverLead()` below. Wire it to your CRM's API
-// (e.g. HubSpot, Salesforce, Close) and/or a transactional email provider
-// before relying on this in production. Right now it only logs the lead
-// server-side and returns a success response, so nothing submitted here
-// is actually reaching sales/compliance yet.
+// Required environment variables (set in Vercel, never commit):
+//   RESEND_API_KEY     Resend API key
+//   LEADS_TO_EMAIL     Where leads are delivered (comma-separated for several)
+//   LEADS_FROM_EMAIL   Sender on a domain verified in Resend, e.g. "Callvox <leads@callvox.net>"
 // ------------------------------------------------------------------
 
 const leadSchema = z.object({
@@ -29,13 +27,67 @@ const leadSchema = z.object({
   message: z.string().optional(),
 })
 
-async function deliverLead(lead: z.infer<typeof leadSchema>) {
-  // TODO: replace with a real CRM call and/or email notification.
-  // e.g. await hubspotClient.crm.contacts.basicApi.create({...})
-  console.log('[lead-capture] new lead received (not yet wired to a CRM):', {
-    ...lead,
-    receivedAt: new Date().toISOString(),
+type Lead = z.infer<typeof leadSchema>
+
+const esc = (v: unknown) =>
+  String(v ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+
+const oneLine = (v: string) => v.replace(/[\r\n]+/g, ' ').trim()
+
+async function deliverLead(lead: Lead): Promise<boolean> {
+  const apiKey = process.env.RESEND_API_KEY
+  const to = process.env.LEADS_TO_EMAIL
+  const from = process.env.LEADS_FROM_EMAIL
+
+  if (!apiKey || !to || !from) {
+    console.error('[lead-capture] Email not configured (RESEND_API_KEY, LEADS_TO_EMAIL, LEADS_FROM_EMAIL). Lead not delivered.')
+    return false
+  }
+
+  const rows: [string, string | undefined][] = [
+    ['Source', lead.source],
+    ['Company', lead.companyName],
+    ['Name', lead.contactName],
+    ['Email', lead.email],
+    ['Phone', lead.phone],
+    ['Type', lead.companyType],
+    ['Services', lead.services?.join(', ')],
+    ['Corridors', lead.corridors?.join(', ')],
+    ['Monthly volume', lead.monthlyVolume],
+    ['Message', lead.message],
+  ]
+  const present = rows.filter(([, v]) => v && v.length > 0) as [string, string][]
+
+  const text = present.map(([k, v]) => `${k}: ${v}`).join('\n')
+  const html =
+    '<table cellpadding="6" style="font-family:sans-serif;font-size:14px;border-collapse:collapse">' +
+    present
+      .map(([k, v]) => `<tr><td style="color:#555;vertical-align:top"><b>${esc(k)}</b></td><td>${esc(v).replace(/\n/g, '<br>')}</td></tr>`)
+      .join('') +
+    '</table>'
+
+  const res = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      from,
+      to: to.split(',').map((t) => t.trim()).filter(Boolean),
+      reply_to: lead.email,
+      subject: oneLine(`New lead: ${lead.companyName}${lead.companyType ? ` (${lead.companyType})` : ''}`),
+      text,
+      html,
+    }),
   })
+
+  if (!res.ok) {
+    console.error('[lead-capture] Resend error', res.status, await res.text().catch(() => ''))
+    return false
+  }
+  return true
 }
 
 export async function POST(req: NextRequest) {
@@ -59,7 +111,13 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: true, message: 'Received.' })
   }
 
-  await deliverLead(parsed.data)
+  const delivered = await deliverLead(parsed.data)
+  if (!delivered) {
+    return NextResponse.json(
+      { error: 'We could not send your request right now. Please try again shortly.' },
+      { status: 502 }
+    )
+  }
 
   return NextResponse.json({
     ok: true,
