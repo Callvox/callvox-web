@@ -1,18 +1,20 @@
+import { STATS } from '@/lib/stats'
+
 const proofs = [
   {
-    number: '99.99%',
-    label: 'Uptime SLA',
-    body: 'Carrier-grade infrastructure with geo-redundant PoPs, 24/7 NOC support and contractual SLA penalties. Your reputation depends on ours.',
+    number: STATS.routes.value,
+    label: 'Direct routes',
+    body: 'Voice interconnects built corridor by corridor, across Latin America, Africa, South Asia and the Middle East.',
   },
   {
-    number: '20 yrs',
-    label: 'Emerging-market depth',
-    body: 'Direct routes across Latin America, Africa, South Asia and the Middle East — the corridors where prepaid mobile dominates and termination demand grows fastest.',
+    number: STATS.countries.value,
+    label: 'Countries',
+    body: 'One platform and one invoice for destinations around the world, with a single team to call when it matters.',
   },
   {
-    number: '1',
-    label: 'Platform, API and invoice',
-    body: 'Replace 3–5 fragmented vendor relationships with a single platform, a single API key and a single support contact across all five services.',
+    number: STATS.operators.value,
+    label: 'Operators',
+    body: 'Airtime top-ups across the mobile operators your customers actually use, delivered through one API.',
   },
 ]
 
@@ -22,10 +24,15 @@ export function WhyCallvox() {
       <div className="mx-auto max-w-[88rem] px-5 sm:px-8 lg:px-12">
         <p className="label text-signal">02 — Why Callvox</p>
         <h2 className="mt-5 max-w-4xl text-5xl leading-[1.02] lg:text-7xl">
-          Built for the markets <em className="text-signal">others ignore.</em>
+          Built for the markets <em className="text-signal">others overlook.</em>
         </h2>
+        <p className="mt-8 max-w-2xl text-lg leading-relaxed text-navy-200">
+          Callvox started in 2007 as a voice carrier focused on Latin America and Africa, before most
+          wholesale providers invested there. Prepaid mobile dominates these corridors, and that is
+          where we have built our depth.
+        </p>
 
-        <div className="mt-20 grid border-t border-white/15 md:grid-cols-3">
+        <div className="mt-16 grid border-t border-white/15 md:grid-cols-3">
           {proofs.map((p, i) => (
             <div
               key={p.label}

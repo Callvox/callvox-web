@@ -4,7 +4,6 @@ import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Logo } from './Logo'
-import { Button } from './callvox-ui/Button'
 import {
   Phone,
   ChatDots,
@@ -212,7 +211,7 @@ export default function Nav() {
 
         {/* Desktop CTAs */}
         <div className="hidden lg:flex items-center gap-2 flex-shrink-0">
-          <Button variant={overHero ? 'signal' : 'primary'} size="md">Work with us</Button>
+          <Link href="/get-started" className={`inline-flex h-10 items-center rounded-sm px-5 text-sm font-medium transition-colors ${overHero ? 'bg-signal text-navy-DEFAULT hover:bg-white' : 'bg-navy-DEFAULT text-white hover:bg-navy-700'}`}>Get started</Link>
         </div>
 
         {/* Mobile hamburger */}
@@ -298,7 +297,7 @@ export default function Nav() {
 
             {/* CTAs */}
             <div className="pt-4 border-t border-navy-100 space-y-3 mt-4">
-              <Button variant="primary" size="lg" className="w-full">Work with us</Button>
+              <Link href="/get-started" onClick={() => setMobileOpen(false)} className="flex h-12 w-full items-center justify-center rounded-sm bg-navy-DEFAULT font-medium text-white">Get started</Link>
             </div>
           </div>
         </div>

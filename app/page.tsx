@@ -4,6 +4,7 @@ import { LogoBar } from '@/components/sections/LogoBar'
 import { ProductGrid } from '@/components/sections/ProductGrid'
 import { WhyCallvox } from '@/components/sections/WhyCallvox'
 import { AudiencePaths } from '@/components/sections/AudiencePaths'
+import { CaseStudy } from '@/components/sections/CaseStudy'
 import { TrustBar } from '@/components/sections/TrustBar'
 import { Footer } from '@/components/sections/Footer'
 import { OrganizationJsonLd } from '@/components/JsonLd'
@@ -19,6 +20,7 @@ export default function Home() {
         <ProductGrid />
         <WhyCallvox />
         <AudiencePaths />
+        <CaseStudy />
         <TrustBar />
       </main>
       <Footer />

@@ -15,7 +15,11 @@ import { z } from 'zod'
 // ------------------------------------------------------------------
 
 const leadSchema = z.object({
-  source: z.enum(['rate-deck', 'talk-to-specialist', 'quote-request']),
+  source: z.enum(['rate-deck', 'talk-to-specialist', 'quote-request', 'get-started']),
+  companyType: z.enum(['carrier', 'mvno', 'reseller', 'enterprise', 'other']).optional(),
+  services: z.array(z.enum(['voice', 'sms', 'airtime', 'esim', 'dids'])).optional(),
+  // Honeypot: real users never fill this in
+  website: z.string().optional(),
   companyName: z.string().min(1, 'Company name is required'),
   contactName: z.string().min(1, 'Contact name is required'),
   email: z.string().email('Enter a valid email address'),
@@ -48,6 +52,11 @@ export async function POST(req: NextRequest) {
       { error: 'Validation failed', issues: parsed.error.flatten().fieldErrors },
       { status: 422 }
     )
+  }
+
+  // Bots fill the hidden honeypot field. Pretend success, deliver nothing.
+  if (parsed.data.website) {
+    return NextResponse.json({ ok: true, message: 'Received.' })
   }
 
   await deliverLead(parsed.data)

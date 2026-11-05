@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/developers',
     '/pricing',
     '/resources',
+    '/get-started',
   ]
 
   // Product pages

@@ -3,9 +3,10 @@ import Link from 'next/link'
 const audiences = [
   {
     name: 'Carriers',
-    href: '/solutions/carriers',
-    points: ['Direct interconnects, not aggregated routes', '24/7 NOC with carrier-grade SLAs'],
-    cta: 'Interconnect details',
+    href: '/get-started?type=carrier',
+    points: ['Direct interconnects, not aggregated routes', '24/7 NOC support'],
+    cta: 'Request interconnect details',
+    primary: true,
   },
   {
     name: 'MVNOs',
@@ -16,13 +17,13 @@ const audiences = [
   {
     name: 'Resellers',
     href: '/solutions/resellers',
-    points: ['Margin-friendly wholesale rates', 'Multi-tenant portal & automated billing'],
+    points: ['Wholesale rates built for margin', 'Multi-tenant portal and automated billing'],
     cta: 'Become a partner',
   },
   {
     name: 'Enterprises',
     href: '/solutions/enterprises',
-    points: ['40–70% cost savings over legacy PSTN', 'HD voice + compliance certifications'],
+    points: ['HD voice over modern infrastructure', 'A lower-cost alternative to legacy PSTN'],
     cta: 'Enterprise solutions',
   },
 ]
@@ -34,7 +35,7 @@ export function AudiencePaths() {
         <div className="lg:col-span-4">
           <p className="label text-cyan-DEFAULT">03 — Who we serve</p>
           <h2 className="mt-5 text-5xl leading-[1.02] text-navy-DEFAULT lg:text-6xl">
-            Built for your <em>business model.</em>
+            Start with <em>your</em> corridors.
           </h2>
         </div>
 
@@ -48,6 +49,7 @@ export function AudiencePaths() {
                 <span className="font-data text-xs text-navy-400 md:col-span-1">0{i + 1}</span>
                 <span className="font-display text-4xl leading-none text-navy-DEFAULT md:col-span-4 lg:text-5xl">
                   {a.name}
+                  {a.primary && <span className="label ml-3 align-middle text-cyan-DEFAULT">Primary focus</span>}
                 </span>
                 <ul className="space-y-1.5 text-[15px] text-navy-600 md:col-span-5">
                   {a.points.map((pt) => (

@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
+import { STATS } from '@/lib/stats'
 
 type Product = {
   id: string
@@ -13,49 +14,48 @@ type Product = {
   panel: React.ReactNode
 }
 
-const Row = ({ cells, head }: { cells: string[]; head?: boolean }) => (
-  <div
-    className={`grid grid-cols-4 gap-2 px-4 py-2.5 ${head ? 'label text-navy-300' : 'border-t border-white/10 text-navy-200'}`}
-  >
-    {cells.map((c, i) => (
-      <span key={i} className={i === 0 ? (head ? '' : 'text-white') : 'text-right'}>
-        {c}
-      </span>
-    ))}
-  </div>
-)
-
 const Code = ({ children }: { children: string }) => (
   <pre className="overflow-x-auto px-5 py-4 text-[13px] leading-6 text-navy-200">{children}</pre>
 )
 
-// All figures in the panels are illustrative samples.
+const Flow = ({ steps }: { steps: [string, string, string][] }) => (
+  <ol className="font-data divide-y divide-white/10 text-sm text-navy-200">
+    {steps.map(([n, a, b]) => (
+      <li key={n} className="flex items-baseline gap-4 px-5 py-3.5">
+        <span className="text-signal">{n}</span>
+        <span className="flex-1 text-white">{a}</span>
+        <span className="text-right text-navy-300">{b}</span>
+      </li>
+    ))}
+  </ol>
+)
+
+// Panels show how each product works. They deliberately contain no performance figures.
 const products: Product[] = [
   {
     id: 'voice',
     name: 'Voice',
     pitch: 'Wholesale termination & origination',
-    stat: '500+ premium CLI routes',
+    stat: `${STATS.routes.value} direct routes`,
     href: '/products/voice',
-    title: 'Route table · sample',
+    title: 'How your traffic flows',
     panel: (
-      <>
-        <Row head cells={['Destination', 'ASR %', 'ACD', 'Tier']} />
-        <Row cells={['Nigeria · Mobile', '61.4', '3:42', 'Premium']} />
-        <Row cells={['India · Mobile', '58.9', '4:05', 'Premium']} />
-        <Row cells={['Pakistan · Mobile', '63.2', '3:18', 'Premium']} />
-        <Row cells={['Colombia · Mobile', '66.7', '5:11', 'Premium']} />
-        <Row cells={['Philippines · Mobile', '57.8', '4:27', 'Standard']} />
-      </>
+      <Flow
+        steps={[
+          ['01', 'Your traffic', 'SIP trunk or IP peering'],
+          ['02', 'Callvox network', 'Route optimisation'],
+          ['03', 'Termination', 'Direct interconnect'],
+        ]}
+      />
     ),
   },
   {
     id: 'sms',
     name: 'SMS / Messaging',
     pitch: 'A2P SMS & bulk messaging API',
-    stat: '200+ countries · SMPP & REST',
+    stat: 'SMPP & REST',
     href: '/products/sms',
-    title: 'POST /v1/messages',
+    title: 'POST /v1/messages · example',
     panel: (
       <Code>{`{
   "to": "+2348012345678",
@@ -65,17 +65,16 @@ const products: Product[] = [
 }
 
 → 202 Accepted
-{ "id": "msg_8f2c1a", "status": "queued" }
-→ DLR  delivered  · 1.8s`}</Code>
+{ "id": "msg_8f2c1a", "status": "queued" }`}</Code>
     ),
   },
   {
     id: 'airtime',
     name: 'Airtime Top-Ups',
     pitch: 'International mobile recharge',
-    stat: '800+ operators · <3s delivery',
+    stat: `${STATS.operators.value} operators`,
     href: '/products/airtime',
-    title: 'POST /v1/topups',
+    title: 'POST /v1/topups · example',
     panel: (
       <Code>{`{
   "msisdn": "+919812345678",
@@ -85,50 +84,42 @@ const products: Product[] = [
 }
 
 → 200 OK
-{ "id": "tpu_41d9e0", "status": "delivered",
-  "operator": "detected", "elapsed_ms": 2140 }`}</Code>
+{ "id": "tpu_41d9e0", "status": "delivered" }`}</Code>
     ),
   },
   {
     id: 'esim',
     name: 'eSIMs',
     pitch: 'Wholesale eSIM provisioning',
-    stat: 'GSMA SGP.22 / SGP.32 · IoT-ready',
+    stat: 'Profiles by API',
     href: '/products/esim',
     title: 'Provisioning flow',
     panel: (
-      <ol className="font-data divide-y divide-white/10 text-sm text-navy-200">
-        {[
+      <Flow
+        steps={[
           ['01', 'Create profile order', 'POST /v1/esim/orders'],
-          ['02', 'Receive activation code', 'LPA:1$…$…'],
-          ['03', 'Device downloads profile', 'SM-DP+ handshake'],
-          ['04', 'Profile active', 'webhook: esim.enabled'],
-        ].map(([n, a, b]) => (
-          <li key={n} className="flex items-baseline gap-4 px-5 py-3.5">
-            <span className="text-signal">{n}</span>
-            <span className="flex-1 text-white">{a}</span>
-            <span className="text-navy-300">{b}</span>
-          </li>
-        ))}
-      </ol>
+          ['02', 'Receive activation code', 'LPA string'],
+          ['03', 'Device downloads profile', 'SM-DP+'],
+          ['04', 'Profile active', 'Webhook'],
+        ]}
+      />
     ),
   },
   {
     id: 'dids',
     name: 'DIDs / Numbers',
     pitch: 'Virtual phone numbers worldwide',
-    stat: '90+ countries · instant provisioning',
+    stat: 'Provisioned on demand',
     href: '/products/dids',
-    title: 'Number inventory · sample',
+    title: 'Number provisioning',
     panel: (
-      <>
-        <Row head cells={['Number', 'Country', 'Type', 'Status']} />
-        <Row cells={['+1 305 555 01xx', 'US', 'Local', 'Available']} />
-        <Row cells={['+44 20 7946 0xxx', 'GB', 'Local', 'Available']} />
-        <Row cells={['+57 1 555 01xx', 'CO', 'Local', 'Available']} />
-        <Row cells={['+234 1 555 01xx', 'NG', 'Local', 'Available']} />
-        <Row cells={['+971 4 555 01xx', 'AE', 'Local', 'Available']} />
-      </>
+      <Flow
+        steps={[
+          ['01', 'Choose country & type', 'Search inventory'],
+          ['02', 'Order numbers', 'API or portal'],
+          ['03', 'Route to your trunk', 'Voice & SMS'],
+        ]}
+      />
     ),
   },
 ]
@@ -144,11 +135,11 @@ export function ProductGrid() {
           <div className="lg:col-span-5">
             <p className="label text-cyan-DEFAULT">01 — Platform</p>
             <h2 className="mt-5 text-5xl leading-[1.02] text-navy-DEFAULT lg:text-6xl">
-              Five services. <em>One</em> integration.
+              Voice first. <em>Now the full stack.</em>
             </h2>
             <p className="mt-6 max-w-md text-lg text-navy-600">
-              Stop stitching together vendors. Run voice, messaging, airtime, eSIM and numbers
-              from a single API, a single invoice and a single support desk.
+              Carrier-grade voice is the foundation. Add messaging, airtime, eSIM and numbers
+              through the same integration, on the same invoice, with the same support team.
             </p>
           </div>
         </div>
@@ -203,7 +194,7 @@ export function ProductGrid() {
                 </Link>
               </div>
               <div className="font-data flex-1 py-2 text-sm">{current.panel}</div>
-              <div className="border-t border-white/10 px-5 py-3 label text-navy-300">Illustrative sample</div>
+              <div className="label border-t border-white/10 px-5 py-3 text-navy-300">Illustrative example</div>
             </div>
           </div>
         </div>
