@@ -1,74 +1,66 @@
-'use client'
-
-import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
-import { Check } from '@phosphor-icons/react'
+import Link from 'next/link'
 
 const audiences = [
   {
     name: 'Carriers',
+    href: '/solutions/carriers',
     points: ['Direct interconnects, not aggregated routes', '24/7 NOC with carrier-grade SLAs'],
-    cta: 'View interconnect details',
+    cta: 'Interconnect details',
   },
   {
     name: 'MVNOs',
+    href: '/solutions/mvnos',
     points: ['Cloud-native, elastic infrastructure', 'White-label ready, no vendor lock-in'],
-    cta: 'Talk to an MVNO specialist',
+    cta: 'MVNO solutions',
   },
   {
     name: 'Resellers',
+    href: '/solutions/resellers',
     points: ['Margin-friendly wholesale rates', 'Multi-tenant portal & automated billing'],
     cta: 'Become a partner',
   },
   {
     name: 'Enterprises',
+    href: '/solutions/enterprises',
     points: ['40–70% cost savings over legacy PSTN', 'HD voice + compliance certifications'],
-    cta: 'Work with us',
+    cta: 'Enterprise solutions',
   },
 ]
 
 export function AudiencePaths() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-100px' })
-
   return (
-    <section ref={ref} className="bg-white pt-24 pb-16">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 32 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-[40px] font-semibold text-navy-DEFAULT">
-            Built for your business model.
+    <section className="bg-paper py-28 lg:py-40">
+      <div className="mx-auto grid max-w-[88rem] gap-12 px-5 sm:px-8 lg:grid-cols-12 lg:px-12">
+        <div className="lg:col-span-4">
+          <p className="label text-cyan-DEFAULT">03 — Who we serve</p>
+          <h2 className="mt-5 text-5xl leading-[1.02] text-navy-DEFAULT lg:text-6xl">
+            Built for your <em>business model.</em>
           </h2>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {audiences.map((audience, i) => (
-            <motion.div
-              key={audience.name}
-              initial={{ opacity: 0, y: 32 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, ease: 'easeOut', delay: i * 0.08 }}
-              className="border border-navy-100 rounded-2xl p-8 hover:border-cyan-DEFAULT hover:shadow-md transition-all"
-            >
-              <h3 className="text-lg font-bold text-navy-DEFAULT">{audience.name}</h3>
-              <div className="mt-4 space-y-3">
-                {audience.points.map((point) => (
-                  <div key={point} className="flex items-start gap-2">
-                    <Check weight="bold" className="w-4 h-4 text-cyan-DEFAULT mt-0.5 flex-shrink-0" />
-                    <span className="text-sm text-navy-600">{point}</span>
-                  </div>
-                ))}
-              </div>
-              <a href="#" className="inline-block mt-6 text-[13px] font-semibold text-cyan-DEFAULT hover:underline">
-                {audience.cta}
-              </a>
-            </motion.div>
-          ))}
         </div>
+
+        <ul className="border-t border-navy-DEFAULT lg:col-span-8">
+          {audiences.map((a, i) => (
+            <li key={a.name} className="border-b border-navy-100">
+              <Link
+                href={a.href}
+                className="group grid gap-4 py-8 transition-colors hover:bg-navy-50/70 md:grid-cols-12 md:items-baseline md:gap-6 md:px-4"
+              >
+                <span className="font-data text-xs text-navy-400 md:col-span-1">0{i + 1}</span>
+                <span className="font-display text-4xl leading-none text-navy-DEFAULT md:col-span-4 lg:text-5xl">
+                  {a.name}
+                </span>
+                <ul className="space-y-1.5 text-[15px] text-navy-600 md:col-span-5">
+                  {a.points.map((pt) => (
+                    <li key={pt}>{pt}</li>
+                  ))}
+                </ul>
+                <span className="label text-navy-DEFAULT transition-colors group-hover:text-cyan-DEFAULT md:col-span-2 md:text-right">
+                  {a.cta} →
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   )

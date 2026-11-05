@@ -47,10 +47,20 @@ export default function Nav() {
   const [mobileProducts, setMobileProducts]   = useState(false)
   const [mobileSolutions, setMobileSolutions] = useState(false)
   const [activeDropdown, setActiveDropdown]   = useState<string | null>(null)
+  const [scrolled, setScrolled] = useState(false)
   const navRef = useRef<HTMLElement>(null)
+  // Home: transparent over the ink hero until the page scrolls
+  const overHero = pathname === '/' && !scrolled && !mobileOpen
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   const isCurrentPage = (href: string) => pathname === href || pathname.startsWith(href + '/')
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   // Close dropdowns when clicking outside
   useEffect(() => {
@@ -80,12 +90,17 @@ export default function Nav() {
   }
 
   return (
-    <header ref={navRef} className="sticky top-0 z-50 bg-white border-b border-navy-100 h-[68px]">
+    <header
+      ref={navRef}
+      className={`${pathname === '/' ? 'fixed inset-x-0' : 'sticky'} top-0 z-50 h-[68px] border-b transition-colors duration-300 ${
+        overHero ? 'border-transparent bg-transparent text-white' : 'border-navy-100 bg-paper'
+      }`}
+    >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between gap-6">
 
         {/* Logo */}
         <Link href="/" aria-label="Callvox home" onClick={() => setActiveDropdown(null)}>
-          <Logo className="w-[136px] h-auto flex-shrink-0" />
+          <Logo reversed={overHero} className="w-[136px] h-auto flex-shrink-0" />
         </Link>
 
         {/* Desktop links */}
@@ -97,7 +112,7 @@ export default function Nav() {
               onClick={() => toggleDropdown('Products')}
               aria-expanded={activeDropdown === 'Products'}
               className={`px-4 py-2 text-sm font-medium transition-colors flex items-center gap-1 focus-visible:outline-none ${
-                isCurrentPage('/products') ? 'text-cyan-DEFAULT' : 'text-navy-700 hover:text-cyan-DEFAULT'
+                isCurrentPage('/products') ? 'text-cyan-DEFAULT' : overHero ? 'text-white/85 hover:text-white' : 'text-navy-700 hover:text-cyan-DEFAULT'
               }`}
             >
               Products
@@ -105,7 +120,7 @@ export default function Nav() {
             </button>
 
             {activeDropdown === 'Products' && (
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[520px] bg-white rounded-2xl shadow-2xl border border-navy-100/20 p-6 z-50 animate-in fade-in slide-in-from-top-2 duration-200"
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[520px] bg-paper rounded-md shadow-lg border border-navy-100 p-6 z-50 animate-in fade-in slide-in-from-top-2 duration-200"
                    onMouseEnter={() => handleMouseEnter('Products')}
                    onMouseLeave={handleMouseLeave}>
                 <p className="text-[11px] font-bold uppercase tracking-widest text-navy-400 mb-4">All Products</p>
@@ -117,10 +132,10 @@ export default function Nav() {
                         key={p.name}
                         href={p.href}
                         onClick={() => setActiveDropdown(null)}
-                        className="flex items-start gap-4 px-3 py-3 rounded-xl hover:bg-navy-50 transition-colors group"
+                        className="flex items-start gap-4 px-3 py-3 rounded-sm hover:bg-navy-50 transition-colors group"
                       >
-                        <span className="mt-0.5 w-8 h-8 rounded-lg bg-cyan-DEFAULT/10 flex items-center justify-center flex-shrink-0">
-                          <Icon size={18} weight="duotone" className="text-cyan-DEFAULT" />
+                        <span className="mt-0.5 w-8 h-8 rounded-sm bg-cyan-DEFAULT/10 flex items-center justify-center flex-shrink-0">
+                          <Icon size={18} weight="light" className="text-cyan-DEFAULT" />
                         </span>
                         <span>
                           <span className="block text-sm font-semibold text-navy-DEFAULT group-hover:text-cyan-DEFAULT transition-colors">{p.name}</span>
@@ -150,7 +165,7 @@ export default function Nav() {
               onClick={() => toggleDropdown('Solutions')}
               aria-expanded={activeDropdown === 'Solutions'}
               className={`px-4 py-2 text-sm font-medium transition-colors flex items-center gap-1 focus-visible:outline-none ${
-                isCurrentPage('/solutions') ? 'text-cyan-DEFAULT' : 'text-navy-700 hover:text-cyan-DEFAULT'
+                isCurrentPage('/solutions') ? 'text-cyan-DEFAULT' : overHero ? 'text-white/85 hover:text-white' : 'text-navy-700 hover:text-cyan-DEFAULT'
               }`}
             >
               Solutions
@@ -158,7 +173,7 @@ export default function Nav() {
             </button>
 
             {activeDropdown === 'Solutions' && (
-              <div className="absolute top-full left-0 mt-2 w-52 bg-white rounded-2xl shadow-2xl border border-navy-100/20 p-3 z-50 animate-in fade-in slide-in-from-top-2 duration-200"
+              <div className="absolute top-full left-0 mt-2 w-52 bg-paper rounded-md shadow-lg border border-navy-100 p-3 z-50 animate-in fade-in slide-in-from-top-2 duration-200"
                    onMouseEnter={() => handleMouseEnter('Solutions')}
                    onMouseLeave={handleMouseLeave}>
                 {solutions.map((s) => {
@@ -168,9 +183,9 @@ export default function Nav() {
                       key={s.name}
                       href={s.href}
                       onClick={() => setActiveDropdown(null)}
-                      className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-navy-700 hover:bg-navy-50 hover:text-cyan-DEFAULT transition-colors group"
+                      className="flex items-center gap-3 px-3 py-2.5 rounded-sm text-sm text-navy-700 hover:bg-navy-50 hover:text-cyan-DEFAULT transition-colors group"
                     >
-                      <Icon size={16} weight="duotone" className="text-navy-400 group-hover:text-cyan-DEFAULT transition-colors flex-shrink-0" />
+                      <Icon size={16} weight="light" className="text-navy-400 group-hover:text-cyan-DEFAULT transition-colors flex-shrink-0" />
                       {s.name}
                     </Link>
                   )
@@ -187,7 +202,7 @@ export default function Nav() {
               onClick={() => setActiveDropdown(null)}
               aria-current={isCurrentPage(link.href) ? 'page' : undefined}
               className={`px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-DEFAULT focus-visible:ring-offset-2 rounded-md ${
-                isCurrentPage(link.href) ? 'text-cyan-DEFAULT' : 'text-navy-700 hover:text-cyan-DEFAULT'
+                isCurrentPage(link.href) ? 'text-cyan-DEFAULT' : overHero ? 'text-white/85 hover:text-white' : 'text-navy-700 hover:text-cyan-DEFAULT'
               }`}
             >
               {link.name}
@@ -197,12 +212,12 @@ export default function Nav() {
 
         {/* Desktop CTAs */}
         <div className="hidden lg:flex items-center gap-2 flex-shrink-0">
-          <Button variant="primary" size="md">Work with us</Button>
+          <Button variant={overHero ? 'signal' : 'primary'} size="md">Work with us</Button>
         </div>
 
         {/* Mobile hamburger */}
         <button
-          className="lg:hidden p-2 text-navy-DEFAULT rounded-md"
+          className={`lg:hidden p-2 rounded-md ${overHero ? 'text-white' : 'text-navy-DEFAULT'}`}
           onClick={() => setMobileOpen(prev => !prev)}
           aria-label="Toggle navigation menu"
         >
@@ -212,7 +227,7 @@ export default function Nav() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden absolute top-[68px] left-0 right-0 bg-white border-b border-navy-100/20 shadow-xl overflow-y-auto max-h-[calc(100vh-68px)]">
+        <div className="lg:hidden absolute top-[68px] left-0 right-0 bg-paper text-navy-DEFAULT border-b border-navy-100/20 shadow-xl overflow-y-auto max-h-[calc(100vh-68px)]">
           <div className="px-4 py-6 space-y-1">
 
             {/* Products accordion */}
@@ -234,7 +249,7 @@ export default function Nav() {
                       onClick={() => setMobileOpen(false)}
                       className="flex items-center gap-3 px-4 py-2.5 text-sm text-navy-700 rounded-lg hover:bg-navy-50 hover:text-cyan-DEFAULT"
                     >
-                      <Icon size={16} weight="duotone" className="text-cyan-DEFAULT" />
+                      <Icon size={16} weight="light" className="text-cyan-DEFAULT" />
                       {p.name}
                     </Link>
                   )
@@ -261,7 +276,7 @@ export default function Nav() {
                       onClick={() => setMobileOpen(false)}
                       className="flex items-center gap-3 px-4 py-2.5 text-sm text-navy-700 rounded-lg hover:bg-navy-50 hover:text-cyan-DEFAULT"
                     >
-                      <Icon size={16} weight="duotone" className="text-navy-400" />
+                      <Icon size={16} weight="light" className="text-navy-400" />
                       {s.name}
                     </Link>
                   )

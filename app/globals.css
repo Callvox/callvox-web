@@ -4,23 +4,30 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Callvox Design Tokens */
-  --navy-DEFAULT: #0d2b4e;
-  --navy-50: #E6F1FB;
-  --navy-100: #B5D4F4;
-  --navy-200: #85B7EB;
-  --navy-400: #378ADD;
-  --navy-600: #185FA5;
-  --navy-800: #0C447C;
-  --navy-900: #042C53;
-  --cyan-DEFAULT: #0ea5e9;
-  --cyan-light: #e0f2fe;
-  
-  --background: #ffffff;
+  /* Callvox design tokens — "ink & paper" with a signal accent.
+     Token names are kept (navy-*, cyan-*) so existing pages inherit the new look. */
+  --navy-DEFAULT: #0b1424;   /* ink */
+  --navy-900: #070d19;
+  --navy-800: #111d33;
+  --navy-700: #1b2a45;
+  --navy-600: #46566f;       /* body text on paper (AA) */
+  --navy-500: #5d6c84;
+  --navy-400: #67768d;       /* labels on paper (AA at 13px+) */
+  --navy-300: #9aa6b8;
+  --navy-200: #b9c2d0;       /* body text on ink */
+  --navy-100: #dcd9cf;       /* hairlines on paper */
+  --navy-50:  #efece4;       /* muted paper */
+  --cyan-DEFAULT: #0c7a5c;   /* signal, deep — accent on paper (AA) */
+  --cyan-light: #e3efe7;
+  --signal: #c6f24e;         /* signal, bright — accent on ink */
+  --paper: #f6f4ee;
+  --ink: #0b1424;
+
+  --background: var(--paper);
   --foreground: var(--navy-DEFAULT);
-  --card: #ffffff;
+  --card: #fbfaf6;
   --card-foreground: var(--navy-DEFAULT);
-  --popover: #ffffff;
+  --popover: #fbfaf6;
   --popover-foreground: var(--navy-DEFAULT);
   --primary: var(--navy-DEFAULT);
   --primary-foreground: #ffffff;
@@ -35,12 +42,19 @@
   --border: var(--navy-100);
   --input: var(--navy-100);
   --ring: var(--cyan-DEFAULT);
-  --radius: 0.625rem;
+  --radius: 0.25rem;
 }
 
 @theme inline {
-  --font-sans: 'DM Sans', 'Helvetica Neue', 'Arial', sans-serif;
-  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --font-sans: var(--font-geist), 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, 'SF Mono', monospace;
+  --font-display: var(--font-instrument), Georgia, 'Times New Roman', serif;
+  --color-signal: var(--signal);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-navy-700: var(--navy-700);
+  --color-navy-500: var(--navy-500);
+  --color-navy-300: var(--navy-300);
   
   /* Callvox Colors */
   --color-navy-DEFAULT: var(--navy-DEFAULT);
@@ -73,10 +87,12 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-lg: 4px;
+  --radius-xl: 6px;
+  --radius-2xl: 8px;
+  --radius-3xl: 10px;
 }
 
 @layer base {
@@ -90,14 +106,24 @@
   /* Premium Typography */
   h1, h2, h3, h4, h5, h6 {
     @apply text-balance;
+    letter-spacing: -0.015em;
   }
-  
-  h1 {
-    @apply tracking-tighter;
+
+  h1, h2 {
+    font-family: var(--font-instrument), Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    letter-spacing: -0.02em;
   }
-  
+
+  /* Inner pages set font-semibold/bold on headings; the serif has one weight. */
+  h1.font-semibold, h1.font-bold, h2.font-semibold, h2.font-bold { font-weight: 400; }
+
+  body {
+    font-feature-settings: 'ss01', 'cv11';
+  }
+
   p {
-    @apply leading-loose;
+    @apply leading-relaxed;
   }
   
   /* Improved focus-visible states for accessibility */
@@ -239,4 +265,56 @@
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+}
+
+/* ---------- Surfaces ---------- */
+/* On ink, the deep accent is too dim: swap text accents to bright signal. */
+[class*="bg-navy-DEFAULT"] .text-cyan-DEFAULT,
+[class*="bg-navy-900"] .text-cyan-DEFAULT,
+[class*="bg-navy-800"] .text-cyan-DEFAULT,
+.surface-ink .text-cyan-DEFAULT {
+  color: var(--signal);
+}
+
+/* ---------- Brand utilities ---------- */
+@utility font-display {
+  font-family: var(--font-instrument), Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+}
+
+@utility font-data {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Small mono caption used as section label: "01 — PLATFORM" */
+@utility label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Blueprint grid backdrop for ink sections */
+.bg-grid-ink {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.045) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* Count/reveal motion: one idea, used sparingly */
+@keyframes line-reveal {
+  from { transform: translateY(105%); }
+  to   { transform: translateY(0); }
+}
+.reveal-line { display: block; overflow: hidden; }
+.reveal-line > span {
+  display: block;
+  animation: line-reveal 0.9s cubic-bezier(0.2, 0.7, 0.1, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee, .animate-globe, .animate-pulse-dot { animation: none; }
+  .reveal-line > span { animation: none; }
 }

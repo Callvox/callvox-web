@@ -1,48 +1,28 @@
-'use client'
-
-import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
-
-const partners = [
-  'TelecomOne',
-  'GlobalVoice',
-  'NetLink Pro',
-  'SkyMobile',
-  'ConnectHub',
-  'WaveNet',
-  'PulseTel',
-  'DataStream',
+const corridors = [
+  'Latin America',
+  'Sub-Saharan Africa',
+  'South Asia',
+  'Middle East & North Africa',
+  'Southeast Asia',
+  'Caribbean',
+  'Eastern Europe',
+  'Central Asia',
 ]
 
 export function LogoBar() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-100px' })
-
+  const items = [...corridors, ...corridors]
   return (
-    <section ref={ref} className="bg-navy-50/40 border-y border-navy-100 py-10 overflow-hidden">
-      <motion.div
-        initial={{ opacity: 0, y: 32 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.5, ease: 'easeOut' }}
-      >
-        <p className="text-[11px] uppercase tracking-[1.5px] text-navy-400 text-center mb-6">
-          Trusted by carriers, MVNOs & resellers in 150+ countries
-        </p>
-        
-        {/* Mobile: Marquee */}
-        <div className="md:hidden relative">
-          <div className="flex animate-marquee">
-            {[...partners, ...partners].map((partner, i) => (
-              <div 
-                key={`${partner}-${i}`}
-                className="flex-shrink-0 w-[120px] h-12 flex items-center justify-center text-navy-200 text-xs font-medium mx-4"
-              >
-                {partner}
-              </div>
-            ))}
-          </div>
-        </div>
-      </motion.div>
+    <section aria-label="Core corridors" className="overflow-hidden border-y border-navy-100 bg-paper py-5">
+      <div className="flex w-max animate-marquee items-center">
+        {items.map((c, i) => (
+          <span key={`${c}-${i}`} className="label flex items-center whitespace-nowrap text-navy-500">
+            <span className="px-8">{c}</span>
+            <span className="text-cyan-DEFAULT" aria-hidden>
+              ◆
+            </span>
+          </span>
+        ))}
+      </div>
     </section>
   )
 }

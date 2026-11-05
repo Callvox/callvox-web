@@ -11,10 +11,10 @@ export function Logo({ className, reversed = false }: LogoProps) {
   return (
     <div className={className}>
       <Image
-        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Callvox_Logo_small-TlBNvrQx6nx3HXswnZHOFPpZFmhiXF.png"
+        src={reversed ? '/callvox-logo-white.png' : '/callvox-logo-ink.png'}
         alt="Callvox"
-        width={160}
-        height={32}
+        width={599}
+        height={134}
         priority
         style={{
           width: '100%',

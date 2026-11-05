@@ -36,17 +36,17 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="bg-[#122C51] text-navy-200 pt-32 pb-12 border-t border-navy-800/50">
+    <footer className="bg-navy-900 text-navy-200 pt-32 pb-12 border-t border-navy-800/50">
       <div className="container">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-10 mb-16">
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link href="/">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Callvox_logo_dark_sm-I1oKEm7SW72RmSC0iuxr5tVTsSmIPh.png"
+                src="/callvox-logo-white.png"
                 alt="Callvox"
-                width={180}
-                height={36}
+                width={599}
+                height={134}
                 loading="lazy"
                 style={{
                   width: '100%',
