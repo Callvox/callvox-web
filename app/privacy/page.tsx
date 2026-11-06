@@ -197,11 +197,6 @@ export default function PrivacyPage() {
                       'Log data, online identifiers',
                       'Legitimate interest (Art. 6(1)(f))',
                     ],
-                    [
-                      'Non-essential cookies and analytics',
-                      'Cookie and device data',
-                      'Consent (Art. 6(1)(a))',
-                    ],
                   ]}
                 />
 
