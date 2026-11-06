@@ -210,7 +210,7 @@ export default function DpaPage() {
       <main id="main-content" className="bg-paper">
         <div className="mx-auto max-w-page px-4 pb-24 pt-32 sm:px-6 lg:px-8 lg:pt-40">
           <div>
-            <h1 className="display-h1 text-navy-DEFAULT">Callvox OU Data Processing Agreement</h1>
+            <h1 className="display-h1 text-navy-DEFAULT">Data Processing Agreement</h1>
             <p className="mt-4 text-sm text-navy-400">Effective date: October 2, 2026</p>
 
             <div className="mt-12 space-y-12 text-[15px] leading-relaxed text-navy-600">
