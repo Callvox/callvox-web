@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Logo } from './Logo'
 import { CTA } from './CTA'
+import { products as navProducts, solutions as navSolutions, simpleLinks as navSimpleLinks } from '@/lib/nav'
 import {
   Phone,
   ChatDots,
@@ -18,28 +19,27 @@ import {
   X,
   CaretDown,
   ArrowRight,
+  type Icon,
 } from '@phosphor-icons/react'
 
-const products = [
-  { icon: Phone,         name: 'Wholesale Voice',  desc: 'Termination & origination across 500+ routes', href: '/products/voice' },
-  { icon: ChatDots,      name: 'SMS / Messaging',  desc: 'A2P SMS, SMPP & REST delivery at scale',        href: '/products/sms' },
-  { icon: Lightning,     name: 'Airtime Top-Ups',  desc: 'International mobile recharge via API',          href: '/products/airtime' },
-  { icon: SimCard,       name: 'eSIM',             desc: 'Wholesale eSIM provisioning',           href: '/products/esim' },
-  { icon: PhoneIncoming, name: 'DIDs / Numbers',   desc: 'Virtual numbers, provisioned on demand',              href: '/products/dids' },
-]
+const productIcons: Record<string, Icon> = {
+  '/products/voice': Phone,
+  '/products/sms': ChatDots,
+  '/products/airtime': Lightning,
+  '/products/esim': SimCard,
+  '/products/dids': PhoneIncoming,
+}
 
-const solutions = [
-  { icon: Broadcast,    name: 'For Carriers',    href: '/solutions/carriers' },
-  { icon: SimCard,      name: 'For MVNOs',        href: '/solutions/mvnos' },
-  { icon: ArrowUpRight, name: 'For Resellers',    href: '/solutions/resellers' },
-  { icon: Buildings,    name: 'For Enterprises',  href: '/solutions/enterprises' },
-]
+const solutionIcons: Record<string, Icon> = {
+  '/solutions/carriers': Broadcast,
+  '/solutions/mvnos': SimCard,
+  '/solutions/resellers': ArrowUpRight,
+  '/solutions/enterprises': Buildings,
+}
 
-const simpleLinks = [
-  { name: 'Coverage',   href: '/coverage' },
-  { name: 'Developers', href: '/developers' },
-  { name: 'Resources',  href: '/resources' },
-]
+const products = navProducts.map((p) => ({ ...p, icon: productIcons[p.href] }))
+const solutions = navSolutions.map((s) => ({ ...s, icon: solutionIcons[s.href] }))
+const simpleLinks = navSimpleLinks
 
 export default function Nav() {
   const pathname = usePathname()
