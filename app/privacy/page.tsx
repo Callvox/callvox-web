@@ -167,7 +167,7 @@ export default function PrivacyPage() {
                 <P>
                   <strong className="text-navy-DEFAULT">Collected automatically:</strong> IP address, device type and
                   identifiers, browser, approximate location (country or city level), pages viewed, links clicked,
-                  timestamps, via server logs, cookies and similar technologies.
+                  timestamps, via server logs and cookieless analytics.
                 </P>
                 <P>
                   <strong className="text-navy-DEFAULT">Portal and API data:</strong> account credentials, user roles,

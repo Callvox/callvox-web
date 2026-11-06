@@ -56,8 +56,7 @@ export function Footer() {
             <address className="not-italic text-[13px] text-navy-300 mt-4 leading-relaxed">
               Callvox OÜ<br />
               Lootsa tn 5, 11415 Tallinn, Estonia<br />
-              Registry code 17467209<br />
-              <a href="mailto:support@callvox.net" className="inline-block py-1 hover:text-white transition-colors">support@callvox.net</a>
+              Registry code 17467209
             </address>
           </div>
 
