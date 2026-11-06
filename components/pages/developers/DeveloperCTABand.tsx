@@ -4,7 +4,7 @@ export default function DeveloperCTABand() {
   return (
     <PageCTA
       title="Ready to build?"
-      body="Tell us about your integration and we'll set up sandbox access."
+      body="Tell us about your integration and we'll set up test access."
       tone="dark"
     />
   )

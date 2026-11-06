@@ -391,27 +391,41 @@ export default function Nav() {
           <CTA size="sm" tone={overHero ? 'dark' : 'light'} />
         </div>
 
-        {/* Mobile hamburger: the two icons cross-rotate */}
-        <button
-          className={`lg:hidden -mr-2 rounded-md p-2.5 ${overHero ? 'text-white' : 'text-navy-DEFAULT'}`}
-          onClick={() => setMobileOpen((prev) => !prev)}
-          aria-label="Toggle navigation menu"
-          aria-expanded={mobileOpen}
-          aria-controls="mobile-menu"
-        >
-          <span className="relative block h-6 w-6">
-            <List
-              weight="bold"
-              size={24}
-              className={`absolute inset-0 transition-all duration-200 motion-reduce:transition-none ${mobileOpen ? 'rotate-90 opacity-0' : 'rotate-0 opacity-100'}`}
-            />
-            <X
-              weight="bold"
-              size={24}
-              className={`absolute inset-0 transition-all duration-200 motion-reduce:transition-none ${mobileOpen ? 'rotate-0 opacity-100' : '-rotate-90 opacity-0'}`}
-            />
+        {/* Mobile: a compact CTA appears once the hero button has scrolled away, next to the hamburger */}
+        <div className="flex items-center gap-2 lg:hidden">
+          <span
+            inert={!(scrolled && !mobileOpen)}
+            className={`max-[359px]:hidden motion-reduce:transition-none ${
+              scrolled && !mobileOpen
+                ? 'visible translate-y-0 opacity-100 [transition:opacity_200ms_ease-out,transform_200ms_ease-out,visibility_0s_0s]'
+                : 'invisible -translate-y-1 opacity-0 [transition:opacity_200ms_ease-out,transform_200ms_ease-out,visibility_0s_200ms]'
+            }`}
+          >
+            <CTA size="sm" tone="light" />
           </span>
-        </button>
+
+          {/* Hamburger: the two icons cross-rotate */}
+          <button
+            className={`-mr-2 rounded-md p-2.5 ${overHero ? 'text-white' : 'text-navy-DEFAULT'}`}
+            onClick={() => setMobileOpen((prev) => !prev)}
+            aria-label="Toggle navigation menu"
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-menu"
+          >
+            <span className="relative block h-6 w-6">
+              <List
+                weight="bold"
+                size={24}
+                className={`absolute inset-0 transition-all duration-200 motion-reduce:transition-none ${mobileOpen ? 'rotate-90 opacity-0' : 'rotate-0 opacity-100'}`}
+              />
+              <X
+                weight="bold"
+                size={24}
+                className={`absolute inset-0 transition-all duration-200 motion-reduce:transition-none ${mobileOpen ? 'rotate-0 opacity-100' : '-rotate-90 opacity-0'}`}
+              />
+            </span>
+          </button>
+        </div>
       </nav>
 
       {/* Mobile menu: always mounted so it can animate; `inert` keeps it out of the tab order while closed */}

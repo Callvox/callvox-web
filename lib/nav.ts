@@ -1,7 +1,7 @@
 /** Single source of truth for site navigation links, shared by Nav and Footer. */
 
 export const products = [
-  { name: 'Voice', desc: 'Direct termination across 500+ routes', href: '/products/voice' },
+  { name: 'Voice', desc: 'Termination and origination across 500+ routes', href: '/products/voice' },
   { name: 'SMS / Messaging', desc: 'A2P SMS over SMPP and REST', href: '/products/sms' },
   { name: 'Airtime Top-Ups', desc: 'International mobile top-ups by API', href: '/products/airtime' },
   { name: 'eSIM', desc: 'eSIM profiles, provisioned by API', href: '/products/esim' },

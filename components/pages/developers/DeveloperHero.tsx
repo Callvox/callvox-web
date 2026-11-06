@@ -4,7 +4,7 @@ export default function DeveloperHero() {
   return (
     <PageHero
       title="Five services, one integration."
-      body="REST APIs for voice, SMS, airtime, eSIM and DIDs, with SMPP for messaging."
+      body="Connect by REST API, SMPP, SIP trunk or IP peering, depending on the product."
       cta={{}}
     />
   )

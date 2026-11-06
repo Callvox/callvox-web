@@ -6,7 +6,7 @@ const methods = [
   { product: 'SMS', href: '/products/sms', how: ['SMPP', 'REST'], what: 'A2P messaging' },
   { product: 'Airtime', href: '/products/airtime', how: ['REST API'], what: 'Mobile top-ups' },
   { product: 'eSIM', href: '/products/esim', how: ['REST API'], what: 'Profile provisioning' },
-  { product: 'DIDs', href: '/products/dids', how: ['API', 'portal'], what: 'Number search and provisioning' },
+  { product: 'DIDs', href: '/products/dids', how: ['REST API', 'portal'], what: 'Number search and provisioning' },
 ]
 
 const grid = 'sm:grid-cols-[9rem_minmax(0,1.1fr)_minmax(0,1fr)_1.5rem] sm:gap-x-8'
@@ -17,7 +17,7 @@ export default function ConnectionMethods() {
       <div className="mx-auto max-w-page px-4 sm:px-6 lg:px-8">
         <h2 className="display-h2 text-navy-DEFAULT">How you connect.</h2>
         <p className="mt-4 text-lg text-navy-600">
-          Each product has its own connection method. Use one, some or all.
+          Each product has its own connection method. Use one, some or all. Documentation and test access are shared when your account is set up.
         </p>
 
         <div className="mt-12 border-t border-navy-100">

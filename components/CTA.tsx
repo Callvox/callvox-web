@@ -15,9 +15,10 @@ const base =
   'transition-all duration-200 ease-out active:translate-y-px ' +
   'motion-reduce:transition-colors motion-reduce:transform-none'
 
+// Phones get a 44px touch target; desktop keeps the compact sizes.
 const sizes = {
-  md: 'h-10 px-6 text-[15px]',
-  sm: 'h-9 px-5 text-sm',
+  md: 'h-11 px-6 text-[15px] sm:h-10',
+  sm: 'h-10 px-5 text-sm lg:h-9',
 }
 
 const tones = {
