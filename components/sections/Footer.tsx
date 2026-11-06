@@ -81,6 +81,7 @@ export function Footer() {
           <div className="flex gap-2">
             <Link href="/privacy" className="px-2 py-3 hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="px-2 py-3 hover:text-white transition-colors">Terms of Service</Link>
+            <Link href="/dpa" className="px-2 py-3 hover:text-white transition-colors">DPA</Link>
           </div>
         </div>
       </div>

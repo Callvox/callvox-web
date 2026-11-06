@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
+import Link from 'next/link'
 import Nav from '@/components/Nav'
 import { Footer } from '@/components/sections/Footer'
 
@@ -125,7 +126,8 @@ export default function PrivacyPage() {
                       'Content of SMS messages and other end-user content that Customers submit for delivery',
                       <>
                         <strong className="text-navy-DEFAULT">Processor</strong> on the Customer&rsquo;s instructions
-                        under our data processing agreement; <strong className="text-navy-DEFAULT">controller</strong>{' '}
+                        under our{' '}
+                        <Link href="/dpa" className="text-cyan-DEFAULT underline">data processing agreement</Link>; <strong className="text-navy-DEFAULT">controller</strong>{' '}
                         only where we screen content ourselves for fraud or legal compliance
                       </>,
                     ],
