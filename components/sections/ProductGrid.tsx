@@ -15,15 +15,25 @@ type Product = {
 }
 
 const Flow = ({ steps }: { steps: [string, string][] }) => (
-  <ul className="divide-y divide-white/10 text-base text-navy-200">
-    {steps.map(([a, b]) => (
-      <li key={a} className="flex items-baseline gap-4 px-6 py-6">
-        <span aria-hidden className="text-signal">→</span>
-        <span className="flex-1 text-white">{a}</span>
-        <span className="text-right text-navy-300">{b}</span>
+  <ol className="px-6 py-8 lg:px-10">
+    {steps.map(([title, detail], i) => (
+      <li key={title} className="relative flex gap-5 pb-9 last:pb-0">
+        {i < steps.length - 1 && (
+          <span aria-hidden className="absolute left-[15px] top-8 h-full w-px bg-gradient-to-b from-signal/50 to-white/10" />
+        )}
+        <span
+          aria-hidden
+          className="font-data relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-signal/50 bg-navy-900 text-xs text-signal"
+        >
+          {i + 1}
+        </span>
+        <div className="pt-0.5">
+          <p className="text-xl font-medium leading-tight text-white">{title}</p>
+          <p className="font-data mt-1.5 text-sm text-navy-300">{detail}</p>
+        </div>
       </li>
     ))}
-  </ul>
+  </ol>
 )
 
 // Panels describe how each product is delivered. No performance figures, no example payloads.
@@ -149,10 +159,14 @@ export function ProductGrid() {
                   aria-controls={`panel-${p.id}`}
                   onClick={() => setActive(p.id)}
                   onMouseEnter={() => setActive(p.id)}
-                  className={`group flex w-full items-start gap-5 border-b border-navy-100 px-6 py-6 text-left transition-colors last:border-b-0 ${
+                  className={`group relative flex w-full items-start gap-5 border-b border-navy-100 px-6 py-6 text-left transition-colors last:border-b-0 ${
                     on ? 'bg-white' : 'hover:bg-white/60'
                   }`}
                 >
+                  <span
+                    aria-hidden
+                    className={`absolute inset-y-0 left-0 w-0.5 transition-colors ${on ? 'bg-cyan-DEFAULT' : 'bg-transparent'}`}
+                  />
                   <span className="flex-1">
                     <span className="block font-display text-3xl leading-none text-navy-DEFAULT">{p.name}</span>
                     <span className="mt-2 block text-[15px] text-navy-600">{p.pitch}</span>
@@ -177,13 +191,22 @@ export function ProductGrid() {
             className="surface-ink bg-navy-DEFAULT lg:col-span-7"
           >
             <div className="bg-grid-ink flex h-full min-h-[22rem] flex-col">
-              <div className="flex items-center justify-between border-b border-white/10 px-5 py-3.5">
+              <div className="flex items-center justify-between border-b border-white/10 px-6 py-4 lg:px-10">
                 <span className="label text-navy-200">{current.title}</span>
-                <Link href={current.href} className="label text-signal hover:text-white">
-                  Explore {current.name} →
+                <span className="label text-navy-400">
+                  {String(products.indexOf(current) + 1).padStart(2, '0')} / {String(products.length).padStart(2, '0')}
+                </span>
+              </div>
+              <div className="flex flex-1 items-center">{current.panel}</div>
+              <div className="flex flex-col gap-4 border-t border-white/10 px-6 py-5 sm:flex-row sm:items-center sm:justify-between lg:px-10">
+                <p className="text-[15px] text-navy-200">{current.pitch}</p>
+                <Link
+                  href={current.href}
+                  className="inline-flex h-10 items-center justify-center gap-2 self-start rounded-md border border-signal/50 px-5 text-sm font-medium text-signal transition-colors hover:bg-signal hover:text-navy-DEFAULT sm:self-auto"
+                >
+                  Explore {current.name} <span aria-hidden>→</span>
                 </Link>
               </div>
-              <div className="font-data flex-1 py-2 text-sm">{current.panel}</div>
             </div>
           </div>
         </div>

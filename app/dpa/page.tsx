@@ -7,7 +7,7 @@ import { Footer } from '@/components/sections/Footer'
 export const metadata: Metadata = {
   title: 'Data Processing Agreement',
   description:
-    'How CALLVOX OU processes personal data on behalf of business customers as a processor under the GDPR.',
+    'How CALLVOX OÜ processes personal data on behalf of business customers as a processor under the GDPR.',
   alternates: { canonical: '/dpa' },
 }
 
@@ -150,7 +150,7 @@ const annexes: Annex[] = [
       head: ['Item', 'Description'],
       rows: [
         ['Controller (data exporter)', 'The Customer named in the Order Form'],
-        ['Processor (data importer)', 'CALLVOX OU, Lootsa tn 5, Tallinn, 11415, Estonia. Contact: legal@callvox.net'],
+        ['Processor (data importer)', 'CALLVOX OÜ, Lootsa tn 5, Tallinn, 11415, Estonia. Contact: legal@callvox.net'],
         ['Subject matter', 'Delivery of voice, A2P SMS, airtime top-up, eSIM and DID services to the Customer and its end users'],
         ['Nature of processing', 'Receiving, routing, transmitting, delivering, storing for a limited time, and deleting the data needed to provide the Services'],
         ['Purpose', "To provide the Services under the Agreement and follow the Customer's instructions"],
@@ -216,7 +216,7 @@ export default function DpaPage() {
             <div className="mt-12 space-y-12 text-[15px] leading-relaxed text-navy-600">
               <section>
                 <p>
-                  This Data Processing Agreement (the &ldquo;DPA&rdquo;) forms part of the agreement between CALLVOX OU,
+                  This Data Processing Agreement (the &ldquo;DPA&rdquo;) forms part of the agreement between CALLVOX OÜ,
                   registry code 17467209, VAT no. EE102976692, Lootsa tn 5, Tallinn, 11415, Estonia
                   (&ldquo;Callvox&rdquo;), and the business customer that has signed an Order Form or accepted
                   Callvox&rsquo;s{' '}

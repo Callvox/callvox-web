@@ -77,7 +77,7 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-navy-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-navy-300">
-          <p>&copy; 2026 Callvox. All rights reserved.</p>
+          <p>&copy; 2026 Callvox OÜ. All rights reserved.</p>
           <div className="flex gap-2">
             <Link href="/privacy" className="px-2 py-3 hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="px-2 py-3 hover:text-white transition-colors">Terms of Service</Link>

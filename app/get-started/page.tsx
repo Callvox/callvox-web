@@ -17,7 +17,7 @@ export default async function GetStartedPage({
   searchParams: Promise<{ type?: string }>
 }) {
   const { type } = await searchParams
-  const defaultType = type && TYPES.includes(type) ? type : 'carrier'
+  const defaultType = type && TYPES.includes(type) ? type : ''
 
   return (
     <>

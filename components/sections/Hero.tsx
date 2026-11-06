@@ -1,12 +1,5 @@
 import { CTA } from '@/components/CTA'
 import { NetworkMap } from './NetworkMap'
-import { STATS } from '@/lib/stats'
-
-const stats = [
-  { ...STATS.routes, note: 'Direct voice routes' },
-  { ...STATS.countries, note: 'Reached through one platform' },
-  { ...STATS.operators, note: 'Mobile operators for airtime' },
-]
 
 export function Hero() {
   return (
@@ -22,30 +15,19 @@ export function Hero() {
       />
 
       <div className="relative mx-auto grid max-w-page gap-14 pb-20 pt-36 lg:grid-cols-12 lg:gap-8 lg:pb-28 lg:pt-48 px-4 sm:px-6 lg:px-8">
-        <div className="lg:col-span-8">
-          <h1 className="text-[clamp(3rem,5.8vw,6.25rem)] leading-[0.98] text-white">
-            <span className="reveal-line"><span>Direct routes to the</span></span>
-            <span className="reveal-line"><span style={{ animationDelay: '0.1s' }}>world&apos;s <em className="whitespace-nowrap text-signal">fastest‑growing</em></span></span>
-            <span className="reveal-line"><span style={{ animationDelay: '0.2s' }}>markets.</span></span>
+        <div className="lg:col-span-12">
+          <h1 className="text-[clamp(3rem,5.8vw,6.25rem)] leading-[0.98] text-white [text-wrap:balance]">
+            <span className="reveal-line"><span>Direct routes to the world&rsquo;s <em className="whitespace-nowrap text-signal">fastest‑growing</em> markets.</span></span>
           </h1>
-          <p className="mt-8 text-lg leading-relaxed text-navy-200">
-            Voice, SMS, airtime, eSIM and numbers from one wholesale partner. One integration,
-            one invoice and one support contact, built for carriers.
+          <p className="mt-8 max-w-4xl text-lg leading-relaxed text-navy-200 [text-wrap:pretty]">
+            Voice, SMS, airtime, eSIM and numbers from one wholesale partner.{' '}
+            <br className="hidden sm:block" />
+            One integration, one invoice and one support contact, for carriers, MVNOs, resellers and enterprises.
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <CTA type="carrier" tone="dark" />
+            <CTA tone="dark" />
           </div>
         </div>
-
-        <dl className="grid gap-px self-end overflow-hidden rounded-md border border-white/15 bg-white/15 lg:col-span-4">
-          {stats.map((s) => (
-            <div key={s.label} className="bg-navy-900/85 px-6 py-5 backdrop-blur-sm">
-              <dt className="label text-navy-300">{s.label}</dt>
-              <dd className="font-data mt-1 text-5xl font-medium tracking-tight text-white">{s.value}</dd>
-              <p className="mt-1 text-sm text-navy-200">{s.note}</p>
-            </div>
-          ))}
-        </dl>
       </div>
     </section>
   )

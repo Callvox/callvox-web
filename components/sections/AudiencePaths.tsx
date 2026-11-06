@@ -10,7 +10,6 @@ const audiences = [
     href: '/solutions/carriers',
     points: ['Direct interconnects, not aggregated routes', 'One team to call when it matters'],
     cta: 'Carrier solutions',
-    primary: true,
   },
   {
     name: 'MVNOs',
@@ -75,11 +74,6 @@ export function AudiencePaths() {
                     <span className="font-display text-4xl leading-none text-navy-DEFAULT transition-transform duration-300 group-hover:translate-x-1.5 lg:text-5xl">
                       {a.name}
                     </span>
-                    {a.primary && (
-                      <span className="label rounded-sm border border-cyan-DEFAULT/40 px-2 py-1 text-cyan-DEFAULT">
-                        Primary focus
-                      </span>
-                    )}
                   </div>
 
                   <ul className="space-y-2 text-base text-navy-600">

@@ -21,7 +21,7 @@ const SERVICES = [
 const field =
   'mt-2 w-full rounded-sm border border-navy-100 bg-white px-4 py-3 text-[15px] text-navy-DEFAULT placeholder:text-navy-300 focus:border-cyan-DEFAULT focus:outline-none focus:ring-2 focus:ring-cyan-DEFAULT/30'
 
-export function GetStartedForm({ defaultType = 'carrier' }: { defaultType?: string }) {
+export function GetStartedForm({ defaultType = '' }: { defaultType?: string }) {
   const [status, setStatus] = useState<'idle' | 'sending' | 'done' | 'error'>('idle')
   const [errors, setErrors] = useState<Record<string, string[]>>({})
 

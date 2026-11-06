@@ -12,7 +12,7 @@ export function TrustBar() {
           Share the destinations and services you need, and we&apos;ll come back with route options.
         </p>
         <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-          <CTA type="carrier" tone="dark" />
+          <CTA tone="dark" />
         </div>
       </div>
     </section>

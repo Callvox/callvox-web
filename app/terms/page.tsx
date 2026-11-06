@@ -7,7 +7,7 @@ import { Footer } from '@/components/sections/Footer'
 export const metadata: Metadata = {
   title: 'Terms of Service',
   description:
-    'Terms governing the supply of telecommunications services by CALLVOX OU to business customers: voice, A2P SMS, airtime top-ups, eSIM and DIDs.',
+    'Terms governing the supply of telecommunications services by CALLVOX OÜ to business customers: voice, A2P SMS, airtime top-ups, eSIM and DIDs.',
   alternates: { canonical: '/terms' },
 }
 
@@ -273,7 +273,7 @@ const articles: Article[] = [
             ['Commercial', 'ben@callvox.net'],
           ],
         },
-        after: `Postal address: CALLVOX OU, Lootsa tn 5, Tallinn, 11415, Estonia.`,
+        after: `Postal address: CALLVOX OÜ, Lootsa tn 5, Tallinn, 11415, Estonia.`,
       },
       { n: '14.2', title: 'Amendments.', text: `Except for price changes under Article 4.2 and changes to the Platform or Services under Article 3.7, any change to the Agreement must be agreed in writing by both Parties. Callvox may update these Terms by giving thirty (30) days' written notice, and the update applies to Order Forms signed or renewed after that date, and to existing Order Forms at their next renewal, unless the update is required by law, in which case it applies from the date the law requires.` },
       { n: '14.3', title: 'Assignment and subcontracting.', text: `Neither Party may assign or transfer its rights or obligations without the other's prior written consent, which may not be unreasonably withheld, except that Callvox may assign to an Affiliate or to a successor to its business. Callvox may use Affiliates and subcontractors to perform the Services and remains responsible for their performance.` },
@@ -324,7 +324,7 @@ export default function TermsPage() {
               <section>
                 <p>
                   These Terms of Service (the &ldquo;Terms&rdquo;) govern the supply of telecommunications and related
-                  services by CALLVOX OU, an Estonian private limited company, registry code 17467209, VAT no.
+                  services by CALLVOX OÜ, an Estonian private limited company, registry code 17467209, VAT no.
                   EE102976692, registered office Lootsa tn 5, Tallinn, 11415, Estonia (&ldquo;Callvox&rdquo;), to the
                   business customer named in the applicable Order Form (the &ldquo;Customer&rdquo;). Callvox and the
                   Customer are each a &ldquo;Party&rdquo; and together the &ldquo;Parties&rdquo;.
