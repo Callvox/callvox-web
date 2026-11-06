@@ -5,14 +5,14 @@ import { products, solutions, simpleLinks } from '@/lib/nav'
 const footerLinks = {
   products: {
     title: 'Products',
-    links: [
-      ...products.map(({ name, href }) => ({ label: name, href })),
-      { label: 'Pricing', href: '/pricing' },
-    ],
+    links: products.map(({ name, href }) => ({ label: name, href })),
   },
   solutions: {
     title: 'Solutions',
-    links: solutions.map(({ name, href }) => ({ label: name, href })),
+    links: [
+      ...solutions.map(({ name, href }) => ({ label: name, href })),
+      { label: 'Pricing', href: '/pricing' },
+    ],
   },
   company: {
     title: 'Company',
