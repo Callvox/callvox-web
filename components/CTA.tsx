@@ -11,13 +11,13 @@ import Link from 'next/link'
 export type CTAType = 'carrier' | 'mvno' | 'reseller' | 'enterprise' | 'other'
 
 const base =
-  'inline-flex items-center justify-center rounded-md font-medium tracking-[-0.005em] ' +
+  'inline-flex items-center justify-center rounded-control font-medium tracking-[-0.005em] ' +
   'transition-all duration-200 ease-out active:translate-y-px ' +
   'motion-reduce:transition-colors motion-reduce:transform-none'
 
 const sizes = {
-  md: 'h-12 px-7 text-[15px]',
-  sm: 'h-10 px-5 text-sm',
+  md: 'h-10 px-6 text-[15px]',
+  sm: 'h-9 px-5 text-sm',
 }
 
 const tones = {

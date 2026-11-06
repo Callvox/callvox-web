@@ -1,80 +1,53 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m as motion } from 'framer-motion';
 import { SimCard, Airplane, HardDrives } from '@phosphor-icons/react';
+import { Section, SectionHeader } from '@/components/Section';
+
+const cards = [
+  {
+    icon: SimCard,
+    title: 'MVNOs',
+    description:
+      'Launch or expand your MVNO with eSIM provisioning. Over-the-air profile delivery through one wholesale partner.',
+  },
+  {
+    icon: Airplane,
+    title: 'Travel operators',
+    description:
+      'Offer eSIM data plans to travellers without physical SIM inventory. Profile delivery at point of booking.',
+  },
+  {
+    icon: HardDrives,
+    title: 'Enterprise IoT',
+    description:
+      'Deploy connected devices without SIM logistics. Manage profiles over the air across your device fleet.',
+  },
+];
 
 export function WhoItsForESIM() {
-  const cards = [
-    {
-      icon: SimCard,
-      title: 'MVNOs',
-      description: 'Launch or expand your MVNO with eSIM provisioning. Over-the-air profile delivery and subscriber management through one wholesale partner.',
-    },
-    {
-      icon: Airplane,
-      title: 'Travel operators',
-      description: 'Offer eSIM data plans to travellers without physical SIM inventory. Profile delivery at point of booking.',
-    },
-    {
-      icon: HardDrives,
-      title: 'Enterprise IoT',
-      description: 'Deploy connected devices without SIM logistics. Manage profiles over the air across your device fleet.',
-    },
-  ];
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.08,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 },
-    },
-  };
-
   return (
-    <section className="bg-white py-20">
-      <div className="mx-auto max-w-page px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="mb-12 md:mb-16"
-        >
-          <h2 className="display-h2 font-bold text-navy-DEFAULT">
-            Who uses our eSIM platform.
-          </h2>
-        </motion.div>
-
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid gap-8 md:grid-cols-3"
-        >
-          {cards.map((card, idx) => {
-            const Icon = card.icon;
-            return (
-              <motion.div key={idx} variants={itemVariants} className="rounded-lg border border-navy-100 bg-white p-8 hover:shadow-lg transition-shadow">
-                <Icon weight="duotone" size={40} className="text-cyan-DEFAULT mb-4" />
-                <h3 className="text-xl font-semibold text-navy-DEFAULT mb-3">{card.title}</h3>
-                <p className="text-navy-600 text-base leading-relaxed">{card.description}</p>
-              </motion.div>
-            );
-          })}
-        </motion.div>
+    <Section>
+      <SectionHeader title="Who uses our eSIM platform." />
+      <div className="grid gap-8 md:grid-cols-3">
+        {cards.map((card, idx) => {
+          const Icon = card.icon;
+          return (
+            <motion.div
+              key={card.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.08 }}
+              className="card-lift rounded-xl border border-navy-100 bg-white p-8"
+            >
+              <Icon weight="duotone" size={40} className="mb-4 text-cyan-DEFAULT" />
+              <h3 className="mb-3 text-xl font-semibold text-navy-DEFAULT">{card.title}</h3>
+              <p className="text-base leading-relaxed text-navy-600">{card.description}</p>
+            </motion.div>
+          );
+        })}
       </div>
-    </section>
+    </Section>
   );
 }

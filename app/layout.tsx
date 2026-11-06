@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono, Instrument_Serif } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { MotionProvider } from '@/components/MotionProvider'
 import './globals.css'
 
 const geist = Geist({
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
     template: '%s | Callvox',
   },
   description:
-    'The unified wholesale platform built for the world\'s fastest-growing markets. Voice termination, A2P SMS, airtime top-ups, eSIM provisioning and DIDs. One API, one invoice.',
+    'Wholesale voice termination, A2P SMS, airtime top-ups, eSIM and DIDs for carriers, MVNOs, resellers and enterprises. Direct routes since 2007.',
   keywords: [
     'wholesale voice termination',
     'A2P SMS wholesale',
@@ -46,13 +47,13 @@ export const metadata: Metadata = {
     siteName: 'Callvox',
     title: 'Callvox — The Unified Wholesale Telecom Platform',
     description:
-      'The unified wholesale platform built for the world\'s fastest-growing markets. Voice, SMS, airtime, eSIM & DIDs on one platform.',
+      'Wholesale voice, SMS, airtime, eSIM and DIDs, routed direct to emerging markets.',
     images: [
       {
         url: '/api/og',
         width: 1200,
         height: 630,
-        alt: 'Callvox — The unified wholesale platform for the world\'s fastest-growing markets',
+        alt: 'Callvox — Wholesale voice, SMS, airtime, eSIM and DIDs for emerging markets',
       },
     ],
   },
@@ -60,7 +61,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Callvox — The Unified Wholesale Telecom Platform',
     description:
-      'The unified wholesale platform built for the world\'s fastest-growing markets.',
+      'Wholesale voice, SMS, airtime, eSIM and DIDs, routed direct to emerging markets.',
     images: ['/api/og'],
   },
   robots: {
@@ -92,7 +93,7 @@ export default function RootLayout({
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
-        {children}
+        <MotionProvider>{children}</MotionProvider>
         <Analytics />
       </body>
     </html>

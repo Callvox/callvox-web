@@ -1,6 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m as motion } from 'framer-motion';
+import { STATS } from '@/lib/stats';
 import { Section, SectionHeader } from '@/components/Section';
 import { Phone, ChatDots, Wallet, SimCard, Hash } from '@phosphor-icons/react';
 
@@ -12,11 +13,11 @@ const fadeUp = (i: number) => ({
 });
 
 const products = [
-  { name: 'Voice', icon: Phone, desc: 'Direct routes' },
-  { name: 'SMS', icon: ChatDots, desc: 'A2P messaging' },
-  { name: 'Airtime', icon: Wallet, desc: '1700+ operators' },
-  { name: 'eSIM', icon: SimCard, desc: 'Profiles by API' },
-  { name: 'DIDs', icon: Hash, desc: 'Virtual numbers' },
+  { name: 'Voice', icon: Phone, desc: 'Direct routes, by SIP trunk or IP peering.' },
+  { name: 'SMS', icon: ChatDots, desc: 'A2P messaging over SMPP or REST.' },
+  { name: 'Airtime', icon: Wallet, desc: `Top-ups across ${STATS.operators.value} operators.` },
+  { name: 'eSIM', icon: SimCard, desc: 'Profiles ordered by API.' },
+  { name: 'Numbers', icon: Hash, desc: 'DIDs by country and number type.' },
 ];
 
 export default function ResellerAdvantage() {
@@ -24,7 +25,7 @@ export default function ResellerAdvantage() {
     <Section>
       <SectionHeader
         title="Five revenue streams. One wholesale relationship."
-        intro="Most resellers manage multiple wholesale accounts across fragmented providers. Callvox consolidates all five product lines, so you can offer clients more while cutting back-office overhead."
+        intro="Instead of one wholesale account per product, you work with one partner and one invoice."
       />
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-5">
@@ -34,7 +35,7 @@ export default function ResellerAdvantage() {
             <motion.div key={product.name} {...fadeUp(i)} className="rounded-lg border border-navy-100 bg-navy-50/50 p-6">
               <Icon weight="duotone" size={32} className="mb-4 text-cyan-DEFAULT" />
               <h3 className="mb-3 text-lg font-semibold text-navy-DEFAULT">{product.name}</h3>
-              <p className="text-sm text-navy-600">{product.desc}</p>
+              <p className="text-sm leading-relaxed text-navy-600">{product.desc}</p>
             </motion.div>
           );
         })}

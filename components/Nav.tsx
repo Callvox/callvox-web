@@ -93,7 +93,7 @@ export default function Nav() {
     <header
       ref={navRef}
       className={`${pathname === '/' ? 'fixed inset-x-0' : 'sticky'} top-0 z-50 h-[68px] border-b transition-colors duration-300 ${
-        overHero ? 'border-transparent bg-transparent text-white' : 'border-navy-100 bg-paper'
+        overHero ? 'border-transparent bg-transparent text-white' : scrolled ? 'border-navy-100 bg-paper/85 backdrop-blur-md supports-[backdrop-filter]:bg-paper/80' : 'border-navy-100 bg-paper'
       }`}
     >
       <nav className="max-w-page mx-auto h-full flex items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">

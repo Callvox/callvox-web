@@ -1,8 +1,8 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m as motion } from 'framer-motion';
 import { Section, SectionHeader } from '@/components/Section';
-import { SimCard, Truck, ArrowsClockwise } from '@phosphor-icons/react';
+import { SimCard, Truck, WifiHigh } from '@phosphor-icons/react';
 
 const benefits = [
   {
@@ -13,22 +13,19 @@ const benefits = [
   {
     icon: Truck,
     title: 'Eliminate SIM logistics',
-    desc: 'No physical SIM printing, warehousing or distribution. Profiles are delivered over the air.',
+    desc: 'No physical SIM printing, warehousing or distribution. Profiles are delivered over the air to the device.',
   },
   {
-    icon: ArrowsClockwise,
-    title: 'Easier switching',
-    desc: 'Subscribers can move between your plans, or move to you from another operator, without visiting a store.',
+    icon: WifiHigh,
+    title: 'Profiles with data connectivity',
+    desc: 'eSIM profiles come with data connectivity, ordered through the same API.',
   },
 ];
 
 export default function ESIMFocus() {
   return (
     <Section tone="tint">
-      <SectionHeader
-        title="eSIM, without the SIM logistics."
-        intro="MVNOs that offer eSIM can onboard subscribers without printing, shipping or stocking physical SIMs."
-      />
+      <SectionHeader title="eSIM, without the SIM logistics." />
 
       <div className="grid gap-8 md:grid-cols-3">
         {benefits.map((benefit, idx) => {

@@ -35,7 +35,7 @@ export default function LegalPage() {
           <li key={href}>
             <Link
               href={href}
-              className="block h-full rounded-sm border border-navy-200 bg-white p-6 transition-colors hover:border-cyan-DEFAULT"
+              className="card-lift block h-full rounded-xl border border-navy-200 bg-white p-6"
             >
               <h2 className="text-lg font-semibold text-navy-DEFAULT">{title}</h2>
               <p className="mt-2 text-[15px] leading-relaxed text-navy-600">{text}</p>

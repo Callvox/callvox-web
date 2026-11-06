@@ -1,7 +1,7 @@
 'use client';
 
 import { CTA } from '@/components/CTA';
-import { motion } from 'framer-motion';
+import { m as motion } from 'framer-motion';
 
 const asks = [
   { title: 'Interconnect details', body: 'Technical details for connecting to our network.' },

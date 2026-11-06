@@ -1,17 +1,15 @@
 import type { ReactNode } from 'react'
-import { Breadcrumb, type Crumb } from '@/components/Breadcrumb'
 import { CTA, type CTAType } from '@/components/CTA'
 import { HeroBackdrop } from '@/components/sections/HeroBackdrop'
 
 /**
- * The one hero used by every page: optional breadcrumb, one heading, one
- * paragraph, one CTA. No eyebrow pills (the breadcrumb and heading already
+ * The one hero used by every page: one heading, one
+ * paragraph, one CTA. No eyebrow pills or breadcrumbs (the nav and heading already
  * say where you are), no repeated stat blocks, and no width caps on the
  * heading or paragraph so lines only wrap at the page edge.
  * Pass `aside` for a right-hand column (7/5 split).
  */
 export function PageHero({
-  breadcrumb,
   title,
   body,
   cta,
@@ -20,7 +18,6 @@ export function PageHero({
   aside,
   compact = false,
 }: {
-  breadcrumb?: Crumb[]
   title: ReactNode
   body?: ReactNode
   cta?: { type?: CTAType } | false
@@ -33,7 +30,6 @@ export function PageHero({
   const center = align === 'center' && !aside
   const text = (
     <div className={center ? 'text-center' : ''}>
-      {breadcrumb && <Breadcrumb tone={tone} align={center ? 'center' : 'left'} className="mb-10" items={breadcrumb} />}
       <h1 className={`display-h1 ${dark ? 'text-white' : 'text-navy-DEFAULT'}`}>{title}</h1>
       {body && (
         <p className={`mt-6 text-lg leading-relaxed md:text-xl ${center ? 'text-balance' : ''} ${dark ? 'text-navy-200' : 'text-navy-600'}`}>{body}</p>

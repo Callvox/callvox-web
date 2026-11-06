@@ -1,72 +1,46 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { m as motion } from 'framer-motion'
 import { FileText } from '@phosphor-icons/react'
+import { Section, SectionHeader } from '@/components/Section'
+
+const specs = [
+  { label: 'Protocol', value: 'REST API (JSON)' },
+  { label: 'Validation', value: 'MSISDN lookup + operator identification' },
+  { label: 'Webhook', value: 'Delivery confirmation, failure codes, operator ref' },
+  { label: 'Transaction log', value: 'Exportable' },
+  { label: 'Rates', value: 'Quoted by corridor and volume, on request' },
+]
 
 export default function TechnicalSpecsAirtime() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
-
-  const specs = [
-    { label: 'Protocol', value: 'REST API (JSON)' },
-    { label: 'Validation', value: 'MSISDN lookup + operator identification' },
-    { label: 'Webhook', value: 'Delivery confirmation, failure codes, operator ref' },
-    { label: 'CDRs', value: 'Transaction log, exportable' },
-  ]
-
-  const complianceCards = [
-    {
-      icon: FileText,
-      title: 'Integration details',
-      description: 'Integration documentation and sandbox details are shared once your account is set up.',
-    },
-  ]
-
   return (
-    <section ref={ref} className="bg-white py-20">
-      <div className="max-w-page mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Spec table */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ delay: 0.1 }}
-          >
-            <h3 className="text-lg font-semibold text-navy-DEFAULT mb-6">Technical Specifications</h3>
-            <div className="space-y-4">
-              {specs.map((spec, i) => (
-                <div key={i} className="flex gap-4">
-                  <div className="text-sm font-medium text-navy-600 w-32 flex-shrink-0">{spec.label}</div>
-                  <div className="text-sm text-navy-700">{spec.value}</div>
-                </div>
-              ))}
-            </div>
-          </motion.div>
+    <Section>
+      <SectionHeader title="Technical specifications." />
 
-          {/* Compliance cards */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ delay: 0.2 }}
-            className="space-y-6"
-          >
-            {complianceCards.map((card, i) => {
-              const Icon = card.icon
-              return (
-                <div key={i} className="p-6 border border-navy-100 rounded-lg">
-                  <div className="flex gap-3 mb-3">
-                    <Icon size={24} weight="bold" className="text-cyan-DEFAULT flex-shrink-0" />
-                    <h4 className="font-semibold text-navy-DEFAULT">{card.title}</h4>
-                  </div>
-                  <p className="text-sm text-navy-600">{card.description}</p>
-                </div>
-              )
-            })}
-          </motion.div>
+      <dl className="grid grid-cols-1 border-t border-navy-100 md:grid-cols-2 md:gap-x-12">
+        {specs.map((spec) => (
+          <div key={spec.label} className="border-b border-navy-100 py-5">
+            <dt className="mb-1 text-sm font-semibold text-navy-DEFAULT">{spec.label}</dt>
+            <dd className="text-navy-600">{spec.value}</dd>
+          </div>
+        ))}
+      </dl>
+
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="mt-8 flex gap-4 rounded-lg border border-navy-100 bg-navy-50/50 p-6"
+      >
+        <FileText size={28} weight="duotone" className="mt-1 flex-shrink-0 text-cyan-DEFAULT" />
+        <div>
+          <h3 className="mb-2 text-lg font-semibold text-navy-DEFAULT">Integration details</h3>
+          <p className="text-sm leading-relaxed text-navy-600">
+            Integration documentation and sandbox details are shared once your account is set up.
+          </p>
         </div>
-      </div>
-    </section>
+      </motion.div>
+    </Section>
   )
 }

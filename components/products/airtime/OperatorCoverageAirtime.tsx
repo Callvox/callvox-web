@@ -1,67 +1,69 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { m as motion } from 'framer-motion'
+
+const regions = [
+  {
+    title: 'Latin America',
+    operators: ['Telcel, Movistar (Mexico)', 'Claro, TIM (Brazil)'],
+  },
+  {
+    title: 'Africa',
+    operators: [
+      'MTN, Airtel, Glo, 9mobile (Nigeria)',
+      'Safaricom (Kenya)',
+      'Vodacom (South Africa)',
+      'Orange (multiple countries)',
+    ],
+  },
+  {
+    title: 'South Asia',
+    operators: ['Jio, Airtel, Vi (India)', 'Jazz, Telenor (Pakistan)', 'Banglalink, Robi (Bangladesh)'],
+  },
+  {
+    title: 'Middle East',
+    operators: ['Etisalat, du (UAE)', 'STC (Saudi Arabia)', 'Zain (multiple countries)'],
+  },
+]
 
 export default function OperatorCoverageAirtime() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
-
-  const regions = [
-    {
-      title: 'Africa',
-      operators: 'MTN, Airtel, Glo, 9mobile (Nigeria) · Safaricom (Kenya) · Vodacom (SA) · Orange (multiple)',
-    },
-    {
-      title: 'South Asia',
-      operators: 'Jio, Airtel, Vi (India) · Jazz, Telenor (Pakistan) · Banglalink, Robi (BD)',
-    },
-    {
-      title: 'Latin America',
-      operators: 'Telcel, Movistar (Mexico) · Claro, TIM (Brazil)',
-    },
-    {
-      title: 'Middle East & others',
-      operators: 'Etisalat, du (UAE) · STC (Saudi) · Zain (multiple)',
-    },
-  ]
-
   return (
-    <section ref={ref} className="bg-navy-DEFAULT py-20">
-      <div className="max-w-page mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="surface-ink bg-navy-DEFAULT py-20 md:py-24">
+      <div className="mx-auto max-w-page px-4 sm:px-6 lg:px-8">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ delay: 0.1 }}
-          className="display-h2 font-bold text-white mb-12 md:mb-16"
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="display-h2 mb-12 text-white md:mb-14"
         >
           Operators across four regions.
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
           {regions.map((region, i) => (
             <motion.div
-              key={i}
+              key={region.title}
               initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ delay: (i + 1) * 0.1 }}
-              className="border-l-4 border-cyan-DEFAULT pl-4 py-2"
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: i * 0.08 }}
+              className="rounded-lg border border-white/10 bg-white/[0.04] p-6"
             >
-              <h3 className="text-sm font-semibold tracking-wide text-cyan-DEFAULT mb-2">{region.title}</h3>
-              <p className="text-sm text-navy-200 leading-relaxed">{region.operators}</p>
+              <h3 className="border-b border-white/10 pb-4 text-xl font-semibold text-white">{region.title}</h3>
+              <ul className="mt-4 space-y-2.5">
+                {region.operators.map((op) => (
+                  <li key={op} className="flex items-start gap-3 text-[15px] text-navy-100">
+                    <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-DEFAULT" />
+                    {op}
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           ))}
         </div>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-          transition={{ delay: 0.6 }}
-          className="text-xs italic text-navy-300 mb-4"
-        >
-          Full operator list available on request.
-        </motion.p>
+        <p className="mt-8 text-sm text-navy-200">Representative operators. Full operator list available on request.</p>
       </div>
     </section>
   )

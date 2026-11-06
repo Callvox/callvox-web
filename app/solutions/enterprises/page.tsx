@@ -7,8 +7,8 @@ import Nav from '@/components/Nav';
 import { Footer } from '@/components/sections/Footer';
 
 export const metadata = {
-  title: 'Enterprise Voice & Numbers',
-  description: 'SIP trunking, virtual numbers and voice for businesses, from a wholesale carrier operating since 2007. One provider, one invoice, one support contact.',
+  title: 'Enterprise SIP Trunking & Virtual Numbers',
+  description: 'SIP trunking, virtual numbers and voice for businesses, from a wholesale carrier operating since 2007.',
 };
 
 export default function EnterprisesPage() {

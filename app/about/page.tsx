@@ -10,7 +10,7 @@ import { Footer } from '@/components/sections/Footer';
 
 export const metadata: Metadata = {
   title: 'About Callvox: wholesale telecom since 2007',
-  description: 'The unified wholesale platform built for the world\'s fastest-growing markets. Founded in 2007, Callvox serves carriers and MVNOs in Latin America, Africa, South Asia, and the Middle East.',
+  description: 'Founded in 2007, Callvox is a wholesale carrier for Latin America, Africa, South Asia and the Middle East, serving carriers, MVNOs, resellers and enterprises.',
 };
 
 export default function AboutPage() {

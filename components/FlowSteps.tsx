@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { m as motion } from 'framer-motion'
 import type { Icon } from '@phosphor-icons/react'
 
 export type FlowStep = { title: string; description: string; icon: Icon }
@@ -42,7 +42,7 @@ export function FlowSteps({ steps }: { steps: FlowStep[] }) {
               </div>
             )}
 
-            <div className="group flex h-full flex-col rounded-xl border border-navy-100 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-DEFAULT/40 hover:shadow-[0_12px_32px_-12px_rgba(13,43,78,0.25)]">
+            <div className="group flex h-full flex-col card-lift rounded-xl border border-navy-100 bg-white p-8">
               <div
                 className="flow-node mb-8 flex h-16 w-16 items-center justify-center rounded-full bg-cyan-light ring-1 ring-cyan-DEFAULT/20 transition-colors duration-300 group-hover:bg-cyan-DEFAULT"
                 style={{ animationDelay: `${(1.2 * index - 0.29).toFixed(2)}s` }}

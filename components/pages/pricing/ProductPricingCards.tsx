@@ -1,7 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { Phone, ChatCircle, DeviceMobile, SimCard, PhoneIncoming, CheckCircle, type Icon } from '@phosphor-icons/react';
+import { m as motion } from 'framer-motion';
+import { Phone, ChatDots, Lightning, SimCard, PhoneIncoming, CheckCircle, type Icon } from '@phosphor-icons/react';
 import { STATS } from '@/lib/stats';
 
 interface ProductPricingCard {
@@ -19,13 +19,13 @@ const products: ProductPricingCard[] = [
     features: [`${STATS.routes.value} direct routes`, 'SIP trunk or IP peering', 'Volume-based rates'],
   },
   {
-    icon: ChatCircle,
+    icon: ChatDots,
     name: 'SMS',
     basis: 'Quoted per destination',
     features: ['SMPP and REST API', 'Delivery receipts', 'Volume-based rates'],
   },
   {
-    icon: DeviceMobile,
+    icon: Lightning,
     name: 'Airtime',
     basis: 'Quoted by operator and volume',
     features: [`${STATS.operators.value} operators`, 'Top-ups through one API', 'Delivery status by API'],
@@ -58,7 +58,7 @@ export default function ProductPricingCards() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: idx * 0.05 }}
                 viewport={{ once: true }}
-                className="border border-navy-100 rounded-md p-8 bg-white hover:shadow-lg transition-shadow"
+                className="card-lift border border-navy-100 rounded-xl p-8 bg-white"
               >
                 <Icon size={36} weight="duotone" className="text-navy-600 mb-4" />
                 <h3 className="text-navy-DEFAULT font-bold text-xl mb-3">{product.name}</h3>

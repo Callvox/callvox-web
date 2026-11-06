@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { m as motion } from 'framer-motion'
 import { ArrowFatDown, Clock, Stack, Headset } from '@phosphor-icons/react'
 import { Section, SectionHeader } from '@/components/Section'
 
@@ -13,7 +13,7 @@ const painPoints = [
   {
     icon: Clock,
     title: 'Slow onboarding',
-    description: 'Long procurement cycles hold up new routes. We keep it simple: tell us your corridors and we send interconnect details and a rate deck.',
+    description: 'Long procurement cycles hold up new routes. A short path from first conversation to live traffic keeps new capacity moving.',
   },
   {
     icon: Stack,
@@ -22,8 +22,8 @@ const painPoints = [
   },
   {
     icon: Headset,
-    title: 'Poor support from wholesale providers',
-    description: 'Most wholesale providers send you to a ticket queue. You get one support contact who knows your account and understands carrier infrastructure.',
+    title: 'Support that does not know your account',
+    description: 'Support works best when it knows your account. You get one contact who understands carrier infrastructure, not a queue to join.',
   },
 ]
 

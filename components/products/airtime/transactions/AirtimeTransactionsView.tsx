@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { m as motion } from 'framer-motion'
 import { MagnifyingGlass } from '@phosphor-icons/react'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/callvox-ui/Button'

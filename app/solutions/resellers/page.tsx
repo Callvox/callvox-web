@@ -7,8 +7,8 @@ import TechnicalIntegration from '@/components/solutions/resellers/TechnicalInte
 import ResellersCTABand from '@/components/solutions/resellers/ResellersCTABand';
 
 export const metadata = {
-  title: 'For Resellers & Aggregators',
-  description: 'Wholesale voice, SMS, airtime, eSIM and numbers from one partner, with 1700+ operators and 190+ countries. One integration, one invoice, one support contact.',
+  title: 'Wholesale Voice, SMS & Airtime for Resellers & Aggregators',
+  description: 'Wholesale voice, SMS, airtime, eSIM and numbers for resellers and aggregators, across 190+ countries. One partner, one invoice.',
 };
 
 export default function ResellersPage() {

@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m as motion } from 'framer-motion';
 
 const steps = [
   { title: 'Tell us your corridors', body: 'Which destinations, which services, and roughly how much traffic you expect.' },

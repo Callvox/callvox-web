@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m as motion } from 'framer-motion';
 import { Section, SectionHeader } from '@/components/Section';
 import { Monitor, Receipt, Users } from '@phosphor-icons/react';
 

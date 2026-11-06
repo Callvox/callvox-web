@@ -6,6 +6,7 @@ import { PageHero } from '@/components/PageHero'
 export const metadata = {
   title: 'Sandbox Transactions — Airtime',
   description: 'Preview your airtime sandbox transaction log.',
+  robots: { index: false, follow: false },
 }
 
 export default function AirtimeTransactionsPage() {
@@ -16,7 +17,6 @@ export default function AirtimeTransactionsPage() {
         <PageHero
           tone="light"
           compact
-          breadcrumb={[{ label: 'Products' }, { label: 'Airtime Top-Ups', href: '/products/airtime' }, { label: 'Transactions' }]}
           title="Your airtime transactions."
         />
         <AirtimeTransactionsView />

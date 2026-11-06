@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { m as motion } from 'framer-motion'
 import {
   PhoneCall,
   Plugs,
@@ -30,7 +30,7 @@ const features = [
   },
   {
     icon: ChartBar,
-    title: 'Real-time CDRs via API + portal',
+    title: 'CDR delivery agreed per account',
   },
   {
     icon: CurrencyDollar,

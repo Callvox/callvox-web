@@ -4,13 +4,12 @@ import UseCasesAirtime from '@/components/products/airtime/UseCasesAirtime'
 import HowItWorksAirtime from '@/components/products/airtime/HowItWorksAirtime'
 import OperatorCoverageAirtime from '@/components/products/airtime/OperatorCoverageAirtime'
 import TechnicalSpecsAirtime from '@/components/products/airtime/TechnicalSpecsAirtime'
-import CrossSellCallout from '@/components/products/airtime/CrossSellCallout'
 import AirtimeCTABand from '@/components/products/airtime/AirtimeCTABand'
 import { Footer } from '@/components/sections/Footer'
 
 export const metadata = {
-  title: 'Airtime Top-Ups',
-  description: 'Wholesale airtime top-up API for diaspora remittance platforms, mobile money operators, and international resellers. 1700+ operators.',
+  title: 'Wholesale Airtime Top-Up API',
+  description: 'Wholesale airtime top-up REST API with webhook confirmation for remittance platforms, mobile money operators and resellers. 1700+ operators across Africa, South Asia, Latin America and the Middle East.',
 }
 
 export default function AirtimePage() {
@@ -23,7 +22,6 @@ export default function AirtimePage() {
         <HowItWorksAirtime />
         <OperatorCoverageAirtime />
         <TechnicalSpecsAirtime />
-        <CrossSellCallout />
         <AirtimeCTABand />
       </main>
       <Footer />

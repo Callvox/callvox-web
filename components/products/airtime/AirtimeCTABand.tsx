@@ -4,7 +4,8 @@ export default function AirtimeCTABand() {
   return (
     <PageCTA
       title="Tell us where your customers top up."
-      body="We'll follow up on integration and activation." type="carrier"
+      body="Already routing voice with us? Add airtime on the same invoice."
+      type="reseller"
       tone="dark"
     />
   )

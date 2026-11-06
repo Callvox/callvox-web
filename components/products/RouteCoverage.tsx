@@ -1,8 +1,12 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m as motion } from 'framer-motion';
 
 const regions = [
+  {
+    title: 'Latin America',
+    destinations: ['Mexico', 'Brazil', 'Colombia', 'Peru', 'Argentina', 'Ecuador'],
+  },
   {
     title: 'Africa',
     destinations: ['Nigeria', 'Ghana', 'Kenya', 'South Africa', 'Egypt', 'Tanzania', 'Ethiopia'],
@@ -10,10 +14,6 @@ const regions = [
   {
     title: 'South Asia',
     destinations: ['India', 'Pakistan', 'Bangladesh', 'Sri Lanka', 'Nepal'],
-  },
-  {
-    title: 'Latin America',
-    destinations: ['Mexico', 'Brazil', 'Colombia', 'Peru', 'Argentina', 'Ecuador'],
   },
   {
     title: 'Middle East',
@@ -60,6 +60,7 @@ export function RouteCoverage() {
             </motion.div>
           ))}
         </div>
+        <p className="mt-8 text-sm text-navy-200">Representative destinations. Full route list on request.</p>
       </div>
     </section>
   );

@@ -7,13 +7,13 @@ import ESIMFocus from '@/components/solutions/mvnos/ESIMFocus';
 import MVNOsCTABand from '@/components/solutions/mvnos/MVNOsCTABand';
 
 export const metadata: Metadata = {
-  title: 'For MVNOs',
+  title: 'Wholesale Voice, SMS & eSIM for MVNOs',
   description:
-    'Voice, SMS, eSIM, airtime and numbers from one wholesale partner. One integration, one invoice and one support contact for MVNOs.',
+    'Voice termination, A2P SMS, eSIM, airtime and numbers for MVNOs, from one wholesale partner with one integration and one invoice.',
   openGraph: {
-    title: 'For MVNOs | Callvox',
+    title: 'Wholesale Services for MVNOs | Callvox',
     description:
-      'Voice, SMS, eSIM, airtime and numbers from one wholesale partner, built for MVNOs.',
+      'Wholesale voice, SMS, eSIM, airtime and numbers for MVNOs, from one partner.',
     type: 'website',
   },
 };

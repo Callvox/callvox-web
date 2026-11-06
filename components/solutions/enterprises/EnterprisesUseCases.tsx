@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m as motion } from 'framer-motion';
 import { Section, SectionHeader } from '@/components/Section';
 import { Building, Globe, Headset } from '@phosphor-icons/react';
 
@@ -40,7 +40,7 @@ export default function EnterprisesUseCases() {
                 className="p-8 bg-white rounded-xl border border-navy-100"
               >
                 <Icon size={40} weight="duotone" className="text-cyan-DEFAULT mb-6" />
-                <h3 className="text-navy-DEFAULT font-bold text-xl mb-4">
+                <h3 className="text-navy-DEFAULT font-semibold text-xl mb-4">
                   {useCase.title}
                 </h3>
                 <p className="text-navy-600 leading-relaxed">

@@ -93,6 +93,8 @@
   --radius-xl: 6px;
   --radius-2xl: 8px;
   --radius-3xl: 10px;
+  /* Shared control radius: buttons, inputs, chips (rounded-control) */
+  --radius-control: 10px;
 }
 
 @layer base {
@@ -192,19 +194,6 @@
 }
 
 /* Marquee Animation for Logo Bar */
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-marquee {
-  animation: marquee 30s linear infinite;
-}
-
 /* Pulsing dot animation */
 @keyframes pulse-dot {
   0%, 100% {
@@ -298,6 +287,19 @@
   font-variant-numeric: tabular-nums;
 }
 
+/* Shared card hover: one border/lift/shadow treatment site-wide */
+@utility card-lift {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s, box-shadow 0.3s;
+  &:hover {
+    transform: translateY(-2px);
+    border-color: color-mix(in srgb, var(--cyan-DEFAULT) 40%, transparent);
+    box-shadow: 0 12px 32px -12px rgb(13 43 78 / 0.25);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    &:hover { transform: none; }
+  }
+}
+
 /* Small mono caption used as section label: "01 — PLATFORM" */
 @utility label {
   font-family: var(--font-mono);
@@ -314,6 +316,11 @@
   background-size: 64px 64px;
 }
 
+@keyframes tab-progress {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
 /* Count/reveal motion: one idea, used sparingly */
 @keyframes line-reveal {
   from { transform: translateY(105%); }
@@ -327,7 +334,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-marquee, .animate-globe, .animate-pulse-dot { animation: none; }
+  .animate-globe, .animate-pulse-dot { animation: none; }
   .reveal-line > span { animation: none; }
 }
 

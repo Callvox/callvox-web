@@ -18,5 +18,4 @@ export const solutions = [
 export const simpleLinks = [
   { name: 'Coverage', href: '/coverage' },
   { name: 'Developers', href: '/developers' },
-  { name: 'Resources', href: '/resources' },
 ]

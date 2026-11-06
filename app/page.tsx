@@ -1,6 +1,5 @@
 import Nav from '@/components/Nav'
 import { Hero } from '@/components/sections/Hero'
-import { LogoBar } from '@/components/sections/LogoBar'
 import { ProductGrid } from '@/components/sections/ProductGrid'
 import { WhyCallvox } from '@/components/sections/WhyCallvox'
 import { AudiencePaths } from '@/components/sections/AudiencePaths'
@@ -16,7 +15,6 @@ export default function Home() {
       <Nav />
       <main id="main-content">
         <Hero />
-        <LogoBar />
         <ProductGrid />
         <WhyCallvox />
         <AudiencePaths />

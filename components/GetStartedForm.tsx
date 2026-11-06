@@ -19,7 +19,7 @@ const SERVICES = [
 ] as const
 
 const field =
-  'mt-2 w-full rounded-sm border border-navy-100 bg-white px-4 py-3 text-[15px] text-navy-DEFAULT placeholder:text-navy-300 focus:border-cyan-DEFAULT focus:outline-none focus:ring-2 focus:ring-cyan-DEFAULT/30'
+  'mt-2 w-full rounded-control border border-navy-100 bg-white px-4 py-2 text-[15px] text-navy-DEFAULT placeholder:text-navy-300 focus:border-cyan-DEFAULT focus:outline-none focus:ring-2 focus:ring-cyan-DEFAULT/30'
 
 export function GetStartedForm({ defaultType = '' }: { defaultType?: string }) {
   const [status, setStatus] = useState<'idle' | 'sending' | 'done' | 'error'>('idle')
@@ -120,7 +120,7 @@ export function GetStartedForm({ defaultType = '' }: { defaultType?: string }) {
           {TYPES.map(([v, l]) => (
             <label key={v} className="cursor-pointer">
               <input type="radio" name="companyType" value={v} defaultChecked={v === defaultType} className="peer sr-only" />
-              <span className="label inline-block rounded-sm border border-navy-100 px-4 py-2.5 text-navy-600 transition-colors peer-checked:border-navy-DEFAULT peer-checked:bg-navy-DEFAULT peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-cyan-DEFAULT">
+              <span className="label inline-block rounded-control border border-navy-100 px-4 py-2 text-navy-600 transition-colors peer-checked:border-navy-DEFAULT peer-checked:bg-navy-DEFAULT peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-cyan-DEFAULT">
                 {l}
               </span>
             </label>
@@ -134,7 +134,7 @@ export function GetStartedForm({ defaultType = '' }: { defaultType?: string }) {
           {SERVICES.map(([v, l]) => (
             <label key={v} className="cursor-pointer">
               <input type="checkbox" name="services" value={v} className="peer sr-only" />
-              <span className="label inline-block rounded-sm border border-navy-100 px-4 py-2.5 text-navy-600 transition-colors peer-checked:border-cyan-DEFAULT peer-checked:bg-cyan-DEFAULT peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-cyan-DEFAULT">
+              <span className="label inline-block rounded-control border border-navy-100 px-4 py-2 text-navy-600 transition-colors peer-checked:border-cyan-DEFAULT peer-checked:bg-cyan-DEFAULT peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-cyan-DEFAULT">
                 {l}
               </span>
             </label>
@@ -171,7 +171,7 @@ export function GetStartedForm({ defaultType = '' }: { defaultType?: string }) {
       <button
         type="submit"
         disabled={status === 'sending'}
-        className="inline-flex h-12 w-full items-center justify-center rounded-sm bg-navy-DEFAULT px-7 text-[15px] font-semibold text-white transition-colors hover:bg-navy-700 disabled:opacity-60 sm:w-auto"
+        className="inline-flex h-10 w-full items-center justify-center rounded-control bg-navy-DEFAULT px-6 text-[15px] font-semibold text-white transition-colors hover:bg-navy-700 disabled:opacity-60 sm:w-auto"
       >
         {status === 'sending' ? 'Sending…' : 'Request interconnect details'}
       </button>

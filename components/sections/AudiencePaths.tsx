@@ -1,32 +1,32 @@
 'use client'
 
 import Link from 'next/link'
-import { motion } from 'framer-motion'
+import { m as motion } from 'framer-motion'
 import { ArrowRight } from '@phosphor-icons/react'
 
 const audiences = [
   {
     name: 'Carriers',
     href: '/solutions/carriers',
-    points: ['Direct interconnects, not aggregated routes', 'One team to call when it matters'],
+    points: ['Direct interconnects in emerging corridors, not aggregated routes', 'One team to call when route quality matters'],
     cta: 'Carrier solutions',
   },
   {
     name: 'MVNOs',
     href: '/solutions/mvnos',
-    points: ['Voice, SMS, airtime and eSIM on one integration', 'One invoice and one support contact'],
+    points: ['Launch voice, SMS and eSIM without building the interconnects yourself', 'Airtime and numbers added through the same integration'],
     cta: 'MVNO solutions',
   },
   {
     name: 'Resellers',
     href: '/solutions/resellers',
-    points: ['Voice, SMS, airtime and numbers from one partner', 'Rates quoted by corridor and volume'],
+    points: ['One supplier instead of many for voice, SMS, airtime and numbers', 'Rates quoted by corridor and volume'],
     cta: 'Reseller solutions',
   },
   {
     name: 'Enterprises',
     href: '/solutions/enterprises',
-    points: ['Voice and numbers from one wholesale partner', 'One integration, one invoice'],
+    points: ['Local numbers and voice reach for customer communications', 'Wholesale routes behind one integration and one invoice'],
     cta: 'Enterprise solutions',
   },
 ]
