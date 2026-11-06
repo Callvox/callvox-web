@@ -333,9 +333,20 @@
   animation: line-reveal 0.9s cubic-bezier(0.2, 0.7, 0.1, 1) both;
 }
 
+/* Hero supporting copy and CTA ease in just after the headline reveal. */
+@keyframes hero-fade {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-fade {
+  animation: hero-fade 0.7s cubic-bezier(0.2, 0.7, 0.1, 1) both;
+  animation-delay: var(--hero-delay, 0.35s);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-globe, .animate-pulse-dot { animation: none; }
   .reveal-line > span { animation: none; }
+  .hero-fade { animation: none; }
 }
 
 /* Unlayered on purpose: beats Tailwind's layered font-bold/semibold utilities,
