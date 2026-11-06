@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { Section, SectionHeader } from '@/components/Section';
 
 const integrations = [
   'Microsoft Teams Direct Routing',
@@ -17,26 +18,15 @@ const integrations = [
 
 export default function IntegrationCompatibility() {
   return (
-    <section className="bg-white py-20 md:py-24">
-      <div className="container">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <h2 className="display-h2 text-navy-DEFAULT font-bold">
-            Built on standard SIP.
-          </h2>
-        </motion.div>
+    <Section>
+        <SectionHeader title="Built on standard SIP." />
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true }}
-          className="flex flex-wrap gap-3 justify-center mb-8"
+          className="flex flex-wrap gap-3 mb-6"
         >
           {integrations.map((integration, idx) => (
             <div
@@ -53,11 +43,9 @@ export default function IntegrationCompatibility() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="text-center"
         >
           <span className="text-navy-600">Platforms commonly connected over SIP.</span>
         </motion.p>
-      </div>
-    </section>
+    </Section>
   );
 }

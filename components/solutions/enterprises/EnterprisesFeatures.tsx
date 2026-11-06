@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { Section, SectionHeader } from '@/components/Section';
 import { Phone, PhoneTransfer, Receipt, Headset } from '@phosphor-icons/react';
 
 const features = [
@@ -28,19 +29,8 @@ const features = [
 
 export default function EnterprisesFeatures() {
   return (
-    <section className="bg-white py-20 md:py-24">
-      <div className="container">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <h2 className="display-h2 text-navy-DEFAULT font-bold">
-            Business voice from one provider.
-          </h2>
-        </motion.div>
+    <Section>
+        <SectionHeader title="Business voice from one provider." />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, idx) => {
@@ -65,7 +55,6 @@ export default function EnterprisesFeatures() {
             );
           })}
         </div>
-      </div>
-    </section>
+    </Section>
   );
 }

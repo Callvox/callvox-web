@@ -1,17 +1,8 @@
 'use client';
 
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { motion } from 'framer-motion';
+import { Section, SectionHeader } from '@/components/Section';
 import { Monitor, Receipt, Users } from '@phosphor-icons/react';
-
-const fadeUpVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.08, duration: 0.5 },
-  }),
-};
 
 const features = [
   {
@@ -31,42 +22,30 @@ const features = [
   },
 ];
 
+const fadeUp = (i: number) => ({
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: '-60px' },
+  transition: { duration: 0.5, delay: i * 0.06 },
+});
+
 export default function WhiteLabelCapabilities() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
-
   return (
-    <section ref={ref} className="bg-navy-50/40 py-20">
-      <div className="max-w-page mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.h2
-          custom={0}
-          variants={fadeUpVariants}
-          initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
-          className="text-navy-DEFAULT text-4xl mb-16"
-        >
-          Your brand. Our infrastructure.
-        </motion.h2>
+    <Section tone="tint">
+      <SectionHeader title="Your brand. Our infrastructure." />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {features.map((feature, i) => {
-            const Icon = feature.icon;
-            return (
-              <motion.div
-                key={feature.title}
-                custom={1 + i}
-                variants={fadeUpVariants}
-                initial="hidden"
-                animate={isInView ? 'visible' : 'hidden'}
-              >
-                <Icon weight="duotone" size={40} className="text-cyan-DEFAULT mb-4" />
-                <h3 className="font-semibold text-navy-DEFAULT text-xl mb-3">{feature.title}</h3>
-                <p className="text-navy-200">{feature.description}</p>
-              </motion.div>
-            );
-          })}
-        </div>
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+        {features.map((feature, i) => {
+          const Icon = feature.icon;
+          return (
+            <motion.div key={feature.title} {...fadeUp(i)}>
+              <Icon weight="duotone" size={40} className="mb-4 text-cyan-DEFAULT" />
+              <h3 className="mb-3 text-xl font-semibold text-navy-DEFAULT">{feature.title}</h3>
+              <p className="text-navy-600">{feature.description}</p>
+            </motion.div>
+          );
+        })}
       </div>
-    </section>
+    </Section>
   );
 }

@@ -1,16 +1,7 @@
 'use client';
 
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
-
-const fadeUpVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.08, duration: 0.5 },
-  }),
-};
+import { motion } from 'framer-motion';
+import { Section, SectionHeader } from '@/components/Section';
 
 const specs = [
   { label: 'Voice API', value: 'SIP trunk, CDR API' },
@@ -23,50 +14,33 @@ const specs = [
   { label: 'Auth', value: 'API keys per sub-account, IP whitelisting' },
 ];
 
+const fadeUp = (i: number) => ({
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: '-60px' },
+  transition: { duration: 0.5, delay: i * 0.06 },
+});
+
 export default function TechnicalIntegration() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
-
   return (
-    <section ref={ref} className="bg-white py-20">
-      <div className="max-w-page mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.h2
-          custom={0}
-          variants={fadeUpVariants}
-          initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
-          className="text-navy-DEFAULT text-4xl mb-16"
+    <Section>
+      <SectionHeader title="API-first. SMPP + REST." />
+
+      <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
+        <div className="space-y-4">
+          {specs.map((spec, i) => (
+            <motion.div key={spec.label} {...fadeUp(i)} className="border-l-2 border-cyan-DEFAULT py-2 pl-4">
+              <div className="text-sm font-semibold text-cyan-DEFAULT">{spec.label}</div>
+              <div className="text-sm text-navy-600">{spec.value}</div>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.div
+          {...fadeUp(2)}
+          className="overflow-x-auto rounded-lg border border-navy-100 bg-navy-50/50 p-6 font-mono text-sm"
         >
-          API-first. SMPP + REST.
-        </motion.h2>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div>
-            <div className="space-y-4">
-              {specs.map((spec, i) => (
-                <motion.div
-                  key={spec.label}
-                  custom={1 + i}
-                  variants={fadeUpVariants}
-                  initial="hidden"
-                  animate={isInView ? 'visible' : 'hidden'}
-                  className="border-l-2 border-cyan-DEFAULT pl-4 py-2"
-                >
-                  <div className="text-sm font-semibold text-cyan-DEFAULT">{spec.label}</div>
-                  <div className="text-navy-600 text-sm">{spec.value}</div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          <motion.div
-            custom={9}
-            variants={fadeUpVariants}
-            initial="hidden"
-            animate={isInView ? 'visible' : 'hidden'}
-            className="bg-navy-50/50 p-6 rounded-lg border border-navy-100 font-mono text-sm overflow-x-auto"
-          >
-            <pre className="text-navy-300">
+          <pre className="text-navy-600">
 {`POST /v1/accounts/sub-accounts HTTP/1.1
 Authorization: Bearer YOUR_API_KEY
 Content-Type: application/json
@@ -86,9 +60,8 @@ Authorization: Bearer YOUR_API_KEY
   "airtime_value": 34500
 }`}
             </pre>
-          </motion.div>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </Section>
   );
 }

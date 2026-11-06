@@ -1,10 +1,9 @@
 'use client';
 
+import { Fragment } from 'react';
 import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { Phone, ChatCircle, SimCard, Lightning, Hash } from '@phosphor-icons/react';
-import { ArrowRight } from '@phosphor-icons/react';
+import { Phone, ChatCircle, SimCard, Lightning, Hash, ArrowRight } from '@phosphor-icons/react';
+import { Section, SectionHeader } from '@/components/Section';
 
 const services = [
   { num: 1, name: 'Voice termination', desc: 'Direct routes', icon: Phone },
@@ -15,86 +14,42 @@ const services = [
 ];
 
 export default function MVNOStack() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1, delayChildren: 0.2 },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
-
   return (
-    <section ref={ref} className="bg-white py-20 md:py-28">
-      <div className="max-w-page mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-navy-DEFAULT font-bold mb-4" style={{ fontSize: 'clamp(28px, 4vw, 36px)' }}>
-            Your wholesale stack from one vendor.
-          </h2>
-          <p className="text-navy-600 text-lg mx-auto">
-            Voice, messaging, eSIM, airtime and numbers from one wholesale partner. One integration. One invoice. One support contact.
-          </p>
-        </motion.div>
+    <Section>
+      <SectionHeader
+        title="Your wholesale stack from one vendor."
+        intro="Voice, messaging, eSIM, airtime and numbers from one wholesale partner. One integration. One invoice. One support contact."
+      />
 
-        {/* Flow diagram */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
-          className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-2 mb-8 overflow-x-auto"
-        >
-          {services.map((service, idx) => {
-            const IconComponent = service.icon;
-            return (
-              <div key={service.num} className="flex items-center gap-4 min-w-max">
-                <motion.div
-                  variants={itemVariants}
-                  className="flex flex-col items-center"
-                >
-                  <div className="w-24 h-24 rounded-lg bg-navy-50 flex items-center justify-center mb-3 border border-navy-100">
-                    <div className="flex flex-col items-center gap-1">
-                      <IconComponent weight="duotone" size={24} className="text-cyan-DEFAULT" />
-                      <span className="text-xs font-bold text-navy-600">{service.num}</span>
-                    </div>
+      {/* Flow diagram: left-aligned, wraps on small screens instead of scrolling */}
+      <div className="flex flex-wrap items-start gap-x-3 gap-y-8">
+        {services.map((service, idx) => {
+          const Icon = service.icon;
+          return (
+            <Fragment key={service.num}>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ duration: 0.5, delay: idx * 0.08 }}
+                className="flex w-36 flex-col items-start"
+              >
+                <div className="mb-3 flex h-24 w-24 items-center justify-center rounded-lg border border-navy-100 bg-navy-50">
+                  <div className="flex flex-col items-center gap-1">
+                    <Icon weight="duotone" size={24} className="text-cyan-DEFAULT" />
+                    <span className="text-xs font-bold text-navy-600">{service.num}</span>
                   </div>
-                  <div className="text-center">
-                    <p className="font-semibold text-navy-DEFAULT text-sm">{service.name}</p>
-                    <p className="text-xs text-navy-600">{service.desc}</p>
-                  </div>
-                </motion.div>
-
-                {idx < services.length - 1 && (
-                  <div className="hidden lg:block">
-                    <ArrowRight size={32} className="text-cyan-DEFAULT" weight="bold" />
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </motion.div>
-
-        {/* Bottom text */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          className="text-center"
-        >
-          <p className="text-cyan-DEFAULT text-sm font-semibold">One integration. One invoice.</p>
-        </motion.div>
+                </div>
+                <p className="text-sm font-semibold text-navy-DEFAULT">{service.name}</p>
+                <p className="text-xs text-navy-600">{service.desc}</p>
+              </motion.div>
+              {idx < services.length - 1 && (
+                <ArrowRight size={28} weight="bold" className="mt-8 hidden text-cyan-DEFAULT xl:block" />
+              )}
+            </Fragment>
+          );
+        })}
       </div>
-    </section>
+    </Section>
   );
 }

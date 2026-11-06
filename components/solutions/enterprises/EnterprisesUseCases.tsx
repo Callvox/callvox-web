@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { Section, SectionHeader } from '@/components/Section';
 import { Building, Globe, Headset } from '@phosphor-icons/react';
 
 const useCases = [
@@ -23,19 +24,8 @@ const useCases = [
 
 export default function EnterprisesUseCases() {
   return (
-    <section className="bg-navy-50/40 py-20 md:py-24">
-      <div className="container">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <h2 className="display-h2 text-navy-DEFAULT font-bold">
-            What enterprises use it for.
-          </h2>
-        </motion.div>
+    <Section tone="tint">
+        <SectionHeader title="What enterprises use it for." />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {useCases.map((useCase, idx) => {
@@ -60,7 +50,6 @@ export default function EnterprisesUseCases() {
             );
           })}
         </div>
-      </div>
-    </section>
+    </Section>
   );
 }

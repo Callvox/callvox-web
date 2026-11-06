@@ -13,14 +13,16 @@ export const metadata = {
 
 export default function EnterprisesPage() {
   return (
-    <main className="w-full overflow-hidden bg-white">
+    <>
       <Nav />
-      <EnterprisesHero />
-      <EnterprisesFeatures />
-      <EnterprisesUseCases />
-      <IntegrationCompatibility />
-      <EnterprisesCTABand />
+      <main>
+        <EnterprisesHero />
+        <EnterprisesFeatures />
+        <EnterprisesUseCases />
+        <IntegrationCompatibility />
+        <EnterprisesCTABand />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

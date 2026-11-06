@@ -13,14 +13,16 @@ export const metadata = {
 
 export default function ResellersPage() {
   return (
-    <main>
+    <>
       <Nav />
-      <ResellersHero />
-      <ResellerAdvantage />
-      <WhiteLabelCapabilities />
-      <TechnicalIntegration />
-      <ResellersCTABand />
+      <main>
+        <ResellersHero />
+        <ResellerAdvantage />
+        <WhiteLabelCapabilities />
+        <TechnicalIntegration />
+        <ResellersCTABand />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }
