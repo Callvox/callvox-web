@@ -5,7 +5,7 @@ import { MapPin } from '@phosphor-icons/react';
 import { Section, SectionHeader } from '@/components/Section';
 
 const specs = [
-  { label: 'Signalling and encryption', value: 'SIP (RFC 3261), TLS transport, SRTP' },
+  { label: 'Signalling and encryption', value: 'Confirmed in the interconnect details' },
   { label: 'Portability', value: 'Number porting, with terms confirmed per country' },
   { label: 'Call detail records', value: 'Exportable' },
   { label: 'Rates', value: 'Quoted by country and number type, on request' },

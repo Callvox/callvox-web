@@ -4,10 +4,8 @@ import { m as motion } from 'framer-motion';
 import { FileText } from '@phosphor-icons/react';
 
 const specs = [
-  { label: 'Codecs', value: 'G.711 (a-law / μ-law), G.729, G.722 HD' },
-  { label: 'Signalling', value: 'SIP (RFC 3261), TLS + SRTP' },
-  { label: 'Transport', value: 'UDP, TCP, TLS' },
-  { label: 'DTMF', value: 'RFC 2833, SIP INFO, In-band' },
+  { label: 'Connection', value: 'SIP trunk or IP peering' },
+  { label: 'Codecs, signalling and DTMF', value: 'Confirmed in the interconnect details' },
   { label: 'Caller ID', value: 'CLI delivery' },
   { label: 'Billing', value: 'Billing increments and CDR delivery agreed per account' },
   { label: 'Rates', value: 'Rate decks by corridor, on request' },

@@ -2,7 +2,7 @@ import { STATS } from '@/lib/stats'
 import { Section, SectionHeader } from '@/components/Section'
 
 const products = [
-  { title: 'Voice', body: 'Termination over direct routes, by SIP trunk or IP peering.' },
+  { title: 'Voice', body: 'Termination and origination over direct routes, by SIP trunk or IP peering.' },
   { title: 'SMS', body: 'A2P messaging over SMPP or REST.' },
   { title: 'Numbers', body: 'DIDs by country and number type.' },
   { title: 'Airtime', body: `Top-ups across ${STATS.operators.value} operators.` },
