@@ -4,7 +4,7 @@ import { LegalLayout } from '@/components/LegalLayout'
 
 export const metadata: Metadata = {
   title: 'Legal',
-  description: 'Callvox OÜ legal documents: Privacy Notice, Terms of Service and Data Processing Agreement.',
+  description: 'Our legal documents: Privacy Notice, Terms of Service and Data Processing Agreement.',
   alternates: { canonical: '/legal' },
 }
 
@@ -12,17 +12,17 @@ const documents = [
   {
     title: 'Privacy Notice',
     href: '/privacy',
-    text: 'How Callvox OÜ handles personal data across its website, customer portal, recruitment and telecommunications services.',
+    text: 'How we handle personal data across our website, customer portal, recruitment and telecommunications services.',
   },
   {
     title: 'Terms of Service',
     href: '/terms',
-    text: 'Terms governing the supply of telecommunications services by CALLVOX OÜ to business customers.',
+    text: 'Terms governing the supply of our telecommunications services to business customers.',
   },
   {
     title: 'Data Processing Agreement',
     href: '/dpa',
-    text: 'How CALLVOX OÜ processes personal data on behalf of business customers as a processor under the GDPR.',
+    text: 'How we process personal data on behalf of business customers as a processor under the GDPR.',
   },
 ]
 
