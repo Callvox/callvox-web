@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 /**
- * The one call-to-action used across the site. Always reads "Get started" and
+ * The one call-to-action used across the site. Always reads "Contact us" and
  * always leads to the signup form. `type` pre-selects the buyer type in the form.
  *
  * tone="dark"  -> for navy / dark surfaces
@@ -55,7 +55,7 @@ export function CTA({
       onClick={onClick}
       className={`${base} ${sizes[size]} ${tones[tone]} ${className}`}
     >
-      Get started
+      Contact us
     </Link>
   )
 }
