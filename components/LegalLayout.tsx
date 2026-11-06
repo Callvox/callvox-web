@@ -9,7 +9,7 @@ const documents = [
 ]
 
 interface LegalLayoutProps {
-  current: (typeof documents)[number]['href']
+  current?: (typeof documents)[number]['href']
   children: React.ReactNode
 }
 
@@ -19,6 +19,7 @@ export function LegalLayout({ current, children }: LegalLayoutProps) {
       <Nav />
       <main id="main-content" className="bg-paper">
         <div className="mx-auto max-w-page px-4 pb-24 pt-32 sm:px-6 lg:px-8 lg:pt-40">
+          {current && (
           <nav aria-label="Legal documents" className="mb-10 flex flex-wrap gap-x-6 gap-y-1 border-b border-navy-200">
             {documents.map(({ label, href }) => {
               const active = href === current
@@ -38,6 +39,7 @@ export function LegalLayout({ current, children }: LegalLayoutProps) {
               )
             })}
           </nav>
+          )}
           {children}
         </div>
       </main>

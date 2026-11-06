@@ -29,6 +29,7 @@ const footerLinks = {
       { label: 'Coverage', href: '/coverage' },
       { label: 'Developers', href: '/developers' },
       { label: 'Resources', href: '/resources' },
+      { label: 'Legal', href: '/legal' },
     ],
   },
 }
@@ -53,11 +54,6 @@ export function Footer() {
             <p className="text-[13px] text-navy-300 mt-1 leading-relaxed max-w-xs">
               The unified wholesale platform for the world&apos;s fastest-growing markets.
             </p>
-            <address className="not-italic text-[13px] text-navy-300 mt-4 leading-relaxed">
-              Callvox OÜ<br />
-              Lootsa tn 5, 11415 Tallinn, Estonia<br />
-              Registry code 17467209
-            </address>
           </div>
 
           {Object.values(footerLinks).map(({ title, links }) => (
@@ -81,11 +77,6 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-navy-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-navy-300">
           <p>&copy; {new Date().getFullYear()} Callvox OÜ. All rights reserved.</p>
-          <nav aria-label="Legal" className="flex gap-2">
-            <Link href="/privacy" className="px-2 py-3 hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="px-2 py-3 hover:text-white transition-colors">Terms of Service</Link>
-            <Link href="/dpa" className="px-2 py-3 hover:text-white transition-colors">DPA</Link>
-          </nav>
         </div>
       </div>
     </footer>

@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/developers',
     '/pricing',
     '/get-started',
+    '/legal',
     '/privacy',
     '/terms',
     '/dpa',
