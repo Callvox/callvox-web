@@ -2,24 +2,7 @@
 
 import { m as motion } from 'framer-motion';
 
-const regions = [
-  {
-    title: 'Latin America',
-    destinations: ['Mexico', 'Brazil', 'Colombia', 'Peru', 'Argentina', 'Ecuador'],
-  },
-  {
-    title: 'Africa',
-    destinations: ['Nigeria', 'Ghana', 'Kenya', 'South Africa', 'Egypt', 'Tanzania', 'Ethiopia'],
-  },
-  {
-    title: 'South Asia',
-    destinations: ['India', 'Pakistan', 'Bangladesh', 'Sri Lanka', 'Nepal'],
-  },
-  {
-    title: 'Middle East',
-    destinations: ['UAE', 'Saudi Arabia', 'Kuwait', 'Jordan', 'Lebanon', 'Oman'],
-  },
-];
+import { regions } from '@/lib/coverage';
 
 export function RouteCoverage() {
   return (

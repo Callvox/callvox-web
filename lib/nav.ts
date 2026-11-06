@@ -1,21 +1,20 @@
 /** Single source of truth for site navigation links, shared by Nav and Footer. */
 
 export const products = [
-  { name: 'Voice', desc: 'Termination & origination across 500+ routes', href: '/products/voice' },
-  { name: 'SMS / Messaging', desc: 'A2P SMS, SMPP & REST delivery at scale', href: '/products/sms' },
-  { name: 'Airtime Top-Ups', desc: 'International mobile recharge via API', href: '/products/airtime' },
-  { name: 'eSIM', desc: 'Wholesale eSIM provisioning', href: '/products/esim' },
-  { name: 'DIDs / Numbers', desc: 'Virtual numbers, provisioned on demand', href: '/products/dids' },
+  { name: 'Voice', desc: 'Direct termination across 500+ routes', href: '/products/voice' },
+  { name: 'SMS / Messaging', desc: 'A2P SMS over SMPP and REST', href: '/products/sms' },
+  { name: 'Airtime Top-Ups', desc: 'International mobile top-ups by API', href: '/products/airtime' },
+  { name: 'eSIM', desc: 'eSIM profiles, provisioned by API', href: '/products/esim' },
+  { name: 'DIDs / Numbers', desc: 'Virtual numbers by country and type', href: '/products/dids' },
 ]
 
 export const solutions = [
-  { name: 'For Carriers', href: '/solutions/carriers' },
-  { name: 'For MVNOs', href: '/solutions/mvnos' },
-  { name: 'For Resellers', href: '/solutions/resellers' },
-  { name: 'For Enterprises', href: '/solutions/enterprises' },
+  { name: 'For Carriers', desc: 'Direct interconnects and routes', href: '/solutions/carriers' },
+  { name: 'For MVNOs', desc: 'Wholesale services behind your MVNO', href: '/solutions/mvnos' },
+  { name: 'For Resellers', desc: 'One partner for everything you resell', href: '/solutions/resellers' },
+  { name: 'For Enterprises', desc: 'SIP trunking and virtual numbers', href: '/solutions/enterprises' },
 ]
 
 export const simpleLinks = [
-  { name: 'Coverage', href: '/coverage' },
   { name: 'Developers', href: '/developers' },
 ]

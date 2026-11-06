@@ -85,7 +85,7 @@ const products: Product[] = [
   },
   {
     id: "esim",
-    name: "eSIMs",
+    name: "eSIM",
     pitch: "Order eSIM profiles by API and receive activation codes back.",
     stat: "Provisioned by API",
     href: "/products/esim",

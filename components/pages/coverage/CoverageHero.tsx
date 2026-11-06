@@ -5,7 +5,7 @@ export default function CoverageHero() {
   return (
     <PageHero
       title="Coverage across emerging markets."
-      body={`${STATS.routes.value} voice routes, ${STATS.operators.value} airtime operators and ${STATS.countries.value} countries. Built for the corridors that matter most.`}
+      body={`${STATS.routes.value} direct voice routes across four regions, ${STATS.operators.value} airtime operators, and ${STATS.countries.value} countries reached through one platform.`}
       cta={{ type: 'carrier' }}
     />
   )

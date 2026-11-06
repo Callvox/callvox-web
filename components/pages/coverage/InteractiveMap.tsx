@@ -2,19 +2,26 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { DOTS, DOT_COLS, DOT_ROWS, DOT_STEP, DOT_LON0, DOT_LAT0 } from '@/lib/world-dots'
-import { voiceRoutes, smsCarriers, airtimeOperators, didCountries } from './CoverageByProduct'
+import { STATS } from '@/lib/stats'
+import { regions } from '@/lib/coverage'
+import { Section } from '@/components/Section'
 
 type RegionKey = 'Africa' | 'South Asia' | 'Latin America' | 'Middle East'
 
 // Longitude/latitude boxes used to light up land dots. Approximate, for illustration.
 const BOXES: Record<RegionKey, { lon: [number, number]; lat: [number, number] }[]> = {
+  // Middle East is listed first so the Arabian Peninsula and the Levant are not claimed by the wider Africa box.
+  'Middle East': [
+    { lon: [35.5, 60], lat: [20, 38] },
+    { lon: [34.2, 60], lat: [29, 38] },
+    { lon: [41, 55], lat: [12, 20] },
+  ],
   Africa: [{ lon: [-18, 52], lat: [-35, 33] }],
   'South Asia': [{ lon: [60, 93], lat: [5, 37] }],
   'Latin America': [{ lon: [-118, -34], lat: [-56, 30] }],
-  'Middle East': [{ lon: [34, 60], lat: [12, 38] }],
 }
 
-const REGIONS = Object.keys(BOXES) as RegionKey[]
+const REGIONS: RegionKey[] = ['Latin America', 'Africa', 'South Asia', 'Middle East']
 
 const MARKETS = [
   { name: 'Lagos', lon: 3.4, lat: 6.5 },
@@ -39,7 +46,7 @@ function regionOf(lon: number, lat: number): RegionKey | null {
 }
 
 export default function InteractiveMap() {
-  const [active, setActive] = useState<RegionKey>('Africa')
+  const [active, setActive] = useState<RegionKey>('Latin America')
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   const dots = useMemo(
@@ -98,16 +105,16 @@ export default function InteractiveMap() {
     return () => ro.disconnect()
   }, [active, dots])
 
-  const stats = [
-    { label: 'Voice routes', value: voiceRoutes[active].count },
-    { label: 'SMS carriers', value: smsCarriers[active].count },
-    { label: 'Airtime operators', value: airtimeOperators[active].count },
-    { label: 'DID countries', value: didCountries[active].count },
+  const examples = regions.find((r) => r.title === active)?.destinations ?? []
+  const totals = [
+    { label: 'Direct routes', value: STATS.routes.value },
+    { label: 'Airtime operators', value: STATS.operators.value },
+    { label: 'Countries', value: STATS.countries.value },
   ]
 
   return (
-    <section className="bg-white py-12 md:py-16">
-      <div className="container">
+    <Section>
+      <div>
         <div className="surface-ink overflow-hidden rounded-md bg-navy-DEFAULT text-white">
           <div role="tablist" aria-label="Region" className="flex flex-wrap border-b border-white/10">
             {REGIONS.map((r) => (
@@ -136,21 +143,34 @@ export default function InteractiveMap() {
                 style={{ aspectRatio: `${DOT_COLS} / ${DOT_ROWS}` }}
               />
             </div>
-            <dl className="grid grid-cols-2 border-t border-white/10 lg:col-span-4 lg:grid-cols-1 lg:border-l lg:border-t-0">
-              {stats.map((s) => (
-                <div key={s.label} className="border-b border-white/10 p-6 last:border-b-0">
-                  <dt className="label text-navy-300">{s.label}</dt>
-                  <dd className="font-data mt-2 text-4xl font-medium">{s.value}</dd>
-                </div>
-              ))}
-            </dl>
+            <div className="border-t border-white/10 lg:col-span-4 lg:border-l lg:border-t-0">
+              <div className="border-b border-white/10 p-6">
+                <p className="label text-navy-300">Example destinations</p>
+                <ul className="mt-4 space-y-2">
+                  {examples.map((d) => (
+                    <li key={d} className="flex items-center gap-3 text-navy-100">
+                      <span aria-hidden className="h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-DEFAULT" />
+                      {d}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <dl className="grid grid-cols-3 lg:grid-cols-1">
+                {totals.map((t) => (
+                  <div key={t.label} className="border-b border-white/10 p-6 last:border-b-0 lg:last:border-b-0">
+                    <dt className="label text-navy-300">{t.label}</dt>
+                    <dd className="font-data mt-2 text-3xl font-medium">{t.value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
           </div>
 
           <p className="label border-t border-white/10 px-5 py-3 text-navy-300">
-            Region shading is approximate · counts reflect published coverage by region
+            Region shading is approximate · example destinations are representative, not a full route list
           </p>
         </div>
       </div>
-    </section>
+    </Section>
   )
 }
