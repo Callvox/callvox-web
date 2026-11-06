@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: '%s | Callvox',
   },
   description:
-    'The unified wholesale platform built for the world\'s fastest-growing markets. Voice termination, A2P SMS, airtime top-ups, eSIM provisioning and DIDs — one API, one invoice.',
+    'The unified wholesale platform built for the world\'s fastest-growing markets. Voice termination, A2P SMS, airtime top-ups, eSIM provisioning and DIDs. One API, one invoice.',
   keywords: [
     'wholesale voice termination',
     'A2P SMS wholesale',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     siteName: 'Callvox',
     title: 'Callvox — The Unified Wholesale Telecom Platform',
     description:
-      'The unified wholesale platform built for the world\'s fastest-growing markets. Voice, SMS, airtime, eSIM & DIDs — one platform.',
+      'The unified wholesale platform built for the world\'s fastest-growing markets. Voice, SMS, airtime, eSIM & DIDs on one platform.',
     images: [
       {
         url: '/api/og',

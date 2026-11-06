@@ -18,9 +18,8 @@ export function CaseStudy() {
   if (!PUBLISHED) return null
   return (
     <section className="bg-paper py-28 lg:py-40">
-      <div className="mx-auto max-w-[88rem] px-5 sm:px-8 lg:px-12">
-        <p className="label text-cyan-DEFAULT">Customer story</p>
-        <h2 className="mt-5 max-w-3xl text-5xl text-navy-DEFAULT lg:text-6xl">{study.customer}</h2>
+      <div className="mx-auto max-w-page px-4 sm:px-6 lg:px-8">
+        <h2 className="display-h2 text-navy-DEFAULT">{study.customer}</h2>
         <dl className="mt-12 grid gap-px overflow-hidden rounded-md border border-navy-100 bg-navy-100 md:grid-cols-3">
           {[
             ['Challenge', study.challenge],

@@ -4,7 +4,6 @@ import { Footer } from '@/components/sections/Footer';
 import SMSHero from '@/components/products/sms/SMSHero';
 import DeliverabilitySection from '@/components/products/sms/DeliverabilitySection';
 import SMSTechnicalSpecs from '@/components/products/sms/SMSTechnicalSpecs';
-import SMSPricing from '@/components/products/sms/SMSPricing';
 import SMSCTABand from '@/components/products/sms/SMSCTABand';
 
 export const metadata: Metadata = {
@@ -26,7 +25,6 @@ export default function SMSPage() {
       <SMSHero />
       <DeliverabilitySection />
       <SMSTechnicalSpecs />
-      <SMSPricing />
       <SMSCTABand />
       <Footer />
     </main>

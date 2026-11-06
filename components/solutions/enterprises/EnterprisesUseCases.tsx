@@ -32,8 +32,8 @@ export default function EnterprisesUseCases() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h2 className="text-navy-DEFAULT font-bold text-4xl md:text-5xl">
-            Enterprise voice, simplified.
+          <h2 className="display-h2 text-navy-DEFAULT font-bold">
+            What enterprises use it for.
           </h2>
         </motion.div>
 

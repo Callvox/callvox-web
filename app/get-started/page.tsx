@@ -23,13 +23,12 @@ export default async function GetStartedPage({
     <>
       <Nav />
       <main id="main-content" className="bg-paper">
-        <div className="mx-auto grid max-w-[88rem] gap-12 px-5 pb-24 pt-16 sm:px-8 lg:grid-cols-12 lg:gap-16 lg:px-12 lg:pb-32 lg:pt-24">
+        <div className="mx-auto grid max-w-page gap-12 pb-24 pt-16 lg:grid-cols-12 lg:gap-16 lg:pb-32 lg:pt-24 px-4 sm:px-6 lg:px-8">
           <div className="lg:col-span-5">
-            <p className="label text-cyan-DEFAULT">Get started</p>
-            <h1 className="mt-5 text-5xl text-navy-DEFAULT lg:text-7xl">
+            <h1 className="display-h2 text-navy-DEFAULT">
               Tell us your <em>corridors.</em>
             </h1>
-            <p className="mt-6 max-w-md text-lg text-navy-600">
+            <p className="mt-6 text-lg text-navy-600">
               Share the destinations and services you need. We&apos;ll review them and come back with
               route options and wholesale rates.
             </p>

@@ -4,7 +4,6 @@ import ResellersHero from '@/components/solutions/resellers/ResellersHero';
 import ResellerAdvantage from '@/components/solutions/resellers/ResellerAdvantage';
 import WhiteLabelCapabilities from '@/components/solutions/resellers/WhiteLabelCapabilities';
 import TechnicalIntegration from '@/components/solutions/resellers/TechnicalIntegration';
-import PartnerProgram from '@/components/solutions/resellers/PartnerProgram';
 import ResellersCTABand from '@/components/solutions/resellers/ResellersCTABand';
 
 export const metadata = {
@@ -20,7 +19,6 @@ export default function ResellersPage() {
       <ResellerAdvantage />
       <WhiteLabelCapabilities />
       <TechnicalIntegration />
-      <PartnerProgram />
       <ResellersCTABand />
       <Footer />
     </main>

@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
@@ -30,7 +29,7 @@ export default function OperatorCoverageAirtime() {
 
   return (
     <section ref={ref} className="bg-navy-DEFAULT py-20">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-page mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -63,20 +62,6 @@ export default function OperatorCoverageAirtime() {
         >
           Full operator list available on request.
         </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-          transition={{ delay: 0.7 }}
-          className="text-center"
-        >
-          <Link
-            href="/products/airtime/coverage"
-            className="text-cyan-DEFAULT text-sm font-semibold hover:opacity-80 transition-opacity"
-          >
-            See live vs. coming-soon status by country →
-          </Link>
-        </motion.div>
       </div>
     </section>
   )

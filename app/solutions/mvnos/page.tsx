@@ -4,7 +4,6 @@ import { Footer } from '@/components/sections/Footer';
 import MVNOsHero from '@/components/solutions/mvnos/MVNOsHero';
 import MVNOStack from '@/components/solutions/mvnos/MVNOStack';
 import ESIMFocus from '@/components/solutions/mvnos/ESIMFocus';
-import PricingPhilosophy from '@/components/solutions/mvnos/PricingPhilosophy';
 import MVNOsCTABand from '@/components/solutions/mvnos/MVNOsCTABand';
 
 export const metadata: Metadata = {
@@ -27,7 +26,6 @@ export default function MVNOsPage() {
         <MVNOsHero />
         <MVNOStack />
         <ESIMFocus />
-        <PricingPhilosophy />
         <MVNOsCTABand />
       </main>
       <Footer />

@@ -105,7 +105,7 @@
   
   /* Premium Typography */
   h1, h2, h3, h4, h5, h6 {
-    @apply text-balance;
+    text-wrap: pretty;
     letter-spacing: -0.015em;
   }
 
@@ -156,27 +156,39 @@
   }
   
   @media (min-width: 1280px) {
-    max-width: 80rem;
+    max-width: 85rem;
   }
 }
 
-/* Hero inner wrapper — full width, consistent padding, no max-w cap on the heading level */
+/* Page-width token: 1360px content, same gutters as nav, footer and .container. */
+@utility max-w-page {
+  max-width: 85rem;
+}
+
+/* Hero inner wrapper — aligned with nav/footer/body (1360px, 1/1.5/2rem gutters) */
 @utility hero-inner {
   width: 100%;
+  max-width: 85rem;
   margin-inline: auto;
   padding-inline: 1rem;
 
   @media (min-width: 640px) {
-    padding-inline: 2rem;
+    padding-inline: 1.5rem;
   }
 
   @media (min-width: 1024px) {
-    padding-inline: 3rem;
+    padding-inline: 2rem;
   }
+}
 
-  @media (min-width: 1280px) {
-    padding-inline: 5rem;
-  }
+/* Heading scale: shrinks with the viewport instead of wrapping early */
+@utility display-h1 {
+  font-size: clamp(2.5rem, 4.4vw, 4.5rem);
+  line-height: 1.04;
+}
+@utility display-h2 {
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  line-height: 1.08;
 }
 
 /* Marquee Animation for Logo Bar */
@@ -307,7 +319,8 @@
   from { transform: translateY(105%); }
   to   { transform: translateY(0); }
 }
-.reveal-line { display: block; overflow: hidden; }
+/* Extra bottom room keeps descenders (g, y, p) from being clipped by the reveal mask; the negative margin cancels it out. */
+.reveal-line { display: block; overflow: hidden; padding-bottom: 0.18em; margin-bottom: -0.18em; }
 .reveal-line > span {
   display: block;
   animation: line-reveal 0.9s cubic-bezier(0.2, 0.7, 0.1, 1) both;
@@ -321,3 +334,58 @@
 /* Unlayered on purpose: beats Tailwind's layered font-bold/semibold utilities,
    which would otherwise synthesise a fake bold on Instrument Serif (400 only). */
 h1, h2 { font-weight: 400; }
+
+/* Route-flow animation (voice "how it works"): a packet travels each link in turn, nodes pulse on arrival */
+@keyframes flow-packet {
+  0%   { left: 0; opacity: 0; }
+  10%  { opacity: 1; }
+  30%  { left: calc(100% - 0.5rem); opacity: 1; }
+  38%  { left: calc(100% - 0.5rem); opacity: 0; }
+  100% { left: calc(100% - 0.5rem); opacity: 0; }
+}
+@keyframes flow-node {
+  0%, 30%   { box-shadow: 0 0 0 0 rgba(2, 132, 199, 0); }
+  38%       { box-shadow: 0 0 0 0 rgba(2, 132, 199, 0.35); }
+  70%, 100% { box-shadow: 0 0 0 14px rgba(2, 132, 199, 0); }
+}
+.flow-packet { animation: flow-packet 3.6s ease-in-out infinite; }
+.flow-node { animation: flow-node 3.6s ease-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .flow-packet, .flow-node { animation: none; }
+  .flow-packet { opacity: 0; }
+}
+
+/* Vertical variant of the route-flow packet (eSIM stack) */
+@keyframes flow-packet-y {
+  0%   { top: 0; opacity: 0; }
+  10%  { opacity: 1; }
+  30%  { top: calc(100% - 0.5rem); opacity: 1; }
+  38%  { top: calc(100% - 0.5rem); opacity: 0; }
+  100% { top: calc(100% - 0.5rem); opacity: 0; }
+}
+.flow-packet-y { animation: flow-packet-y 3.6s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .flow-packet-y { animation: none; opacity: 0; }
+}
+
+/* ---------- Mobile ---------- */
+/* Grid items default to min-width:auto, so a long code line or table stretches its column
+   past the viewport. Letting them shrink fixes horizontal scroll site-wide. */
+.grid > *, .flex > * { min-width: 0; }
+/* Stop the browser inflating text after rotation */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+/* iOS Safari zooms the page when a focused field is under 16px. Unlayered so it beats text-sm / text-[15px]. */
+@media (max-width: 767px) {
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+  select,
+  textarea { font-size: 16px; }
+}
+
+/* Default grid track: shrinkable. Layered, so any grid-cols-* utility still wins. */
+@layer base {
+  .grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Slide-in animations (framer-motion x: ±20) start outside the column and would add horizontal scroll.
+   `clip` (not `hidden`) so position: sticky on the nav keeps working. */
+html, body { overflow-x: clip; }

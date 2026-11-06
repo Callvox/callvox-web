@@ -70,7 +70,7 @@ export default function CoverageByProduct() {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <h2 className="text-navy-DEFAULT font-bold text-4xl md:text-5xl mb-8">
+          <h2 className="display-h2 text-navy-DEFAULT font-bold mb-8">
             Coverage by product
           </h2>
 

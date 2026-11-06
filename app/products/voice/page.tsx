@@ -4,7 +4,6 @@ import { VoiceHero } from '@/components/products/VoiceHero';
 import { HowItWorks } from '@/components/products/HowItWorks';
 import { TechnicalSpecs } from '@/components/products/TechnicalSpecs';
 import { RouteCoverage } from '@/components/products/RouteCoverage';
-import { PricingModel } from '@/components/products/PricingModel';
 import { CTABand } from '@/components/products/CTABand';
 import { Footer } from '@/components/sections/Footer';
 
@@ -29,7 +28,6 @@ export default function VoicePage() {
         <HowItWorks />
         <TechnicalSpecs />
         <RouteCoverage />
-        <PricingModel />
         <CTABand />
       </main>
       <Footer />

@@ -42,8 +42,8 @@ export function BusinessModels() {
   };
 
   return (
-    <section className="bg-navy-DEFAULT py-20 px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl">
+    <section className="bg-navy-DEFAULT py-20">
+      <div className="mx-auto max-w-page px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -51,7 +51,7 @@ export function BusinessModels() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+          <h2 className="display-h2 font-bold text-white">
             Four ways to monetise eSIM.
           </h2>
         </motion.div>

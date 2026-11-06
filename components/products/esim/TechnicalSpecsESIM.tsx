@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 
 export function TechnicalSpecsESIM() {
   const specs = [
@@ -24,8 +23,8 @@ export function TechnicalSpecsESIM() {
   ];
 
   return (
-    <section className="bg-white py-20 px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl">
+    <section className="bg-white py-20">
+      <div className="mx-auto max-w-page px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-3 gap-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -52,16 +51,10 @@ export function TechnicalSpecsESIM() {
             className="lg:col-span-1"
           >
             <div className="bg-navy-DEFAULT text-white rounded-lg p-8">
-              <div className="text-xs font-bold uppercase tracking-wider mb-4 opacity-80">
-                Technical details
-              </div>
-              <h3 className="text-xl font-bold mb-6">Need more detail?</h3>
-              <p className="text-sm text-navy-100 leading-relaxed mb-6">
-                Tell us about your use case and we will share technical details for your integration.
+              <h3 className="text-xl font-bold mb-6">Integration details</h3>
+              <p className="text-sm text-navy-100 leading-relaxed">
+                Technical details are shared for your use case and integration.
               </p>
-              <Link href="/get-started?type=mvno" className="text-cyan-DEFAULT text-sm font-semibold hover:opacity-80 transition-opacity">
-                Talk to an eSIM specialist →
-              </Link>
             </div>
           </motion.div>
         </div>

@@ -21,12 +21,11 @@ const proofs = [
 export function WhyCallvox() {
   return (
     <section className="surface-ink bg-grid-ink bg-navy-DEFAULT py-28 text-white lg:py-40">
-      <div className="mx-auto max-w-[88rem] px-5 sm:px-8 lg:px-12">
-        <p className="label text-signal">02 — Why Callvox</p>
-        <h2 className="mt-5 max-w-4xl text-5xl leading-[1.02] lg:text-7xl">
-          Built for the markets <em className="text-signal">others overlook.</em>
+      <div className="mx-auto max-w-page px-4 sm:px-6 lg:px-8">
+        <h2 className="display-h2">
+          Latin America and Africa <em className="text-signal">came first.</em>
         </h2>
-        <p className="mt-8 max-w-2xl text-lg leading-relaxed text-navy-200">
+        <p className="mt-8 text-lg leading-relaxed text-navy-200">
           Callvox started in 2007 as a voice carrier focused on Latin America and Africa, before most
           wholesale providers invested there. Prepaid mobile dominates these corridors, and that is
           where we have built our depth.
@@ -40,7 +39,7 @@ export function WhyCallvox() {
             >
               <div className="font-data text-6xl font-medium tracking-tight text-white lg:text-7xl">{p.number}</div>
               <div className="label mt-5 text-signal">{p.label}</div>
-              <p className="mt-4 max-w-sm text-[15px] leading-relaxed text-navy-200">{p.body}</p>
+              <p className="mt-4 text-[15px] leading-relaxed text-navy-200">{p.body}</p>
             </div>
           ))}
         </div>

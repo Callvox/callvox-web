@@ -83,11 +83,7 @@ export default function AirtimeTransactionsView() {
             </form>
             {error && <p className="text-red-600 text-sm mt-3">{error}</p>}
             <p className="text-navy-400 text-xs mt-6">
-              Don&apos;t have a sandbox key yet?{' '}
-              <a href="/products/airtime/apply" className="text-cyan-DEFAULT font-semibold">
-                Get API access
-              </a>
-              .
+              Sandbox keys are issued once your account is set up.
             </p>
           </motion.div>
         )}
@@ -130,10 +126,9 @@ export default function AirtimeTransactionsView() {
               </Table>
             </div>
 
-            <p className="text-navy-400 text-xs mt-6 max-w-2xl">
+            <p className="text-navy-400 text-xs mt-6">
               This is a lightweight preview scoped to airtime only, ahead of the full customer
-              portal (usage analytics, billing, key management) — the data above is illustrative
-              sandbox fixture data, not a live ledger query.
+              portal (usage analytics, billing, key management).
             </p>
           </motion.div>
         )}

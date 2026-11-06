@@ -37,7 +37,7 @@ export default function NumberTypes() {
     {
       icon: Globe,
       name: 'UIFN',
-      description: 'Universal International Freephone Numbers — one number, worldwide reach.',
+      description: 'Universal International Freephone Numbers: one number, worldwide reach.',
       format: '+800 xxxx xxxx',
     },
   ];
@@ -60,7 +60,7 @@ export default function NumberTypes() {
 
   return (
     <section ref={ref} className="bg-white py-20">
-      <div className="container mx-auto px-4">
+      <div className="container">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}

@@ -39,8 +39,8 @@ export function TechnicalArchitecture() {
   ];
 
   return (
-    <section className="bg-navy-50 py-20 px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl">
+    <section className="bg-navy-50 py-20">
+      <div className="mx-auto max-w-page px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -48,13 +48,10 @@ export function TechnicalArchitecture() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <div className="text-xs font-semibold text-cyan-DEFAULT uppercase tracking-wider mb-4">
-            How It Works
-          </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-DEFAULT mb-6">
+          <h2 className="display-h2 font-bold text-navy-DEFAULT mb-6">
             The eSIM stack, explained.
           </h2>
-          <p className="text-navy-600 text-lg max-w-2xl leading-relaxed">
+          <p className="text-navy-600 text-lg leading-relaxed">
             eSIM provisioning involves several layers, from your platform to the chip in the device. Callvox provides profile provisioning through an SM-DP+ (Subscription Manager Data Preparation+) server.
           </p>
         </motion.div>
@@ -67,24 +64,35 @@ export function TechnicalArchitecture() {
             viewport={{ once: true }}
             className="lg:col-span-2"
           >
-            <div className="space-y-4">
+            <div>
               {layers.map((layer, idx) => (
-                <div key={idx}>
+                <div key={layer.title}>
                   <div
                     className={`${layer.bgColor} ${
                       layer.isHighlight ? `border-2 ${layer.borderColor}` : 'border border-navy-100'
-                    } rounded-lg p-6`}
+                    } flow-node flex min-h-[5.5rem] flex-col justify-center rounded-lg px-6 py-4`}
+                    style={{ animationDelay: `${(1.2 * idx - 0.29).toFixed(2)}s` }}
                   >
                     <h3 className={`font-semibold text-base ${layer.isHighlight ? 'text-navy-DEFAULT' : 'text-navy-600'}`}>
                       {layer.title}
                     </h3>
                     {layer.subtitle && (
-                      <p className="text-sm text-navy-500 mt-1">{layer.subtitle}</p>
+                      <p className="mt-1 text-sm text-navy-500">{layer.subtitle}</p>
                     )}
                   </div>
                   {idx < layers.length - 1 && (
-                    <div className="flex justify-center py-2">
-                      <div className="text-cyan-DEFAULT text-lg">↕</div>
+                    <div aria-hidden className="relative mx-auto h-10 w-px">
+                      <motion.div
+                        initial={{ scaleY: 0 }}
+                        whileInView={{ scaleY: 1 }}
+                        transition={{ duration: 0.5, delay: 0.3 + idx * 0.25, ease: 'easeOut' }}
+                        viewport={{ once: true }}
+                        className="h-full w-px origin-top bg-cyan-DEFAULT/40"
+                      />
+                      <span
+                        className="flow-packet-y absolute -left-[3px] h-2 w-2 rounded-full bg-cyan-DEFAULT"
+                        style={{ animationDelay: `${1.2 + idx * 1.2}s` }}
+                      />
                     </div>
                   )}
                 </div>

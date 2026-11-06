@@ -13,16 +13,16 @@ const specs = [
 export default function SMSTechnicalSpecs() {
   return (
     <section className="bg-white py-20">
-      <div className="max-w-7xl mx-auto px-6 space-y-16">
+      <div className="max-w-page mx-auto space-y-16 px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-navy-DEFAULT font-semibold text-4xl mb-12">Technical specifications</h2>
+          <h2 className="display-h2 text-navy-DEFAULT font-semibold mb-12">Technical specifications</h2>
 
-          <div className="max-w-2xl">
+          <div>
             <div className="space-y-4">
               {specs.map((spec, i) => (
                 <motion.div

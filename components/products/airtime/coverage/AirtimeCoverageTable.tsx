@@ -129,8 +129,8 @@ export default function AirtimeCoverageTable() {
           </Table>
         </motion.div>
 
-        <p className="text-navy-400 text-xs mt-6 max-w-2xl">
-          Coverage above reflects operators genuinely live today vs. those still being onboarded —
+        <p className="text-navy-400 text-xs mt-6">
+          Coverage above reflects operators genuinely live today vs. those still being onboarded.
           &quot;1700+ operators&quot; describes the aggregate network reachable across all corridors,
           not all-at-once day-one availability per operator. Limits vary per market; see notes
           above for market-specific caveats.

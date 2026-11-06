@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 
 const integrations = [
   'Microsoft Teams Direct Routing',
@@ -27,7 +26,7 @@ export default function IntegrationCompatibility() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h2 className="text-navy-DEFAULT font-bold text-4xl md:text-5xl">
+          <h2 className="display-h2 text-navy-DEFAULT font-bold">
             Built on standard SIP.
           </h2>
         </motion.div>
@@ -56,11 +55,7 @@ export default function IntegrationCompatibility() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <span className="text-navy-600">Platforms commonly connected over SIP. Running something else? </span>
-          <Link href="/get-started?type=enterprise" className="text-cyan-DEFAULT hover:opacity-80 font-medium">
-            Contact us
-          </Link>
-          <span className="text-navy-600"> and we&apos;ll confirm.</span>
+          <span className="text-navy-600">Platforms commonly connected over SIP.</span>
         </motion.p>
       </div>
     </section>

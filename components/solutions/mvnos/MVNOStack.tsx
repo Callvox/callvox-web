@@ -33,7 +33,7 @@ export default function MVNOStack() {
 
   return (
     <section ref={ref} className="bg-white py-20 md:py-28">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-page mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -41,9 +41,9 @@ export default function MVNOStack() {
           className="text-center mb-16"
         >
           <h2 className="text-navy-DEFAULT font-bold mb-4" style={{ fontSize: 'clamp(28px, 4vw, 36px)' }}>
-            Your entire wholesale stack. One vendor.
+            Your wholesale stack from one vendor.
           </h2>
-          <p className="text-navy-600 text-lg max-w-2xl mx-auto">
+          <p className="text-navy-600 text-lg mx-auto">
             Voice, messaging, eSIM, airtime and numbers from one wholesale partner. One integration. One invoice. One support contact.
           </p>
         </motion.div>

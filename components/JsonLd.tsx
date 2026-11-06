@@ -10,7 +10,7 @@ export function OrganizationJsonLd({ type = 'Organization' }: OrganizationJsonLd
     url: 'https://callvox.net',
     logo: 'https://callvox.net/icon.png',
     description:
-      'The unified wholesale platform built for the world\'s fastest-growing markets. Voice, SMS, airtime, eSIM & DIDs — one platform.',
+      'The unified wholesale platform built for the world\'s fastest-growing markets. Voice, SMS, airtime, eSIM & DIDs on one platform.',
     foundingDate: '2007',
     contactPoint: {
       '@type': 'ContactPoint',

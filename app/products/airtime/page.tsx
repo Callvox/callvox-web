@@ -4,7 +4,6 @@ import UseCasesAirtime from '@/components/products/airtime/UseCasesAirtime'
 import HowItWorksAirtime from '@/components/products/airtime/HowItWorksAirtime'
 import OperatorCoverageAirtime from '@/components/products/airtime/OperatorCoverageAirtime'
 import TechnicalSpecsAirtime from '@/components/products/airtime/TechnicalSpecsAirtime'
-import AirtimePricingTeaser from '@/components/products/airtime/AirtimePricingTeaser'
 import CrossSellCallout from '@/components/products/airtime/CrossSellCallout'
 import AirtimeCTABand from '@/components/products/airtime/AirtimeCTABand'
 import { Footer } from '@/components/sections/Footer'
@@ -23,7 +22,6 @@ export default function AirtimePage() {
       <HowItWorksAirtime />
       <OperatorCoverageAirtime />
       <TechnicalSpecsAirtime />
-      <AirtimePricingTeaser />
       <CrossSellCallout />
       <AirtimeCTABand />
       <Footer />

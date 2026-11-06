@@ -29,7 +29,7 @@ export default function TechnicalIntegration() {
 
   return (
     <section ref={ref} className="bg-white py-20">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-page mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h2
           custom={0}
           variants={fadeUpVariants}

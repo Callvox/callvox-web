@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import Link from 'next/link'
 import { FileText } from '@phosphor-icons/react'
 
 export default function TechnicalSpecsAirtime() {
@@ -21,15 +20,13 @@ export default function TechnicalSpecsAirtime() {
     {
       icon: FileText,
       title: 'Integration details',
-      description: 'Apply for API access and we will share integration documentation and sandbox details.',
-      href: '/products/airtime/apply',
-      cta: 'Get API access →',
+      description: 'Integration documentation and sandbox details are shared once your account is set up.',
     },
   ]
 
   return (
     <section ref={ref} className="bg-white py-20">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-page mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Spec table */}
           <motion.div
@@ -63,8 +60,7 @@ export default function TechnicalSpecsAirtime() {
                     <Icon size={24} weight="bold" className="text-cyan-DEFAULT flex-shrink-0" />
                     <h4 className="font-semibold text-navy-DEFAULT">{card.title}</h4>
                   </div>
-                  <p className="text-sm text-navy-600 mb-3">{card.description}</p>
-                  <Link href={card.href} className="text-sm font-semibold text-cyan-DEFAULT hover:underline">{card.cta}</Link>
+                  <p className="text-sm text-navy-600">{card.description}</p>
                 </div>
               )
             })}

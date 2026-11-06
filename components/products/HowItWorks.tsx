@@ -2,16 +2,17 @@
 
 import { motion } from 'framer-motion';
 import { Phone, ArrowsHorizontal, CheckCircle } from '@phosphor-icons/react';
+import { FlowSteps } from '@/components/FlowSteps';
 
 export function HowItWorks() {
   const steps = [
     {
-      title: 'Your Traffic',
+      title: 'Your traffic',
       description: 'SIP trunk or IP peering from your infrastructure',
       icon: Phone,
     },
     {
-      title: 'Callvox Network',
+      title: 'Callvox network',
       description: 'Route optimisation across 500+ direct routes.',
       icon: ArrowsHorizontal,
     },
@@ -24,7 +25,7 @@ export function HowItWorks() {
 
   return (
     <section className="py-20 bg-navy-50/40">
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-page px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -32,41 +33,13 @@ export function HowItWorks() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <p className="text-xs uppercase tracking-widest text-cyan-DEFAULT font-medium mb-4">How It Works</p>
-          <h2 className="text-4xl md:text-5xl font-semibold text-navy-DEFAULT mb-6">Direct. Not aggregated.</h2>
-          <p className="text-base md:text-lg text-navy-600 max-w-2xl leading-relaxed">
+          <h2 className="display-h2 font-semibold text-navy-DEFAULT mb-6">Why we run direct routes.</h2>
+          <p className="text-base md:text-lg text-navy-600 leading-relaxed">
             Many wholesale carriers aggregate routes through intermediaries. Callvox operates direct interconnects, keeping the path from your network to the terminating carrier as short as possible.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-          {steps.map((step, index) => {
-            const Icon = step.icon;
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="relative"
-              >
-                {/* Connector line for desktop */}
-                {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-16 -right-4 w-8 h-1 bg-cyan-DEFAULT/20"></div>
-                )}
-
-                <div className="bg-white rounded-xl p-8 border border-navy-100">
-                  <div className="flex items-center justify-center w-16 h-16 rounded-full bg-cyan-light mb-6">
-                    <Icon size={32} weight="duotone" className="text-cyan-DEFAULT" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-navy-DEFAULT mb-3">{step.title}</h3>
-                  <p className="text-navy-600 leading-relaxed">{step.description}</p>
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
+        <FlowSteps steps={steps} />
       </div>
     </section>
   );

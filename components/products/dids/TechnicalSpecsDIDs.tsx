@@ -41,7 +41,7 @@ export default function TechnicalSpecsDIDs() {
 
   return (
     <section ref={ref} className="bg-navy-50/40 py-20">
-      <div className="container mx-auto px-4">
+      <div className="container">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}

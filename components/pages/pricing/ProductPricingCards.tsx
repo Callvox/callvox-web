@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Phone, ChatCircle, DeviceMobile, SimCard, PhoneIncoming, CheckCircle, type Icon } from '@phosphor-icons/react';
 import { STATS } from '@/lib/stats';
@@ -74,10 +73,6 @@ export default function ProductPricingCards() {
                     </li>
                   ))}
                 </ul>
-
-                <Link href="/get-started" className="text-cyan-DEFAULT font-semibold text-sm flex items-center gap-2 hover:gap-3 transition-all">
-                  Request rates
-                </Link>
               </motion.div>
             );
           })}
@@ -88,7 +83,7 @@ export default function ProductPricingCards() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-          className="text-navy-400 text-xs text-center mt-8 max-w-2xl mx-auto"
+          className="text-navy-400 text-xs text-center mt-8 mx-auto"
         >
           Pricing depends on destination, service and volume. Request a rate deck for exact quotes.
         </motion.p>

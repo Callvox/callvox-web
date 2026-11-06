@@ -27,7 +27,7 @@ export default function ResellerAdvantage() {
 
   return (
     <section ref={ref} className="bg-white py-20">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-page mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h2
           custom={0}
           variants={fadeUpVariants}
@@ -43,9 +43,9 @@ export default function ResellerAdvantage() {
           variants={fadeUpVariants}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          className="text-navy-200 text-lg max-w-3xl mb-16"
+          className="text-navy-200 text-lg mb-16"
         >
-          Most resellers manage multiple wholesale accounts across fragmented providers. Callvox consolidates all five product lines — letting you offer more to clients while reducing your back-office overhead.
+          Most resellers manage multiple wholesale accounts across fragmented providers. Callvox consolidates all five product lines, so you can offer clients more while cutting back-office overhead.
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">

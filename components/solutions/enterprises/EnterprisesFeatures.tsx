@@ -37,8 +37,8 @@ export default function EnterprisesFeatures() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h2 className="text-navy-DEFAULT font-bold text-4xl md:text-5xl">
-            One provider for business voice.
+          <h2 className="display-h2 text-navy-DEFAULT font-bold">
+            Business voice from one provider.
           </h2>
         </motion.div>
 

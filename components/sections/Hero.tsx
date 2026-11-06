@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { CTA } from '@/components/CTA'
 import { NetworkMap } from './NetworkMap'
 import { STATS } from '@/lib/stats'
 
@@ -21,31 +21,19 @@ export function Hero() {
         aria-hidden
       />
 
-      <div className="relative mx-auto grid max-w-[88rem] gap-14 px-5 pb-20 pt-36 sm:px-8 lg:grid-cols-12 lg:gap-8 lg:px-12 lg:pb-28 lg:pt-48">
+      <div className="relative mx-auto grid max-w-page gap-14 pb-20 pt-36 lg:grid-cols-12 lg:gap-8 lg:pb-28 lg:pt-48 px-4 sm:px-6 lg:px-8">
         <div className="lg:col-span-8">
-          <p className="label text-signal">Wholesale telecom for carriers · Since 2007</p>
-          <h1 className="mt-6 text-[clamp(3rem,5.8vw,6.25rem)] leading-[0.98] text-white">
+          <h1 className="text-[clamp(3rem,5.8vw,6.25rem)] leading-[0.98] text-white">
             <span className="reveal-line"><span>Direct routes to the</span></span>
             <span className="reveal-line"><span style={{ animationDelay: '0.1s' }}>world&apos;s <em className="whitespace-nowrap text-signal">fastest‑growing</em></span></span>
             <span className="reveal-line"><span style={{ animationDelay: '0.2s' }}>markets.</span></span>
           </h1>
-          <p className="mt-8 max-w-xl text-lg leading-relaxed text-navy-200">
+          <p className="mt-8 text-lg leading-relaxed text-navy-200">
             Voice, SMS, airtime, eSIM and numbers from one wholesale partner. One integration,
             one invoice and one support contact, built for carriers.
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <Link
-              href="/get-started"
-              className="inline-flex h-12 items-center justify-center rounded-sm bg-signal px-7 text-[15px] font-semibold text-navy-DEFAULT transition-colors hover:bg-white"
-            >
-              Request interconnect details
-            </Link>
-            <Link
-              href="/coverage"
-              className="inline-flex h-12 items-center justify-center rounded-sm border border-white/25 px-7 text-[15px] font-medium text-white transition-colors hover:border-white hover:bg-white/5"
-            >
-              Explore coverage
-            </Link>
+            <CTA type="carrier" tone="dark" />
           </div>
         </div>
 

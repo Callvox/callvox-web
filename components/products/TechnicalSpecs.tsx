@@ -1,8 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { FileText, CurrencyDollar } from '@phosphor-icons/react';
+import { FileText } from '@phosphor-icons/react';
 
 export function TechnicalSpecs() {
   const specs = [
@@ -11,25 +10,20 @@ export function TechnicalSpecs() {
     { label: 'Transport', value: 'UDP, TCP, TLS' },
     { label: 'DTMF', value: 'RFC 2833, SIP INFO, In-band' },
     { label: 'Caller ID', value: 'CLI delivery' },
-    { label: 'Billing', value: 'Billing increments and CDR delivery confirmed in your rate deck' },
+    { label: 'Billing', value: 'Billing increments and CDR delivery agreed per account' },
   ];
 
   const compliance = [
     {
       icon: FileText,
       title: 'Interconnect details',
-      description: 'Request our technical interconnect details for your traffic profile and corridors.',
-    },
-    {
-      icon: CurrencyDollar,
-      title: 'Rate deck',
-      description: 'Destination-level pricing for the routes you need, on request.',
+      description: 'Technical interconnect details are shared for your traffic profile and corridors.',
     },
   ];
 
   return (
     <section className="bg-white py-20">
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-page px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -37,8 +31,7 @@ export function TechnicalSpecs() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <p className="text-xs uppercase tracking-widest text-cyan-DEFAULT font-medium mb-4">Technical Specifications</p>
-          <h2 className="text-4xl md:text-5xl font-semibold text-navy-DEFAULT">Everything a carrier needs to evaluate.</h2>
+          <h2 className="display-h2 font-semibold text-navy-DEFAULT">Everything a carrier needs to evaluate.</h2>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -93,9 +86,6 @@ export function TechnicalSpecs() {
                 </motion.div>
               );
             })}
-            <Link href="/get-started?type=carrier" className="inline-block text-cyan-DEFAULT font-medium hover:underline">
-              Request interconnect details →
-            </Link>
           </motion.div>
         </div>
       </div>

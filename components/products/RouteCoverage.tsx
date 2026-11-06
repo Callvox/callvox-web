@@ -1,8 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight } from '@phosphor-icons/react';
-import Link from 'next/link';
 
 export function RouteCoverage() {
   const regions = [
@@ -26,7 +24,7 @@ export function RouteCoverage() {
 
   return (
     <section className="bg-navy-DEFAULT py-20">
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-page px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -34,15 +32,15 @@ export function RouteCoverage() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-semibold text-white mb-6">
-            500+ direct routes. Built for the corridors others avoid.
+          <h2 className="display-h2 font-semibold text-white mb-6">
+            500+ direct routes into emerging markets.
           </h2>
           <p className="text-lg text-navy-200">
-            Our route network is designed around the world's highest-growth termination corridors — not just the easy markets.
+            Our route network is designed around the world's highest-growth termination corridors, not just the easy markets.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {regions.map((region, index) => (
             <motion.div
               key={index}
@@ -57,19 +55,6 @@ export function RouteCoverage() {
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <Link href="/get-started?type=carrier" className="inline-flex items-center gap-2 text-cyan-DEFAULT hover:text-cyan-light transition-colors font-medium">
-            Don't see your destination? Tell us your corridors
-            <ArrowRight size={18} weight="bold" />
-          </Link>
-        </motion.div>
       </div>
     </section>
   );

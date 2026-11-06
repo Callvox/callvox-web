@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Logo } from './Logo'
+import { CTA } from './CTA'
 import {
   Phone,
   ChatDots,
@@ -95,10 +96,10 @@ export default function Nav() {
         overHero ? 'border-transparent bg-transparent text-white' : 'border-navy-100 bg-paper'
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between gap-6">
+      <nav className="max-w-page mx-auto h-full flex items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
 
         {/* Logo */}
-        <Link href="/" aria-label="Callvox home" onClick={() => setActiveDropdown(null)}>
+        <Link href="/" aria-label="Callvox home" onClick={() => setActiveDropdown(null)} className="flex items-center min-h-11">
           <Logo reversed={overHero} className="w-[136px] h-auto flex-shrink-0" />
         </Link>
 
@@ -172,7 +173,7 @@ export default function Nav() {
             </button>
 
             {activeDropdown === 'Solutions' && (
-              <div className="absolute top-full left-0 mt-2 w-52 bg-paper rounded-md shadow-lg border border-navy-100 p-3 z-50 animate-in fade-in slide-in-from-top-2 duration-200"
+              <div className="absolute top-full left-0 mt-2 w-60 bg-paper rounded-md shadow-lg border border-navy-100 p-3 z-50 animate-in fade-in slide-in-from-top-2 duration-200"
                    onMouseEnter={() => handleMouseEnter('Solutions')}
                    onMouseLeave={handleMouseLeave}>
                 {solutions.map((s) => {
@@ -182,10 +183,12 @@ export default function Nav() {
                       key={s.name}
                       href={s.href}
                       onClick={() => setActiveDropdown(null)}
-                      className="flex items-center gap-3 px-3 py-2.5 rounded-sm text-sm text-navy-700 hover:bg-navy-50 hover:text-cyan-DEFAULT transition-colors group"
+                      className="flex items-center gap-3 px-3 py-2.5 rounded-sm hover:bg-navy-50 transition-colors group"
                     >
-                      <Icon size={16} weight="light" className="text-navy-400 group-hover:text-cyan-DEFAULT transition-colors flex-shrink-0" />
-                      {s.name}
+                      <span className="w-8 h-8 rounded-sm bg-cyan-DEFAULT/10 flex items-center justify-center flex-shrink-0">
+                        <Icon size={18} weight="light" className="text-cyan-DEFAULT" />
+                      </span>
+                      <span className="text-sm font-semibold text-navy-DEFAULT group-hover:text-cyan-DEFAULT transition-colors">{s.name}</span>
                     </Link>
                   )
                 })}
@@ -211,14 +214,15 @@ export default function Nav() {
 
         {/* Desktop CTAs */}
         <div className="hidden lg:flex items-center gap-2 flex-shrink-0">
-          <Link href="/get-started" className={`inline-flex h-10 items-center rounded-sm px-5 text-sm font-medium transition-colors ${overHero ? 'bg-signal text-navy-DEFAULT hover:bg-white' : 'bg-navy-DEFAULT text-white hover:bg-navy-700'}`}>Get started</Link>
+          <CTA size="sm" tone={overHero ? 'dark' : 'light'} />
         </div>
 
         {/* Mobile hamburger */}
         <button
-          className={`lg:hidden p-2 rounded-md ${overHero ? 'text-white' : 'text-navy-DEFAULT'}`}
+          className={`lg:hidden -mr-2 p-2.5 rounded-md ${overHero ? 'text-white' : 'text-navy-DEFAULT'}`}
           onClick={() => setMobileOpen(prev => !prev)}
           aria-label="Toggle navigation menu"
+          aria-expanded={mobileOpen}
         >
           {mobileOpen ? <X weight="bold" size={24} /> : <List weight="bold" size={24} />}
         </button>
@@ -226,7 +230,7 @@ export default function Nav() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden absolute top-[68px] left-0 right-0 bg-paper text-navy-DEFAULT border-b border-navy-100/20 shadow-xl overflow-y-auto max-h-[calc(100vh-68px)]">
+        <div className="lg:hidden absolute top-[68px] left-0 right-0 bg-paper text-navy-DEFAULT border-b border-navy-100/20 shadow-xl overflow-y-auto max-h-[calc(100dvh-68px)] overscroll-contain">
           <div className="px-4 py-6 space-y-1">
 
             {/* Products accordion */}
@@ -246,7 +250,7 @@ export default function Nav() {
                       key={p.name}
                       href={p.href}
                       onClick={() => setMobileOpen(false)}
-                      className="flex items-center gap-3 px-4 py-2.5 text-sm text-navy-700 rounded-lg hover:bg-navy-50 hover:text-cyan-DEFAULT"
+                      className="flex items-center gap-3 px-4 py-3 text-sm text-navy-700 rounded-lg hover:bg-navy-50 hover:text-cyan-DEFAULT"
                     >
                       <Icon size={16} weight="light" className="text-cyan-DEFAULT" />
                       {p.name}
@@ -273,9 +277,9 @@ export default function Nav() {
                       key={s.name}
                       href={s.href}
                       onClick={() => setMobileOpen(false)}
-                      className="flex items-center gap-3 px-4 py-2.5 text-sm text-navy-700 rounded-lg hover:bg-navy-50 hover:text-cyan-DEFAULT"
+                      className="flex items-center gap-3 px-4 py-3 text-sm text-navy-700 rounded-lg hover:bg-navy-50 hover:text-cyan-DEFAULT"
                     >
-                      <Icon size={16} weight="light" className="text-navy-400" />
+                      <Icon size={16} weight="light" className="text-cyan-DEFAULT" />
                       {s.name}
                     </Link>
                   )
@@ -297,7 +301,7 @@ export default function Nav() {
 
             {/* CTAs */}
             <div className="pt-4 border-t border-navy-100 space-y-3 mt-4">
-              <Link href="/get-started" onClick={() => setMobileOpen(false)} className="flex h-12 w-full items-center justify-center rounded-sm bg-navy-DEFAULT font-medium text-white">Get started</Link>
+              <CTA onClick={() => setMobileOpen(false)} className="w-full" />
             </div>
           </div>
         </div>

@@ -67,8 +67,7 @@ export function GetStartedForm({ defaultType = 'carrier' }: { defaultType?: stri
   if (status === 'done') {
     return (
       <div role="status" className="rounded-md border border-navy-100 bg-white p-10">
-        <p className="label text-cyan-DEFAULT">Request received</p>
-        <h2 className="mt-4 text-4xl text-navy-DEFAULT">Thank you.</h2>
+        <h2 className="display-h2 text-navy-DEFAULT">Thank you.</h2>
         <p className="mt-4 text-navy-600">
           We&apos;ll review your corridors and follow up by email.
         </p>

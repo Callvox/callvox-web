@@ -32,7 +32,7 @@ export default function NetworkInfrastructure() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h2 className="text-navy-DEFAULT font-bold text-4xl md:text-5xl">
+          <h2 className="display-h2 text-navy-DEFAULT font-bold">
             The infrastructure behind the coverage.
           </h2>
         </motion.div>

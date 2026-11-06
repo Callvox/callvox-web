@@ -4,7 +4,6 @@ import AboutHero from '@/components/pages/about/AboutHero';
 import FoundingStory from '@/components/pages/about/FoundingStory';
 import ByTheNumbers from '@/components/pages/about/ByTheNumbers';
 import MissionSection from '@/components/pages/about/MissionSection';
-import { PositioningQuote } from '@/components/PositioningQuote';
 import TeamValues from '@/components/pages/about/TeamValues';
 import AboutCTABand from '@/components/pages/about/AboutCTABand';
 import { Footer } from '@/components/sections/Footer';
@@ -22,7 +21,6 @@ export default function AboutPage() {
       <FoundingStory />
       <ByTheNumbers />
       <MissionSection />
-      <PositioningQuote />
       <TeamValues />
       <AboutCTABand />
       <Footer />

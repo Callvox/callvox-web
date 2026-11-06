@@ -42,8 +42,8 @@ export function WhoItsForESIM() {
   };
 
   return (
-    <section className="bg-white py-20 px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl">
+    <section className="bg-white py-20">
+      <div className="mx-auto max-w-page px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -51,8 +51,8 @@ export function WhoItsForESIM() {
           viewport={{ once: true }}
           className="mb-16 text-center"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-DEFAULT">
-            Three entry points. One platform.
+          <h2 className="display-h2 font-bold text-navy-DEFAULT">
+            Who uses our eSIM platform.
           </h2>
         </motion.div>
 

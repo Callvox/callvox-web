@@ -38,7 +38,7 @@ export class ErrorBoundary extends Component<Props, State> {
           <h2 className="text-xl font-semibold text-navy-DEFAULT mb-2">
             Something went wrong
           </h2>
-          <p className="text-navy-600 mb-6 max-w-md">
+          <p className="text-navy-600 mb-6">
             We encountered an unexpected error. Please try refreshing the page.
           </p>
           <Button
