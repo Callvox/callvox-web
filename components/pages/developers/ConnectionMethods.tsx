@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight } from '@phosphor-icons/react'
+import { ArrowRight } from '@phosphor-icons/react/dist/ssr'
 
 const methods = [
   { product: 'Voice', href: '/products/voice', how: ['SIP trunk', 'IP peering'], what: 'Termination and origination' },
