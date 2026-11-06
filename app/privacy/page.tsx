@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import Link from 'next/link'
-import Nav from '@/components/Nav'
-import { Footer } from '@/components/sections/Footer'
+import { LegalLayout } from '@/components/LegalLayout'
 
 export const metadata: Metadata = {
   title: 'Privacy Notice',
@@ -77,9 +76,7 @@ const purposeHead = ['Purpose', 'Data', 'Legal basis']
 export default function PrivacyPage() {
   return (
     <>
-      <Nav />
-      <main id="main-content" className="bg-paper">
-        <div className="mx-auto max-w-page px-4 pb-24 pt-32 sm:px-6 lg:px-8 lg:pt-40">
+      <LegalLayout current="/privacy">
           <div>
             <h1 className="display-h1 text-navy-DEFAULT">Privacy Notice</h1>
             <p className="mt-4 text-sm text-navy-400">Last updated: October 1, 2026</p>
@@ -456,9 +453,7 @@ export default function PrivacyPage() {
               </section>
             </div>
           </div>
-        </div>
-      </main>
-      <Footer />
+      </LegalLayout>
     </>
   )
 }
