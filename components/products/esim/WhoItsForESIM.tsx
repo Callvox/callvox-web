@@ -49,7 +49,7 @@ export function WhoItsForESIM() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="mb-16 text-center"
+          className="mb-12 md:mb-16"
         >
           <h2 className="display-h2 font-bold text-navy-DEFAULT">
             Who uses our eSIM platform.

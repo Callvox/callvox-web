@@ -13,8 +13,10 @@ export default function AirtimeCoveragePage() {
   return (
     <>
       <Nav />
-      <AirtimeCoverageHero />
-      <AirtimeCoverageTable />
+      <main>
+        <AirtimeCoverageHero />
+        <AirtimeCoverageTable />
+      </main>
       <Footer />
     </>
   )

@@ -34,7 +34,7 @@ export default function OperatorCoverageAirtime() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ delay: 0.1 }}
-          className="text-3xl md:text-4xl font-bold text-white text-balance mb-12 text-center"
+          className="display-h2 font-bold text-white mb-12 md:mb-16"
         >
           Operators across four regions.
         </motion.h2>
@@ -58,7 +58,7 @@ export default function OperatorCoverageAirtime() {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ delay: 0.6 }}
-          className="text-center text-xs italic text-navy-300 mb-4"
+          className="text-xs italic text-navy-300 mb-4"
         >
           Full operator list available on request.
         </motion.p>

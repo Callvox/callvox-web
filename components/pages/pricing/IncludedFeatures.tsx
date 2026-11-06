@@ -19,7 +19,7 @@ export default function IncludedFeatures() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-white font-bold text-4xl md:text-5xl mb-16"
+          className="display-h2 text-white font-bold mb-12 md:mb-16"
         >
           One platform. One account.
         </motion.h2>

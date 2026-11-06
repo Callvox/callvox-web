@@ -35,7 +35,7 @@ export default function TeamValues() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-navy-DEFAULT font-bold text-4xl md:text-5xl mb-16"
+          className="display-h2 text-navy-DEFAULT font-bold mb-12 md:mb-16"
         >
           How we operate.
         </motion.h2>

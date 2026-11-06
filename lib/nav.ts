@@ -1,7 +1,7 @@
 /** Single source of truth for site navigation links, shared by Nav and Footer. */
 
 export const products = [
-  { name: 'Wholesale Voice', desc: 'Termination & origination across 500+ routes', href: '/products/voice' },
+  { name: 'Voice', desc: 'Termination & origination across 500+ routes', href: '/products/voice' },
   { name: 'SMS / Messaging', desc: 'A2P SMS, SMPP & REST delivery at scale', href: '/products/sms' },
   { name: 'Airtime Top-Ups', desc: 'International mobile recharge via API', href: '/products/airtime' },
   { name: 'eSIM', desc: 'Wholesale eSIM provisioning', href: '/products/esim' },

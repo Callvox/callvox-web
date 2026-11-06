@@ -17,13 +17,15 @@ export default function AirtimePage() {
   return (
     <>
       <Nav />
-      <AirtimeHero />
-      <UseCasesAirtime />
-      <HowItWorksAirtime />
-      <OperatorCoverageAirtime />
-      <TechnicalSpecsAirtime />
-      <CrossSellCallout />
-      <AirtimeCTABand />
+      <main>
+        <AirtimeHero />
+        <UseCasesAirtime />
+        <HowItWorksAirtime />
+        <OperatorCoverageAirtime />
+        <TechnicalSpecsAirtime />
+        <CrossSellCallout />
+        <AirtimeCTABand />
+      </main>
       <Footer />
     </>
   )

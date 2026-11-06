@@ -12,13 +12,15 @@ export default function AirtimeTransactionsPage() {
   return (
     <>
       <Nav />
-      <PageHero
-        tone="light"
-        compact
-        breadcrumb={[{ label: 'Products' }, { label: 'Airtime Top-Ups', href: '/products/airtime' }, { label: 'Transactions' }]}
-        title="Your airtime transactions."
-      />
-      <AirtimeTransactionsView />
+      <main>
+        <PageHero
+          tone="light"
+          compact
+          breadcrumb={[{ label: 'Products' }, { label: 'Airtime Top-Ups', href: '/products/airtime' }, { label: 'Transactions' }]}
+          title="Your airtime transactions."
+        />
+        <AirtimeTransactionsView />
+      </main>
       <Footer />
     </>
   )
