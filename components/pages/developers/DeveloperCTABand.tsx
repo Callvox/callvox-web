@@ -1,8 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight } from '@phosphor-icons/react';
-import { Button } from '@/components/callvox-ui/Button';
+import Link from 'next/link';
 
 export default function DeveloperCTABand() {
   return (
@@ -20,22 +19,22 @@ export default function DeveloperCTABand() {
           </h2>
 
           <p className="text-navy-600 text-lg mb-12">
-            Sandbox access is instant. Production activation within one business day for verified accounts.
+            Request API access and our team will follow up on sandbox and production activation.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              variant="primary"
-              size="lg"
+            <Link
+              href="/get-started?type=other"
+              className="inline-flex h-12 items-center justify-center rounded-sm bg-navy-DEFAULT px-7 text-[15px] font-medium text-white transition-colors hover:bg-navy-700"
             >
-              Get API Keys
-            </Button>
-            <Button
-              variant="ghost"
-              size="lg"
+              Request API access
+            </Link>
+            <Link
+              href="/products/airtime/apply"
+              className="inline-flex h-12 items-center justify-center rounded-sm border border-navy-DEFAULT/30 px-7 text-[15px] font-medium text-navy-DEFAULT transition-colors hover:border-navy-DEFAULT hover:bg-navy-DEFAULT/[0.04]"
             >
-              Read the Docs
-            </Button>
+              Airtime API access
+            </Link>
           </div>
         </motion.div>
       </div>

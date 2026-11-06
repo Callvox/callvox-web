@@ -5,10 +5,10 @@ import { Check } from '@phosphor-icons/react';
 
 export function TechnicalArchitecture() {
   const specs = [
-    'GSMA SGP.22 (consumer)',
-    'GSMA SGP.32 (IoT)',
-    'SAS-SM certified',
-    'TLS + HSM key management',
+    'Consumer eSIM profile provisioning',
+    'IoT eSIM profile provisioning',
+    'Over-the-air profile delivery',
+    'REST API integration',
   ];
 
   const layers = [
@@ -25,7 +25,7 @@ export function TechnicalArchitecture() {
     },
     {
       title: 'Callvox SM-DP+',
-      subtitle: 'GSMA SAS-SM certified',
+      subtitle: 'profile server',
       bgColor: 'bg-navy-50',
       borderColor: 'border-cyan-DEFAULT',
       isHighlight: true,
@@ -55,7 +55,7 @@ export function TechnicalArchitecture() {
             The eSIM stack, explained.
           </h2>
           <p className="text-navy-600 text-lg max-w-2xl leading-relaxed">
-            eSIM provisioning requires certified infrastructure at every layer. Callvox operates SM-DP+ (Subscription Manager Data Preparation+) infrastructure certified to GSMA SAS-SM standards.
+            eSIM provisioning involves several layers, from your platform to the chip in the device. Callvox provides profile provisioning through an SM-DP+ (Subscription Manager Data Preparation+) server.
           </p>
         </motion.div>
 

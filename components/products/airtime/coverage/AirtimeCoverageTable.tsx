@@ -105,7 +105,6 @@ export default function AirtimeCoverageTable() {
                 <TableHead>Country</TableHead>
                 <TableHead>Operator</TableHead>
                 <TableHead>Status</TableHead>
-                <TableHead>Avg. delivery</TableHead>
                 <TableHead>Notes</TableHead>
               </TableRow>
             </TableHeader>
@@ -116,7 +115,6 @@ export default function AirtimeCoverageTable() {
                   <TableCell className="font-medium text-navy-DEFAULT">{row.country}</TableCell>
                   <TableCell className="text-navy-600">{row.operator}</TableCell>
                   <TableCell>{statusBadge(row.status)}</TableCell>
-                  <TableCell className="text-navy-600">{row.avgDeliveryTime ?? '—'}</TableCell>
                   <TableCell className="text-navy-400 text-sm max-w-xs">{row.notes}</TableCell>
                 </TableRow>
               ))}
@@ -133,9 +131,9 @@ export default function AirtimeCoverageTable() {
 
         <p className="text-navy-400 text-xs mt-6 max-w-2xl">
           Coverage above reflects operators genuinely live today vs. those still being onboarded —
-          &quot;800+ operators&quot; describes the aggregate network reachable across all corridors,
-          not all-at-once day-one availability per operator. AML/KYC daily limits apply as standard
-          and vary per market; see notes above for market-specific caveats.
+          &quot;1700+ operators&quot; describes the aggregate network reachable across all corridors,
+          not all-at-once day-one availability per operator. Limits vary per market; see notes
+          above for market-specific caveats.
         </p>
       </div>
     </section>

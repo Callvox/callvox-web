@@ -3,10 +3,8 @@
 import { motion } from 'framer-motion';
 
 const timeline = [
-  { year: '2007', label: 'Founded as voice-only carrier, LatAm & Africa focus' },
-  { year: '2012', label: '100+ direct routes, expanded to South Asia & MENA' },
-  { year: '2023', label: 'Launched SMS / A2P messaging product' },
-  { year: '2026', label: 'Full platform: eSIM, Airtime, DIDs added' }
+  { year: '2007', label: 'Founded as a voice-only wholesale carrier focused on Latin America and Africa' },
+  { year: 'Today', label: 'Voice, SMS, airtime, eSIM and numbers on one platform, with one invoice and one support contact' }
 ];
 
 export default function FoundingStory() {
@@ -28,7 +26,7 @@ export default function FoundingStory() {
               Callvox was founded in 2007 with a specific thesis: the wholesale telecom industry was obsessed with US and European traffic, and almost everyone was under-investing in Latin America, Africa, South Asia, and the Middle East. These were the fastest-growing mobile markets in the world — and they were being served by aggregators with shallow coverage and inconsistent quality.
             </p>
             <p>
-              We built direct interconnects in these markets before it was fashionable. We developed carrier relationships in Nigeria, Ghana, Kenya, India, Pakistan, Mexico, and Brazil when most wholesale providers were routing through aggregators. That depth is what makes our coverage different — and it's why carriers and MVNOs in these corridors choose us.
+              We built direct interconnects in these markets corridor by corridor, before it was fashionable. That depth is what makes our coverage different, and it's why we keep investing where others don't.
             </p>
           </div>
         </motion.div>
@@ -38,7 +36,7 @@ export default function FoundingStory() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="space-y-8 md:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-8"
+          className="space-y-8 md:space-y-0 md:grid md:grid-cols-2 md:gap-8"
         >
           {timeline.map((item, idx) => (
             <div key={idx} className="relative">

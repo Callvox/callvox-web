@@ -13,12 +13,12 @@ const fadeUpVariants = {
 };
 
 const specs = [
-  { label: 'Voice API', value: 'SIP trunk, CDR API, real-time routing' },
+  { label: 'Voice API', value: 'SIP trunk, CDR API' },
   { label: 'SMS', value: 'REST + SMPP v3.4/5.0' },
   { label: 'Airtime', value: 'REST API, webhook delivery' },
-  { label: 'DIDs', value: 'REST API, instant provisioning' },
+  { label: 'DIDs', value: 'REST API' },
   { label: 'Billing API', value: 'Usage data, invoice generation, balance queries' },
-  { label: 'CDRs', value: 'Real-time, per-tenant, exportable JSON/CSV' },
+  { label: 'CDRs', value: 'Per-tenant, exportable JSON/CSV' },
   { label: 'Webhooks', value: 'Delivery receipts, usage alerts, balance warnings' },
   { label: 'Auth', value: 'API keys per sub-account, IP whitelisting' },
 ];
@@ -35,9 +35,9 @@ export default function TechnicalIntegration() {
           variants={fadeUpVariants}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          className="font-sans font-bold text-navy-DEFAULT text-4xl mb-16"
+          className="text-navy-DEFAULT text-4xl mb-16"
         >
-          API-first. SMPP + REST. Real-time everything.
+          API-first. SMPP + REST.
         </motion.h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -72,8 +72,7 @@ Authorization: Bearer YOUR_API_KEY
 Content-Type: application/json
 
 {
-  "name": "Client ABC",
-  "markup_voice": 1.15
+  "name": "Client ABC"
 }
 
 ---
@@ -84,8 +83,7 @@ Authorization: Bearer YOUR_API_KEY
 {
   "voice_minutes": 125430,
   "sms_count": 89023,
-  "airtime_value": 34500,
-  "invoice_amount": 5234.50
+  "airtime_value": 34500
 }`}
             </pre>
           </motion.div>

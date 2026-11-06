@@ -10,7 +10,7 @@ import AboutCTABand from '@/components/pages/about/AboutCTABand';
 import { Footer } from '@/components/sections/Footer';
 
 export const metadata: Metadata = {
-  title: 'About Callvox | 2 Decades in Emerging Markets',
+  title: 'About Callvox: wholesale telecom since 2007',
   description: 'The unified wholesale platform built for the world\'s fastest-growing markets. Founded in 2007, Callvox serves carriers and MVNOs in Latin America, Africa, South Asia, and the Middle East.',
 };
 

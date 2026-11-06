@@ -18,11 +18,11 @@ export default function ResellerAdvantage() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   const products = [
-    { name: 'Voice', icon: Phone, min: 15, max: 35 },
-    { name: 'SMS', icon: ChatDots, min: 20, max: 45 },
-    { name: 'Airtime', icon: Wallet, min: 5, max: 15 },
-    { name: 'eSIM', icon: SimCard, min: 25, max: 50 },
-    { name: 'DIDs', icon: DID, min: 30, max: 60 },
+    { name: 'Voice', icon: Phone, desc: 'Direct routes' },
+    { name: 'SMS', icon: ChatDots, desc: 'A2P messaging' },
+    { name: 'Airtime', icon: Wallet, desc: '1700+ operators' },
+    { name: 'eSIM', icon: SimCard, desc: 'Profiles by API' },
+    { name: 'DIDs', icon: DID, desc: 'Virtual numbers' },
   ];
 
   return (
@@ -33,7 +33,7 @@ export default function ResellerAdvantage() {
           variants={fadeUpVariants}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          className="font-sans font-bold text-navy-DEFAULT text-4xl mb-4"
+          className="text-navy-DEFAULT text-4xl mb-4"
         >
           Five revenue streams. One wholesale relationship.
         </motion.h2>
@@ -62,31 +62,12 @@ export default function ResellerAdvantage() {
               >
                 <Icon weight="duotone" size={32} className="text-cyan-DEFAULT mb-4" />
                 <h3 className="font-semibold text-navy-DEFAULT text-lg mb-3">{product.name}</h3>
-                <div className="mb-4">
-                  <div className="text-sm text-navy-200 mb-2">{product.min}–{product.max}% margin</div>
-                  <div className="w-full bg-navy-200/20 rounded-full h-2">
-                    <div
-                      className="bg-gradient-to-r from-cyan-500 to-cyan-400 h-2 rounded-full"
-                      style={{
-                        width: `${((product.max - product.min) / 100) * 100}%`,
-                      }}
-                    />
-                  </div>
-                </div>
+                <p className="text-sm text-navy-600">{product.desc}</p>
               </motion.div>
             );
           })}
         </div>
 
-        <motion.p
-          custom={7}
-          variants={fadeUpVariants}
-          initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
-          className="text-sm text-navy-300 mt-8 italic"
-        >
-          Indicative ranges. Actual margins depend on volume tier and destination mix.
-        </motion.p>
       </div>
     </section>
   );

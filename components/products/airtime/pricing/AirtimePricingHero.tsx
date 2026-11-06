@@ -22,7 +22,7 @@ export default function AirtimePricingHero() {
           className="text-navy-DEFAULT font-bold mb-6 text-balance"
           style={{ fontSize: 'clamp(32px, 4.5vw, 48px)' }}
         >
-          Volume-based pricing. No public commission rates.
+          Current rates, on request.
         </motion.h1>
 
         <motion.p
@@ -31,9 +31,8 @@ export default function AirtimePricingHero() {
           transition={{ delay: 0.2, duration: 0.5 }}
           className="text-navy-600 text-lg max-w-2xl leading-relaxed"
         >
-          Airtime commission rates are aggregator- and corridor-dependent, so we don&apos;t publish
-          a flat number. What you pay is set by your monthly volume tier and negotiated per
-          corridor — request a rate deck for exact figures.
+          Airtime rates move with the market and differ by corridor, so we don&apos;t publish a
+          fixed price list. Tell us your corridors and we&apos;ll send a current rate deck.
         </motion.p>
       </div>
     </section>

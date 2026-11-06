@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { ArrowsHorizontal } from '@phosphor-icons/react'
-import { Button } from '@/components/callvox-ui/Button'
+import Link from 'next/link'
 
 export default function CrossSellCallout() {
   const ref = useRef(null)
@@ -26,11 +26,11 @@ export default function CrossSellCallout() {
                 Already routing voice to Africa or South Asia?
               </h3>
               <p className="text-lg text-navy-600 mb-6">
-                Callvox voice and airtime share the same operator relationships. Add airtime top-up to your existing account — no new contracts, no new APIs, one invoice.
+                Add airtime top-up alongside your voice routing, with one wholesale partner and one invoice.
               </p>
-              <Button variant="primary" className="bg-navy-DEFAULT text-white hover:bg-navy-600">
+              <Link href="/get-started?type=carrier" className="inline-flex items-center justify-center font-medium rounded-sm transition-colors duration-200 h-10 px-5 text-sm bg-navy-DEFAULT text-white hover:bg-navy-600">
                 Talk to a specialist
-              </Button>
+              </Link>
             </div>
           </div>
         </motion.div>

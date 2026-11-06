@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const apis = [
   { method: 'POST', endpoint: '/v1/voice/calls', description: 'Initiate or route an outbound call' },
@@ -64,16 +65,12 @@ export default function FiveAPIsOneKey() {
           ))}
         </motion.div>
 
-        <motion.a
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-          href="#"
+        <Link
+          href="/get-started?type=other"
           className="text-cyan-DEFAULT font-semibold flex items-center gap-2 hover:gap-3 transition-all"
         >
-          View full API reference
-        </motion.a>
+          Request API documentation
+        </Link>
       </div>
     </section>
   );

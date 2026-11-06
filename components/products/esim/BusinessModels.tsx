@@ -6,19 +6,19 @@ export function BusinessModels() {
   const models = [
     {
       title: 'Per-profile provisioning',
-      description: 'Pay per eSIM profile delivered. No minimums for established operators.',
+      description: 'Pay per eSIM profile delivered.',
     },
     {
       title: 'White-label RSP platform',
-      description: 'Full branded eSIM provisioning platform for your subscribers. Monthly platform fee.',
+      description: 'A branded eSIM provisioning platform for your subscribers.',
     },
     {
       title: 'Connectivity bundling',
-      description: 'Bundle eSIM profile + data plan. Revenue share model available.',
+      description: 'Bundle an eSIM profile with a data plan.',
     },
     {
       title: 'IoT fleet management',
-      description: 'Per-device monthly management fee. SM-DP+ infrastructure + OTA updates.',
+      description: 'Profile management and over-the-air updates for connected devices.',
     },
   ];
 

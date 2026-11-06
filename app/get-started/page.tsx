@@ -44,7 +44,7 @@ export default async function GetStartedPage({
               </li>
               <li>
                 <span className="label block text-navy-DEFAULT">One team</span>
-                24/7 NOC support.
+                A single team to call when it matters.
               </li>
             </ul>
           </div>

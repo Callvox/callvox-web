@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ArrowRight } from '@phosphor-icons/react'
 import { Button } from '@/components/callvox-ui/Button'
+import { STATS } from '@/lib/stats'
 import { HeroBackdrop } from '@/components/sections/HeroBackdrop'
 
 export default function AirtimeHero() {
@@ -71,7 +72,7 @@ export default function AirtimeHero() {
           className="text-white font-bold leading-tight mb-4 text-balance"
           style={{ fontSize: 'clamp(41px, 6.2vw, 73px)' }}
         >
-          800+ operators. Sub-3-second delivery. Built for remittance corridors.
+          {STATS.operators.value} operators. Built for remittance corridors.
         </motion.h1>
 
         {/* Subtitle */}

@@ -6,15 +6,15 @@ import { ChatDots, ArrowRight } from '@phosphor-icons/react';
 const features = [
   {
     title: 'Direct carrier connections',
-    desc: '600+ direct operator connections. No third-party hubs between your traffic and the destination carrier.',
+    desc: 'Direct operator connections, without third-party hubs between your traffic and the destination carrier.',
   },
   {
     title: 'HLR / MNP pre-validation',
     desc: 'Validate every number before send. Reduce failed deliveries and wasted spend on invalid or ported numbers.',
   },
   {
-    title: 'Real-time DLR webhooks',
-    desc: 'Delivery receipts pushed to your endpoint in under 2 seconds. Full delivery state visibility — delivered, failed, pending, expired.',
+    title: 'DLR webhooks',
+    desc: 'Delivery receipts pushed to your endpoint, with delivery state visibility: delivered, failed, pending, expired.',
   },
 ];
 
@@ -24,17 +24,14 @@ Content-Type: application/json
 {
   "to": "+1234567890",
   "from": "YourBrand",
-  "text": "Your OTP: 123456",
-  "sender_id": "10DLC"
+  "text": "Your OTP: 123456"
 }
 
 // DLR Webhook Response
 {
   "message_id": "msg_abc123xyz",
   "status": "delivered",
-  "timestamp": "2024-01-15T14:32:45Z",
-  "carrier": "Verizon",
-  "latency_ms": 1240
+  "timestamp": "2024-01-15T14:32:45Z"
 }`;
 
 export default function DeliverabilitySection() {
@@ -50,7 +47,7 @@ export default function DeliverabilitySection() {
         >
           <h2 className="text-navy-DEFAULT font-semibold text-4xl mb-6">Delivery is the product.</h2>
           <p className="text-navy-600 text-lg leading-relaxed">
-            Grey routes are cheap until they're not. Carrier filtering kills grey-route traffic overnight — and your clients' campaigns with it. Callvox routes exclusively through direct carrier connections. No grey routes. Ever.
+            Grey routes are cheap until carrier filtering blocks them, and your clients' campaigns with them. Callvox routes through direct carrier connections.
           </p>
         </motion.div>
 

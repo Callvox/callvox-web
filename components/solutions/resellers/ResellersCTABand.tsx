@@ -1,6 +1,7 @@
 'use client';
 
 import { motion, useInView } from 'framer-motion';
+import Link from 'next/link';
 import { useRef } from 'react';
 
 const fadeUpVariants = {
@@ -24,7 +25,7 @@ export default function ResellersCTABand() {
           variants={fadeUpVariants}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          className="font-sans font-bold text-navy-DEFAULT text-4xl mb-4"
+          className="text-navy-DEFAULT text-4xl mb-4"
         >
           Ready to add five new revenue streams?
         </motion.h2>
@@ -36,7 +37,7 @@ export default function ResellersCTABand() {
           animate={isInView ? 'visible' : 'hidden'}
           className="text-navy-200 text-lg mb-10 max-w-2xl mx-auto"
         >
-          Partner onboarding takes under 48 hours. API access, portal setup, and your first rate deck included.
+          Tell us your corridors and expected volumes and we will come back with a rate deck.
         </motion.p>
 
         <motion.div
@@ -46,12 +47,18 @@ export default function ResellersCTABand() {
           animate={isInView ? 'visible' : 'hidden'}
           className="flex gap-4 justify-center flex-wrap"
         >
-          <button className="bg-navy-DEFAULT text-white px-8 py-3 font-semibold rounded-lg hover:bg-navy-800 transition">
+          <Link
+            href="/get-started?type=reseller"
+            className="bg-navy-DEFAULT text-white px-8 py-3 font-semibold rounded-sm hover:bg-navy-700 transition-colors"
+          >
             Become a partner
-          </button>
-          <button className="border-2 border-navy-300 text-navy-DEFAULT px-8 py-3 font-semibold rounded-lg hover:bg-navy-50 transition">
-            See white-label options
-          </button>
+          </Link>
+          <Link
+            href="/pricing"
+            className="border border-navy-300 text-navy-DEFAULT px-8 py-3 font-semibold rounded-sm hover:bg-navy-50 transition-colors"
+          >
+            View pricing
+          </Link>
         </motion.div>
       </div>
     </section>

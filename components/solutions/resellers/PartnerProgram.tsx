@@ -14,16 +14,16 @@ const fadeUpVariants = {
 
 const tiers = [
   {
-    name: 'Starter',
-    features: ['No minimum', 'Self-serve portal', 'Standard wholesale rates', 'Email support'],
+    name: 'Rates',
+    features: ['Rates quoted by corridor', 'Volume pricing agreed up front', 'Custom terms: talk to us'],
   },
   {
-    name: 'Growth',
-    features: ['$2,500/mo min', 'Dedicated account manager', 'Volume pricing', 'Priority support'],
+    name: 'Platform',
+    features: ['One integration across products', 'One invoice', 'White-label options on request'],
   },
   {
-    name: 'Enterprise',
-    features: ['$10,000+/mo', 'Custom SLA', 'White-label platform', 'Named NOC contact'],
+    name: 'Support',
+    features: ['One support contact', 'Direct routes, not aggregated', 'Onboarding help'],
   },
 ];
 
@@ -39,9 +39,9 @@ export default function PartnerProgram() {
           variants={fadeUpVariants}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          className="font-sans font-bold text-white text-4xl mb-16"
+          className="text-white text-4xl mb-16"
         >
-          The Callvox Partner Program.
+          Partner terms, set with you.
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

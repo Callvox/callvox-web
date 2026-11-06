@@ -8,17 +8,17 @@ export function WhoItsForESIM() {
     {
       icon: SimCard,
       title: 'MVNOs',
-      description: 'Launch or expand your MVNO with a white-label RSP (Remote SIM Provisioning) platform. Over-the-air profile delivery, subscriber management, and multi-carrier connectivity bundled.',
+      description: 'Launch or expand your MVNO with eSIM provisioning. Over-the-air profile delivery and subscriber management through one wholesale partner.',
     },
     {
       icon: Airplane,
       title: 'Travel operators',
-      description: 'Offer eSIM data plans to travellers without physical SIM inventory. Instant profile delivery to SGP.22-compatible devices at point of booking.',
+      description: 'Offer eSIM data plans to travellers without physical SIM inventory. Profile delivery at point of booking.',
     },
     {
       icon: HardDrives,
       title: 'Enterprise IoT',
-      description: 'Deploy connected devices at scale with GSMA SGP.32 (eSIM IoT spec). Eliminate SIM logistics. Manage profiles OTA across your entire device fleet.',
+      description: 'Deploy connected devices without SIM logistics. Manage profiles over the air across your device fleet.',
     },
   ];
 

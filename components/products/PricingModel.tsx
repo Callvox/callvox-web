@@ -1,26 +1,21 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export function PricingModel() {
   const pricingTiers = [
     {
-      title: 'US & Canada Domestic',
-      price: '$0.01–0.03',
-      unit: 'per minute',
-      description: 'Competitive blended rates. STIR/SHAKEN included.',
+      title: 'By destination',
+      description: 'Per-minute rates are set per destination and route type.',
     },
     {
-      title: 'Europe (major markets)',
-      price: '$0.02–0.06',
-      unit: 'per minute',
-      description: 'Direct interconnects to all major EU carriers.',
+      title: 'By volume',
+      description: 'Volume tiers are agreed with you and shown in your rate deck.',
     },
     {
-      title: 'Africa & Emerging Markets',
-      price: 'From $0.05',
-      unit: 'per minute',
-      description: 'Premium CLI routes to 40+ African destinations.',
+      title: 'On request',
+      description: 'Tell us your corridors and we will send destination-level pricing.',
     },
   ];
 
@@ -34,9 +29,9 @@ export function PricingModel() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-semibold text-navy-DEFAULT mb-4">Transparent pricing. No surprises.</h2>
+          <h2 className="text-4xl md:text-5xl font-semibold text-navy-DEFAULT mb-4">Pricing built around your corridors.</h2>
           <p className="text-lg text-navy-600">
-            Per-minute rates vary by destination. Volume discounts applied automatically. No setup fees, no monthly minimums for established carriers.
+            Per-minute rates vary by destination, route type and volume. Request a rate deck for the corridors you need.
           </p>
         </motion.div>
 
@@ -50,11 +45,7 @@ export function PricingModel() {
               viewport={{ once: true }}
               className="bg-navy-50/50 rounded-xl p-8 border border-navy-100"
             >
-              <h3 className="text-lg font-semibold text-navy-DEFAULT mb-4">{tier.title}</h3>
-              <div className="mb-6">
-                <p className="text-4xl font-bold text-cyan-DEFAULT">{tier.price}</p>
-                <p className="text-sm text-navy-600 mt-1">{tier.unit}</p>
-              </div>
+              <h3 className="text-lg font-semibold text-navy-DEFAULT mb-3">{tier.title}</h3>
               <p className="text-navy-600">{tier.description}</p>
             </motion.div>
           ))}
@@ -67,12 +58,9 @@ export function PricingModel() {
           viewport={{ once: true }}
           className="text-center pt-8 border-t border-navy-100"
         >
-          <p className="text-navy-600 mb-6">
-            All rates vary by volume tier, route type, and destination.
-          </p>
-          <button className="inline-block bg-navy-DEFAULT hover:bg-navy-600 text-white px-8 py-3 rounded-lg font-medium transition-colors">
-            Talk to a specialist
-          </button>
+          <Link href="/get-started?type=carrier" className="inline-block bg-navy-DEFAULT hover:bg-navy-600 text-white px-8 py-3 rounded-lg font-medium transition-colors">
+            Request a rate deck
+          </Link>
         </motion.div>
       </div>
     </section>

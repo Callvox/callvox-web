@@ -1,21 +1,20 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { STATS } from '@/lib/stats';
 
 const stats = [
-  { number: '2', label: 'decades', description: 'Track record. Founded 2007, operating continuously' },
-  { number: '500+', label: 'direct routes', description: 'Voice termination across 4 continents' },
-  { number: '800+', label: 'operators', description: 'Airtime top-up coverage' },
-  { number: '90+', label: 'countries', description: 'DID number availability' },
-  { number: '150+', label: 'carriers & MVNOs', description: 'Active wholesale relationships' },
-  { number: '99.99%', label: 'uptime', description: 'SLA across all services' }
+  { number: STATS.routes.value, label: 'direct routes', description: 'Voice termination built corridor by corridor' },
+  { number: STATS.countries.value, label: 'countries', description: 'Reached through one platform' },
+  { number: STATS.operators.value, label: 'operators', description: 'Mobile operators for airtime top-ups' },
+  { number: '2007', label: 'founded', description: 'Operating as a wholesale carrier since' }
 ];
 
 export default function ByTheNumbers() {
   return (
-    <section className="bg-navy-DEFAULT py-20 md:py-24">
+    <section className="bg-navy-DEFAULT py-20 md:py-24 surface-ink">
       <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-10">
           {stats.map((stat, idx) => (
             <motion.div
               key={idx}

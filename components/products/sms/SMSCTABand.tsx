@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Button } from '@/components/callvox-ui/Button';
+import Link from 'next/link';
 
 export default function SMSCTABand() {
   return (
@@ -14,9 +14,9 @@ export default function SMSCTABand() {
           viewport={{ once: true }}
           className="space-y-4"
         >
-          <h2 className="text-navy-DEFAULT font-semibold text-4xl">Stop losing revenue to failed deliveries.</h2>
+          <h2 className="text-navy-DEFAULT font-semibold text-4xl">Tell us your messaging corridors.</h2>
           <p className="text-navy-600 text-lg">
-            Talk to a messaging specialist within 1 business day.
+            Talk to a messaging specialist about routes, rates and integration.
           </p>
         </motion.div>
 
@@ -27,9 +27,9 @@ export default function SMSCTABand() {
           viewport={{ once: true }}
           className="flex flex-col sm:flex-row gap-4 justify-center pt-4"
         >
-          <Button variant="primary">
+          <Link href="/get-started?type=carrier" className="inline-flex items-center justify-center font-medium rounded-sm transition-colors duration-200 h-10 px-5 text-sm bg-navy-DEFAULT text-white hover:bg-navy-700">
             Talk to a specialist
-          </Button>
+          </Link>
         </motion.div>
       </div>
     </section>

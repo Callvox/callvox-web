@@ -27,8 +27,8 @@ export interface CoverageRow {
 
 export const airtimeCoverage: CoverageRow[] = [
   // Africa
-  { id: 'ng-mtn', corridor: 'Africa', country: 'Nigeria', operator: 'MTN', product: 'airtime', status: 'live', avgDeliveryTime: '1.8s', notes: 'Enhanced KYC tier required above ₦150,000-equivalent/day.' },
-  { id: 'ng-airtel', corridor: 'Africa', country: 'Nigeria', operator: 'Airtel', product: 'airtime', status: 'live', avgDeliveryTime: '2.1s', notes: 'Enhanced KYC tier required above ₦150,000-equivalent/day.' },
+  { id: 'ng-mtn', corridor: 'Africa', country: 'Nigeria', operator: 'MTN', product: 'airtime', status: 'live', avgDeliveryTime: '1.8s', notes: 'Enhanced KYC tier applies for higher-value transactions.' },
+  { id: 'ng-airtel', corridor: 'Africa', country: 'Nigeria', operator: 'Airtel', product: 'airtime', status: 'live', avgDeliveryTime: '2.1s', notes: 'Enhanced KYC tier applies for higher-value transactions.' },
   { id: 'ng-glo', corridor: 'Africa', country: 'Nigeria', operator: 'Glo', product: 'airtime', status: 'coming-soon', avgDeliveryTime: null, notes: 'Aggregator onboarding in progress.' },
   { id: 'ng-9mobile', corridor: 'Africa', country: 'Nigeria', operator: '9mobile', product: 'airtime', status: 'coming-soon', avgDeliveryTime: null, notes: 'Aggregator onboarding in progress.' },
   { id: 'ke-safaricom', corridor: 'Africa', country: 'Kenya', operator: 'Safaricom', product: 'airtime', status: 'live', avgDeliveryTime: '1.6s', notes: 'Standard KYC tier; M-Pesa-linked daily limits apply.' },
@@ -52,7 +52,7 @@ export const airtimeCoverage: CoverageRow[] = [
   // Latin America
   { id: 'mx-telcel', corridor: 'Latin America', country: 'Mexico', operator: 'Telcel', product: 'airtime', status: 'live', avgDeliveryTime: '1.7s', notes: 'Standard KYC tier.' },
   { id: 'mx-movistar', corridor: 'Latin America', country: 'Mexico', operator: 'Movistar', product: 'airtime', status: 'live', avgDeliveryTime: '2.3s', notes: 'Standard KYC tier.' },
-  { id: 'br-claro', corridor: 'Latin America', country: 'Brazil', operator: 'Claro', product: 'airtime', status: 'live', avgDeliveryTime: '2.1s', notes: 'BACEN reporting threshold applies above R$10,000-equivalent/month.' },
+  { id: 'br-claro', corridor: 'Latin America', country: 'Brazil', operator: 'Claro', product: 'airtime', status: 'live', avgDeliveryTime: '2.1s', notes: 'Regulatory reporting thresholds apply.' },
   { id: 'br-tim', corridor: 'Latin America', country: 'Brazil', operator: 'TIM', product: 'airtime', status: 'coming-soon', avgDeliveryTime: null, notes: 'Aggregator onboarding in progress.' },
   { id: 'co-claro', corridor: 'Latin America', country: 'Colombia', operator: 'Claro', product: 'airtime', status: 'coming-soon', avgDeliveryTime: null, notes: 'Direct MNO agreement pending.' },
   { id: 'ar-personal', corridor: 'Latin America', country: 'Argentina', operator: 'Personal', product: 'airtime', status: 'coming-soon', avgDeliveryTime: null, notes: 'Aggregator onboarding in progress.' },

@@ -1,14 +1,14 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { STATS } from '@/lib/stats';
 import { HeroBackdrop } from '@/components/sections/HeroBackdrop'
 
 export function VoiceHero() {
   const stats = [
-    { value: '500+', label: 'Direct routes' },
-    { value: '99.99%', label: 'ASR uptime' },
-    { value: '<150ms', label: 'One-way latency' },
-    { value: '24/7', label: 'NOC support' },
+    { value: STATS.routes.value, label: 'Direct routes' },
+    { value: STATS.countries.value, label: 'Countries reached' },
   ];
 
   return (
@@ -60,7 +60,7 @@ export function VoiceHero() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-lg md:text-xl text-navy-200 mb-8 max-w-xl leading-relaxed"
             >
-              500+ direct voice routes across Africa, Latin America, South Asia & the Middle East. Tier-1 quality without Tier-1 procurement cycles.
+              500+ direct voice routes across Africa, Latin America, South Asia & the Middle East, with SIP trunk or IP peering interconnect.
             </motion.p>
 
             {/* CTAs */}
@@ -70,9 +70,9 @@ export function VoiceHero() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="flex flex-wrap gap-4"
             >
-              <button className="bg-white text-navy-DEFAULT px-8 py-3 rounded-lg font-semibold hover:bg-navy-50 transition-colors">
+              <Link href="/get-started?type=carrier" className="bg-white text-navy-DEFAULT px-8 py-3 rounded-lg font-semibold hover:bg-navy-50 transition-colors">
                 Get Voice Rates
-              </button>
+              </Link>
             </motion.div>
           </motion.div>
 

@@ -81,8 +81,7 @@ export default function AirtimeRateDeckForm() {
               <CheckCircle size={32} weight="fill" className="text-cyan-DEFAULT" />
               <p className="text-white font-semibold">Request received.</p>
               <p className="text-navy-200 text-sm max-w-sm">
-                A specialist will send the rate deck to your email once your request is reviewed —
-                usually within one business day.
+                A specialist will send the rate deck to your email once your request is reviewed.
               </p>
             </motion.div>
           ) : (

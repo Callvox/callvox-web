@@ -1,24 +1,23 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight } from '@phosphor-icons/react';
-import { Button } from '@/components/callvox-ui/Button';
+import Link from 'next/link';
 
 const pricingCards = [
   {
-    region: 'US Domestic',
-    rate: 'from $0.007/SMS',
-    features: ['+ carrier fees disclosed', '10DLC registration included'],
+    region: 'By destination',
+    rate: 'Per-message rates',
+    features: ['Set per destination and route type'],
   },
   {
-    region: 'Europe',
-    rate: 'from $0.02/SMS',
-    features: ['Direct carrier routes to all major EU markets'],
+    region: 'By volume',
+    rate: 'Volume tiers',
+    features: ['Agreed with you and shown in your rate deck'],
   },
   {
-    region: 'Africa & Asia',
-    rate: 'from $0.04/SMS',
-    features: ['Direct carrier connections across 80+ markets'],
+    region: 'On request',
+    rate: 'Rate deck',
+    features: ['Tell us your corridors and we will send pricing'],
   },
 ];
 
@@ -32,9 +31,9 @@ export default function SMSPricing() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-white font-semibold text-4xl mb-4">Volume pricing. No hidden surcharges.</h2>
+          <h2 className="text-white font-semibold text-4xl mb-4">Pricing built around your traffic.</h2>
           <p className="text-navy-200 text-lg">
-            Wholesale per-message rates. Carrier surcharges disclosed upfront. Volume tiers unlock automatically.
+            Wholesale per-message rates by destination and volume. Request a rate deck for your corridors.
           </p>
         </motion.div>
 
@@ -71,9 +70,9 @@ export default function SMSPricing() {
           viewport={{ once: true }}
           className="flex justify-center pt-8"
         >
-          <Button variant="primary" className="bg-white text-navy-DEFAULT hover:bg-gray-100">
-            Talk to a specialist
-          </Button>
+          <Link href="/get-started?type=carrier" className="inline-flex items-center justify-center font-medium rounded-sm transition-colors duration-200 h-10 px-5 text-sm bg-white text-navy-DEFAULT hover:bg-signal">
+            Request a rate deck
+          </Link>
         </motion.div>
       </div>
     </section>

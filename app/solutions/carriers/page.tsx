@@ -5,17 +5,16 @@ import CarriersHero from '@/components/solutions/carriers/CarriersHero'
 import PainPoints from '@/components/solutions/carriers/PainPoints'
 import WhatYouGet from '@/components/solutions/carriers/WhatYouGet'
 import SLADetails from '@/components/solutions/carriers/SLADetails'
-import CarrierTestimonial from '@/components/solutions/carriers/CarrierTestimonial'
 import CarriersCTABand from '@/components/solutions/carriers/CarriersCTABand'
 
 export const metadata: Metadata = {
   title: 'For Carriers & Telecom Operators',
   description:
-    'Direct interconnects. 99.99% SLA. 24/7 NOC. Wholesale voice, SMS and numbers built for carrier-to-carrier relationships.',
+    'Direct routes to 190+ countries and 1700+ operators. Wholesale voice, SMS and numbers from one team, built for carrier-to-carrier relationships.',
   openGraph: {
     title: 'For Carriers & Telecom Operators | Callvox',
     description:
-      'Direct interconnects. 99.99% SLA. 24/7 NOC. Carrier-grade infrastructure and relationships.',
+      'Direct routes, one integration and one team to call. Wholesale voice, SMS and numbers for carriers.',
     type: 'website',
   },
 }
@@ -29,7 +28,6 @@ export default function CarriersPage() {
         <PainPoints />
         <WhatYouGet />
         <SLADetails />
-        <CarrierTestimonial />
         <CarriersCTABand />
       </main>
       <Footer />

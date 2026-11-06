@@ -12,14 +12,10 @@ export function OrganizationJsonLd({ type = 'Organization' }: OrganizationJsonLd
     description:
       'The unified wholesale platform built for the world\'s fastest-growing markets. Voice, SMS, airtime, eSIM & DIDs — one platform.',
     foundingDate: '2007',
-    sameAs: [
-      'https://linkedin.com/company/callvox',
-      'https://x.com/callvoxnet',
-    ],
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'sales',
-      availableLanguage: ['English', 'Spanish', 'Portuguese'],
+      url: 'https://callvox.net/get-started',
     },
     areaServed: [
       { '@type': 'Continent', name: 'Africa' },

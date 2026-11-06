@@ -4,7 +4,7 @@ import AirtimeCoverageHero from '@/components/products/airtime/coverage/AirtimeC
 import AirtimeCoverageTable from '@/components/products/airtime/coverage/AirtimeCoverageTable'
 
 export const metadata = {
-  title: 'Airtime Operator Coverage | Callvox',
+  title: 'Airtime Operator Coverage',
   description:
     'Live and coming-soon airtime top-up operator coverage across Africa, South Asia, Latin America, and the Middle East.',
 }

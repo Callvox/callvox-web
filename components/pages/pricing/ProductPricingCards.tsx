@@ -1,15 +1,14 @@
 'use client';
 
+import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Phone, ChatCircle, DeviceMobile, SimCard, PhoneIncoming, CheckCircle, ArrowRight, type Icon } from '@phosphor-icons/react';
+import { Phone, ChatCircle, DeviceMobile, SimCard, PhoneIncoming, CheckCircle, type Icon } from '@phosphor-icons/react';
+import { STATS } from '@/lib/stats';
 
 interface ProductPricingCard {
   icon: Icon;
   name: string;
-  price: string;
-  unit: string;
-  showFrom: boolean;
-  href?: string;
+  basis: string;
   features: string[];
 }
 
@@ -17,64 +16,33 @@ const products: ProductPricingCard[] = [
   {
     icon: Phone,
     name: 'Voice',
-    price: '0.01',
-    unit: '/ min',
-    showFrom: true,
-    features: [
-      'Direct CLI routes',
-      '500+ destinations',
-      'Volume tiers'
-    ]
+    basis: 'Quoted per destination',
+    features: [`${STATS.routes.value} direct routes`, 'SIP trunk or IP peering', 'Volume-based rates'],
   },
   {
     icon: ChatCircle,
     name: 'SMS',
-    price: '0.007',
-    unit: '/ msg',
-    showFrom: true,
-    features: [
-      '10DLC included',
-      '200+ countries',
-      'SMPP + REST API'
-    ]
+    basis: 'Quoted per destination',
+    features: ['SMPP and REST API', 'Delivery receipts', 'Volume-based rates'],
   },
   {
     icon: DeviceMobile,
     name: 'Airtime',
-    price: 'Tiered',
-    unit: 'by volume',
-    showFrom: false,
-    href: '/products/airtime/pricing',
-    features: [
-      '800+ operators',
-      '<3s delivery',
-      'Webhook confirms'
-    ]
+    basis: 'Quoted by operator and volume',
+    features: [`${STATS.operators.value} operators`, 'Top-ups through one API', 'Delivery status by API'],
   },
   {
     icon: SimCard,
     name: 'eSIM',
-    price: 'custom',
-    unit: 'pricing',
-    showFrom: false,
-    features: [
-      'Profile + platform',
-      'White-label or API',
-      'GSMA certified'
-    ]
+    basis: 'Quoted by project',
+    features: ['Profile provisioning by API', 'Activation by LPA string', 'Platform and profile pricing'],
   },
   {
     icon: PhoneIncoming,
     name: 'DIDs',
-    price: '1.50',
-    unit: '/ month',
-    showFrom: true,
-    features: [
-      '90+ countries',
-      'Free porting',
-      'Voice + SMS'
-    ]
-  }
+    basis: 'Quoted by country and number type',
+    features: ['Numbers provisioned on demand', 'Route to your trunk', 'Order by API or portal'],
+  },
 ];
 
 export default function ProductPricingCards() {
@@ -91,15 +59,12 @@ export default function ProductPricingCards() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: idx * 0.05 }}
                 viewport={{ once: true }}
-                className="border border-navy-100 rounded-2xl p-8 bg-white hover:shadow-lg transition-shadow"
+                className="border border-navy-100 rounded-md p-8 bg-white hover:shadow-lg transition-shadow"
               >
                 <Icon size={36} weight="duotone" className="text-navy-600 mb-4" />
                 <h3 className="text-navy-DEFAULT font-bold text-xl mb-3">{product.name}</h3>
-                
-                <div className="mb-6">
-                  <span className="text-navy-DEFAULT font-bold" style={{ fontSize: '20px' }}>{product.showFrom ? 'from ' : ''}{product.price}</span>
-                  <span className="text-navy-400 text-base ml-2">{product.unit}</span>
-                </div>
+
+                <p className="mb-6 text-navy-400 text-sm">{product.basis}</p>
 
                 <ul className="mb-6 space-y-3">
                   {product.features.map((feature, fidx) => (
@@ -110,9 +75,9 @@ export default function ProductPricingCards() {
                   ))}
                 </ul>
 
-                <a href={product.href ?? '#'} className="text-cyan-DEFAULT font-semibold text-sm flex items-center gap-2 hover:gap-3 transition-all">
-                  Get rates
-                </a>
+                <Link href="/get-started" className="text-cyan-DEFAULT font-semibold text-sm flex items-center gap-2 hover:gap-3 transition-all">
+                  Request rates
+                </Link>
               </motion.div>
             );
           })}
@@ -125,7 +90,7 @@ export default function ProductPricingCards() {
           viewport={{ once: true }}
           className="text-navy-400 text-xs text-center mt-8 max-w-2xl mx-auto"
         >
-          All prices are indicative wholesale rates. Final pricing depends on volume tier, destination, and account type. Request a custom rate deck for exact quotes.
+          Pricing depends on destination, service and volume. Request a rate deck for exact quotes.
         </motion.p>
       </div>
     </section>

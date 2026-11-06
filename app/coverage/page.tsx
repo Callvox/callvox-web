@@ -7,8 +7,8 @@ import RateFinderCTA from '@/components/pages/coverage/RateFinderCTA';
 import NetworkInfrastructure from '@/components/pages/coverage/NetworkInfrastructure';
 
 export const metadata = {
-  title: 'Global Coverage | Callvox',
-  description: '500+ voice routes, 800+ airtime operators, DIDs in 90+ countries. Built for emerging markets.',
+  title: 'Global Coverage',
+  description: '500+ voice routes, 1700+ airtime operators and 190+ countries. Built for emerging markets.',
 };
 
 export default function CoveragePage() {

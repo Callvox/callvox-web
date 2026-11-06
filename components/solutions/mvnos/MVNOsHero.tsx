@@ -2,7 +2,7 @@
 
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Button } from '@/components/callvox-ui/Button';
+import Link from 'next/link';
 import { HeroBackdrop } from '@/components/sections/HeroBackdrop'
 
 export default function MVNOsHero() {
@@ -35,23 +35,22 @@ export default function MVNOsHero() {
           </h1>
 
           <p className="text-navy-200 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-            Everything an MVNO needs in one wholesale relationship — voice termination, A2P messaging, eSIM provisioning, airtime, and virtual numbers. Cloud-native APIs. No long-term commitment required to start.
+            Everything an MVNO needs from one wholesale partner: voice termination, A2P messaging, eSIM provisioning, airtime and virtual numbers. One integration, one invoice, one support contact.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button
-              variant="white"
-              size="lg"
+            <Link
+              href="/get-started?type=mvno"
+              className="inline-flex h-12 items-center justify-center rounded-sm bg-white px-7 text-[15px] font-medium text-navy-DEFAULT transition-colors hover:bg-signal"
             >
-              Talk to an MVNO Specialist
-            </Button>
-            <Button
-              variant="ghost"
-              size="lg"
-              className="text-white border-white hover:bg-white/10"
+              Talk to us
+            </Link>
+            <Link
+              href="/pricing"
+              className="inline-flex h-12 items-center justify-center rounded-sm border border-white/30 px-7 text-[15px] font-medium text-white transition-colors hover:border-white hover:bg-white/5"
             >
-              View Pricing
-            </Button>
+              View pricing
+            </Link>
           </div>
         </motion.div>
       </div>

@@ -11,8 +11,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/coverage',
     '/developers',
     '/pricing',
-    '/resources',
     '/get-started',
+    '/privacy',
+    '/terms',
   ]
 
   // Product pages

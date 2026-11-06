@@ -7,16 +7,16 @@ import { Check } from '@phosphor-icons/react';
 
 const philosophies = [
   {
-    title: 'No setup fees',
-    desc: 'Zero onboarding cost for new MVNOs. Pay only for what you use.',
+    title: 'Rates by corridor',
+    desc: 'Pricing depends on the destinations you send traffic to.',
   },
   {
-    title: 'Month-to-month',
-    desc: 'No long-term contracts required at entry tier. Annual agreements unlock volume pricing.',
+    title: 'Volume-aware',
+    desc: 'Tell us your expected volumes and we will quote accordingly.',
   },
   {
-    title: 'Volume tiers auto-apply',
-    desc: 'Rates improve automatically as your traffic grows. No renegotiation required.',
+    title: 'Terms agreed up front',
+    desc: 'Commercial terms are set with you before you send traffic.',
   },
 ];
 
@@ -47,7 +47,7 @@ export default function PricingPhilosophy() {
           className="mb-12"
         >
           <h2 className="text-navy-DEFAULT font-bold" style={{ fontSize: 'clamp(28px, 4vw, 36px)' }}>
-            Wholesale economics. Startup-friendly entry.
+            Pricing built around your traffic.
           </h2>
         </motion.div>
 

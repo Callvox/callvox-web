@@ -1,33 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight } from '@phosphor-icons/react';
-import { Button } from '@/components/callvox-ui/Button';
-import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { STATS } from '@/lib/stats';
 import { HeroBackdrop } from '@/components/sections/HeroBackdrop'
 
 export default function SMSHero() {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    let start = 0;
-    const end = 98.4;
-    const duration = 2000;
-    const increment = end / (duration / 50);
-
-    const timer = setInterval(() => {
-      start += increment;
-      if (start >= end) {
-        setCount(end);
-        clearInterval(timer);
-      } else {
-        setCount(parseFloat(start.toFixed(1)));
-      }
-    }, 50);
-
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <section className="relative min-h-[60vh] bg-navy-DEFAULT overflow-hidden surface-ink">
       <HeroBackdrop />
@@ -50,21 +28,21 @@ export default function SMSHero() {
               </div>
 
               <h1 className="text-white font-semibold text-balance" style={{ fontSize: 'clamp(41px, 8.8vw, 73px)' }}>
-                98%+ delivery. Zero grey routes. Full compliance.
+                Direct routes for A2P messaging.
               </h1>
             </div>
 
             <p className="text-navy-200 text-lg max-w-2xl">
-              Wholesale A2P messaging infrastructure for carriers, aggregators and platforms. Direct carrier connections across 200+ countries. 10DLC, TCPA and GDPR compliance built in.
+              Wholesale A2P messaging for carriers, aggregators and platforms, delivered over SMPP and a REST API.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button variant="white" className="">
+              <Link href="/get-started?type=carrier" className="inline-flex items-center justify-center font-medium rounded-sm transition-colors duration-200 h-10 px-5 text-sm bg-white text-navy-DEFAULT hover:bg-signal">
                 Talk to a specialist
-              </Button>
-              <Button variant="ghost" className="text-white border-white hover:bg-white/10">
+              </Link>
+              <Link href="/developers" className="inline-flex items-center justify-center font-medium rounded-sm transition-colors duration-200 h-10 px-5 text-sm border border-white text-white hover:bg-white/10">
                 View API Docs
-              </Button>
+              </Link>
             </div>
           </motion.div>
 
@@ -76,11 +54,10 @@ export default function SMSHero() {
           >
             <div className="text-center space-y-4">
               <div className="text-8xl font-bold text-cyan-DEFAULT">
-                {count.toFixed(1)}%
+                {STATS.countries.value}
               </div>
               <div className="space-y-2">
-                <p className="text-navy-200 text-sm">average delivery rate</p>
-                <p className="text-navy-400 text-xs">last 30 days</p>
+                <p className="text-navy-200 text-sm">countries reached through one platform</p>
               </div>
             </div>
           </motion.div>

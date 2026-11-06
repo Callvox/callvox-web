@@ -9,17 +9,17 @@ const benefits = [
   {
     icon: SimCard,
     title: 'White-label RSP platform',
-    desc: 'Full branded eSIM provisioning under your MVNO identity. Subscribers see your brand, not ours.',
+    desc: 'Branded eSIM provisioning under your MVNO identity, so subscribers see your brand.',
   },
   {
     icon: Truck,
     title: 'Eliminate SIM logistics',
-    desc: 'No physical SIM printing, warehousing, or distribution. OTA delivery from day one.',
+    desc: 'No physical SIM printing, warehousing or distribution. Profiles are delivered over the air.',
   },
   {
     icon: ArrowsClockwise,
-    title: 'Instant profile switching',
-    desc: 'Subscribers can switch between your plans — or switch to you from a competitor — without visiting a store.',
+    title: 'Easier switching',
+    desc: 'Subscribers can move between your plans, or move to you from another operator, without visiting a store.',
   },
 ];
 
@@ -50,10 +50,10 @@ export default function ESIMFocus() {
           className="mb-12"
         >
           <h2 className="text-navy-DEFAULT font-bold mb-4" style={{ fontSize: 'clamp(28px, 4vw, 36px)' }}>
-            eSIM — your biggest growth lever.
+            eSIM, without the SIM logistics.
           </h2>
           <p className="text-navy-600 text-lg leading-relaxed">
-            65% of new smartphones now support eSIM. MVNOs that can provision eSIM profiles have a meaningful competitive advantage over those still shipping physical SIMs. Callvox&apos;s SM-DP+ infrastructure is GSMA SAS-SM certified — the mandatory certification for commercial eSIM at scale.
+            MVNOs that offer eSIM can onboard subscribers without printing, shipping or stocking physical SIMs.
           </p>
         </motion.div>
 

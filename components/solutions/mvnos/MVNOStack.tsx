@@ -7,11 +7,11 @@ import { Phone, ChatCircle, SimCard, Lightning, Hash } from '@phosphor-icons/rea
 import { ArrowRight } from '@phosphor-icons/react';
 
 const services = [
-  { num: 1, name: 'Voice termination', desc: 'Direct routes, premium CLI', icon: Phone },
-  { num: 2, name: 'A2P SMS', desc: '98%+ delivery, 10DLC included', icon: ChatCircle },
-  { num: 3, name: 'eSIM provisioning', desc: 'GSMA SGP.22/32, white-label RSP', icon: SimCard },
-  { num: 4, name: 'Airtime top-up', desc: '800+ operators, <3s delivery', icon: Lightning },
-  { num: 5, name: 'DIDs / Numbers', desc: '90+ countries, instant provisioning', icon: Hash },
+  { num: 1, name: 'Voice termination', desc: 'Direct routes', icon: Phone },
+  { num: 2, name: 'A2P SMS', desc: 'Messaging by API', icon: ChatCircle },
+  { num: 3, name: 'eSIM provisioning', desc: 'Profiles by API', icon: SimCard },
+  { num: 4, name: 'Airtime top-up', desc: '1700+ operators', icon: Lightning },
+  { num: 5, name: 'DIDs / Numbers', desc: 'Virtual numbers', icon: Hash },
 ];
 
 export default function MVNOStack() {
@@ -44,7 +44,7 @@ export default function MVNOStack() {
             Your entire wholesale stack. One vendor.
           </h2>
           <p className="text-navy-600 text-lg max-w-2xl mx-auto">
-            MVNOs typically manage 3–5 vendor relationships for the services Callvox provides in one. One API. One invoice. One support contact.
+            Voice, messaging, eSIM, airtime and numbers from one wholesale partner. One integration. One invoice. One support contact.
           </p>
         </motion.div>
 
@@ -92,7 +92,7 @@ export default function MVNOStack() {
           transition={{ delay: 0.4, duration: 0.6 }}
           className="text-center"
         >
-          <p className="text-cyan-DEFAULT text-sm font-semibold">All through one API key. One monthly invoice.</p>
+          <p className="text-cyan-DEFAULT text-sm font-semibold">One integration. One invoice.</p>
         </motion.div>
       </div>
     </section>

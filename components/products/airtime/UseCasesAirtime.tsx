@@ -13,7 +13,7 @@ export default function UseCasesAirtime() {
     {
       icon: House,
       title: 'Diaspora remittance platforms',
-      description: 'Your users send airtime from the UK to Nigeria, the US to Mexico, Germany to India. Callvox delivers to their family\'s phone in under 3 seconds, to any operator.',
+      description: 'Your users send airtime from the UK to Nigeria, the US to Mexico, Germany to India. Callvox delivers airtime to their family\'s phone through the destination operator.',
     },
     {
       icon: Storefront,
@@ -23,7 +23,7 @@ export default function UseCasesAirtime() {
     {
       icon: ChartLineUp,
       title: 'Retail & reseller networks',
-      description: 'B2B2C airtime distribution at wholesale margins. Multi-tier reseller support with automated billing and real-time transaction tracking.',
+      description: 'Airtime distribution for retail and reseller networks, with transaction tracking through the API.',
     },
   ]
 
@@ -40,7 +40,7 @@ export default function UseCasesAirtime() {
             The infrastructure behind the world's remittance corridors.
           </h2>
           <p className="text-lg text-navy-600 max-w-3xl">
-            Diaspora communities send airtime, not just cash. It's the most direct form of mobile support — and the fastest growing.
+            Diaspora communities send airtime, not just cash. It's one of the most direct forms of mobile support.
           </p>
         </motion.div>
 

@@ -2,12 +2,13 @@
 
 import { motion } from 'framer-motion';
 import { ArrowRight } from '@phosphor-icons/react';
+import Link from 'next/link';
 
 export function RouteCoverage() {
   const regions = [
     {
       title: 'Africa',
-      destinations: 'Nigeria · Ghana · Kenya · South Africa · Egypt · Tanzania · Ethiopia (+18 more)',
+      destinations: 'Nigeria · Ghana · Kenya · South Africa · Egypt · Tanzania · Ethiopia',
     },
     {
       title: 'South Asia',
@@ -15,7 +16,7 @@ export function RouteCoverage() {
     },
     {
       title: 'Latin America',
-      destinations: 'Mexico · Brazil · Colombia · Peru · Argentina · Ecuador (+12 more)',
+      destinations: 'Mexico · Brazil · Colombia · Peru · Argentina · Ecuador',
     },
     {
       title: 'Middle East',
@@ -64,10 +65,10 @@ export function RouteCoverage() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <button className="inline-flex items-center gap-2 text-cyan-DEFAULT hover:text-cyan-light transition-colors font-medium">
-            Don't see your destination? Request a custom route
+          <Link href="/get-started?type=carrier" className="inline-flex items-center gap-2 text-cyan-DEFAULT hover:text-cyan-light transition-colors font-medium">
+            Don't see your destination? Tell us your corridors
             <ArrowRight size={18} weight="bold" />
-          </button>
+          </Link>
         </motion.div>
       </div>
     </section>

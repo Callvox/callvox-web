@@ -3,7 +3,7 @@ import { Footer } from '@/components/sections/Footer'
 import AirtimeTransactionsView from '@/components/products/airtime/transactions/AirtimeTransactionsView'
 
 export const metadata = {
-  title: 'Sandbox Transactions — Airtime | Callvox',
+  title: 'Sandbox Transactions — Airtime',
   description: 'Preview your airtime sandbox transaction log.',
 }
 

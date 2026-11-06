@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Button } from '@/components/callvox-ui/Button';
+import Link from 'next/link';
 import { HeroBackdrop } from '@/components/sections/HeroBackdrop'
 
 export default function EnterprisesHero() {
@@ -29,26 +29,26 @@ export default function EnterprisesHero() {
           </div>
 
           <h1 className="text-white font-bold mb-6" style={{ fontSize: 'clamp(41px, 10.0vw, 68px)' }}>
-            Enterprise-grade voice and numbers. Without enterprise procurement cycles.
+            Business voice and numbers, direct from a wholesale carrier.
           </h1>
 
           <p className="text-navy-200 text-lg leading-relaxed mb-8 max-w-3xl mx-auto">
-            SIP trunking, virtual numbers, and HD voice for businesses running on legacy PSTN or fragmented UCaaS providers. 40–70% cost reduction. 24/7 support. ISO 27001 certified.
+            SIP trunking, virtual numbers and voice for businesses running on legacy PSTN or fragmented UCaaS providers. One provider, one invoice, one support contact.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              variant="white"
-              size="lg"
+            <Link
+              href="/get-started?type=enterprise"
+              className="inline-flex h-12 items-center justify-center rounded-sm bg-white px-7 text-[15px] font-medium text-navy-DEFAULT transition-colors hover:bg-signal"
             >
-              Work with us
-            </Button>
-            <Button
-              variant="white-ghost"
-              size="lg"
+              Talk to us
+            </Link>
+            <Link
+              href="/pricing"
+              className="inline-flex h-12 items-center justify-center rounded-sm border border-white/30 px-7 text-[15px] font-medium text-white transition-colors hover:border-white hover:bg-white/5"
             >
-              Start Free Trial
-            </Button>
+              View pricing
+            </Link>
           </div>
         </motion.div>
       </div>

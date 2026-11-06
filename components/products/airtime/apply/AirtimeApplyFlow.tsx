@@ -320,7 +320,7 @@ export default function AirtimeApplyFlow() {
                       </span>{' '}
                       Sandbox credentials are issued right after this step regardless — but moving
                       real transactions requires our compliance team to confirm these details
-                      first, typically within one business day.
+                      first.
                     </p>
                   </div>
 

@@ -1,8 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight } from '@phosphor-icons/react';
-import { Button } from '@/components/callvox-ui/Button';
+import Link from 'next/link';
 import { HeroBackdrop } from '@/components/sections/HeroBackdrop'
 
 export default function DeveloperHero() {
@@ -28,24 +27,22 @@ export default function DeveloperHero() {
             </h1>
 
             <p className="text-navy-200 text-lg leading-relaxed mb-12 max-w-xl">
-              REST APIs for voice, SMS, airtime, eSIM and DIDs. SMPP for messaging. Sandbox access in under 5 minutes. No sales call required.
+              REST APIs for voice, SMS, airtime, eSIM and DIDs, with SMPP for messaging. One platform, one integration.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button
-                variant="primary"
-                size="lg"
-                className="bg-cyan-DEFAULT text-navy-DEFAULT hover:bg-cyan-DEFAULT/90"
+              <Link
+                href="/get-started?type=other"
+                className="inline-flex h-12 items-center justify-center rounded-sm bg-cyan-DEFAULT px-7 text-[15px] font-medium text-navy-DEFAULT transition-colors hover:bg-cyan-DEFAULT/90"
               >
-                Get API Keys
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-white text-white hover:bg-white/10"
+                Request API access
+              </Link>
+              <Link
+                href="/products/airtime/apply"
+                className="inline-flex h-12 items-center justify-center rounded-sm border border-white px-7 text-[15px] font-medium text-white transition-colors hover:bg-white/10"
               >
-                Read the Docs
-              </Button>
+                Airtime API access
+              </Link>
             </div>
           </motion.div>
 
@@ -57,7 +54,7 @@ export default function DeveloperHero() {
           >
             <div className="bg-[#0a1929] border border-[#1a3a52] rounded-xl p-6 font-mono text-sm text-navy-300 overflow-hidden">
               <div className="text-cyan-DEFAULT mb-4">
-                {'# Get your API key at developers.callvox.net'}
+                {'# Illustrative request'}
               </div>
               <div className="text-white mb-4">
                 {'curl -X POST https://api.callvox.net/v1/sms/send \\'}

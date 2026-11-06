@@ -20,7 +20,7 @@ export default function AirtimeCTABand() {
           transition={{ delay: 0.1 }}
           className="text-3xl md:text-4xl font-bold text-white text-balance mb-4"
         >
-          Start delivering airtime in under 24 hours.
+          Start delivering airtime.
         </motion.h2>
 
         <motion.p
@@ -29,7 +29,7 @@ export default function AirtimeCTABand() {
           transition={{ delay: 0.2 }}
           className="text-lg text-navy-200 max-w-2xl mx-auto mb-8"
         >
-          Sandbox access available immediately. Production activation within one business day for verified accounts.
+          Apply for API access and our team will follow up on sandbox and production activation.
         </motion.p>
 
         <motion.div

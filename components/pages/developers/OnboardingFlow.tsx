@@ -1,33 +1,33 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { UserCircle, Key, Phone, Rocket, ArrowRight } from '@phosphor-icons/react';
-import { Button } from '@/components/callvox-ui/Button';
+import Link from 'next/link';
+import { UserCircle, Key, Phone, Rocket } from '@phosphor-icons/react';
 
 const steps = [
   {
     num: 1,
     icon: UserCircle,
-    title: 'Create account',
-    description: 'Email + company. No credit card.'
+    title: 'Request access',
+    description: 'Tell us about your company and use case.'
   },
   {
     num: 2,
     icon: Key,
-    title: 'Get sandbox key',
-    description: 'Instant API access. Full sandbox parity with production.'
+    title: 'Get sandbox access',
+    description: 'Sandbox credentials to build and test against.'
   },
   {
     num: 3,
     icon: Phone,
     title: 'Make first call',
-    description: 'Follow the quickstart. First request in under 10 minutes.'
+    description: 'Send your first request from the sandbox.'
   },
   {
     num: 4,
     icon: Rocket,
     title: 'Go live',
-    description: 'Upgrade to production. Billing starts on first live request.'
+    description: 'Move to production once your account is verified.'
   }
 ];
 
@@ -42,7 +42,7 @@ export default function OnboardingFlow() {
           viewport={{ once: true }}
           className="text-navy-DEFAULT font-bold text-4xl md:text-5xl mb-16 text-center"
         >
-          From zero to live in under 10 minutes.
+          From request to live.
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
@@ -88,13 +88,12 @@ export default function OnboardingFlow() {
           viewport={{ once: true }}
           className="flex justify-center"
         >
-          <Button
-            variant="primary"
-            size="lg"
-            className="bg-navy-DEFAULT text-white hover:bg-navy-700"
+          <Link
+            href="/get-started?type=other"
+            className="inline-flex h-12 items-center justify-center rounded-sm bg-navy-DEFAULT px-7 text-[15px] font-medium text-white transition-colors hover:bg-navy-700"
           >
-            Start building
-          </Button>
+            Request API access
+          </Link>
         </motion.div>
       </div>
     </section>

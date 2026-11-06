@@ -1,13 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { MapPin, MagnifyingGlass } from '@phosphor-icons/react';
-import { useState } from 'react';
+import Link from 'next/link';
+import { STATS } from '@/lib/stats';
 import { HeroBackdrop } from '@/components/sections/HeroBackdrop'
 
 export default function CoverageHero() {
-  const [searchValue, setSearchValue] = useState('');
-
   return (
     <section className="relative bg-navy-DEFAULT py-20 md:py-24 overflow-hidden surface-ink">
       <HeroBackdrop />
@@ -24,27 +22,15 @@ export default function CoverageHero() {
           </h1>
 
           <p className="text-navy-200 text-lg leading-relaxed mb-12 max-w-3xl mx-auto">
-            500+ voice routes, 800+ airtime operators, DIDs in 90+ countries. Built for the corridors that matter most.
+            {STATS.routes.value} voice routes, {STATS.operators.value} airtime operators and {STATS.countries.value} countries. Built for the corridors that matter most.
           </p>
 
-          <div className="flex gap-3 max-w-2xl mx-auto">
-            <div className="flex-1 relative">
-              <div className="absolute left-4 top-1/2 -translate-y-1/2 text-cyan-DEFAULT">
-                <MapPin size={20} weight="bold" />
-              </div>
-              <input
-                type="text"
-                placeholder="Search a country or destination..."
-                value={searchValue}
-                onChange={(e) => setSearchValue(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 rounded-xl bg-white text-navy-DEFAULT placeholder-navy-400 border-none outline-none"
-              />
-            </div>
-            <button className="px-6 py-3 bg-navy-DEFAULT border border-white text-white font-semibold rounded-xl hover:bg-navy-700 transition-colors flex items-center gap-2">
-              <MagnifyingGlass size={20} weight="bold" />
-              Search
-            </button>
-          </div>
+          <Link
+            href="/get-started?type=carrier"
+            className="inline-flex h-12 items-center justify-center rounded-sm bg-signal px-7 text-[15px] font-semibold text-navy-DEFAULT transition-colors hover:bg-white"
+          >
+            Tell us your corridors
+          </Link>
         </motion.div>
       </div>
     </section>

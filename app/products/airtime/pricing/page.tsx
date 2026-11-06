@@ -1,14 +1,12 @@
 import Nav from '@/components/Nav'
 import { Footer } from '@/components/sections/Footer'
 import AirtimePricingHero from '@/components/products/airtime/pricing/AirtimePricingHero'
-import AirtimeVolumeTiers from '@/components/products/airtime/pricing/AirtimeVolumeTiers'
-import AirtimeFXNote from '@/components/products/airtime/pricing/AirtimeFXNote'
 import AirtimeRateDeckForm from '@/components/products/airtime/pricing/AirtimeRateDeckForm'
 
 export const metadata = {
-  title: 'Airtime Pricing | Callvox',
+  title: 'Airtime Pricing',
   description:
-    'Volume-based pricing tiers for wholesale airtime top-up. Request a rate deck for corridor-specific commission rates.',
+    'Airtime rates change with the market and vary by corridor. Request a current rate deck for wholesale airtime top-up.',
 }
 
 export default function AirtimePricingPage() {
@@ -16,8 +14,6 @@ export default function AirtimePricingPage() {
     <>
       <Nav />
       <AirtimePricingHero />
-      <AirtimeVolumeTiers />
-      <AirtimeFXNote />
       <AirtimeRateDeckForm />
       <Footer />
     </>

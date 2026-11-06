@@ -12,7 +12,7 @@ export function HowItWorks() {
     },
     {
       title: 'Callvox Network',
-      description: 'Route optimisation across 500+ direct interconnects. Real-time quality scoring selects the best path.',
+      description: 'Route optimisation across 500+ direct routes.',
       icon: ArrowsHorizontal,
     },
     {
@@ -35,7 +35,7 @@ export function HowItWorks() {
           <p className="text-xs uppercase tracking-widest text-cyan-DEFAULT font-medium mb-4">How It Works</p>
           <h2 className="text-4xl md:text-5xl font-semibold text-navy-DEFAULT mb-6">Direct. Not aggregated.</h2>
           <p className="text-base md:text-lg text-navy-600 max-w-2xl leading-relaxed">
-            Most wholesale carriers aggregate routes through intermediaries. Every hop adds latency, degrades ASR, and erodes CLI. Callvox operates direct interconnects — the route from your network to the terminating carrier is as short as physically possible.
+            Many wholesale carriers aggregate routes through intermediaries. Callvox operates direct interconnects, keeping the path from your network to the terminating carrier as short as possible.
           </p>
         </motion.div>
 

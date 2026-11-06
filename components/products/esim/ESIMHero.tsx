@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Check } from '@phosphor-icons/react';
+import Link from 'next/link';
 import { HeroBackdrop } from '@/components/sections/HeroBackdrop'
 
 export function ESIMHero() {
@@ -32,16 +32,16 @@ export function ESIMHero() {
           </h1>
 
           <p className="text-navy-200 text-lg mb-8 leading-relaxed">
-            GSMA SGP.22 and SGP.32 certified eSIM infrastructure for MVNOs, travel operators, and enterprise IoT. Over-the-air profile delivery. White-label RSP platform available.
+            Wholesale eSIM provisioning for MVNOs, travel operators, and enterprise IoT. Over-the-air profile delivery, available through the same integration as voice, SMS, airtime and numbers.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="px-6 py-3 bg-white text-navy-DEFAULT font-semibold rounded-lg hover:bg-navy-50 transition-colors">
+            <Link href="/get-started?type=mvno" className="px-6 py-3 bg-white text-navy-DEFAULT font-semibold rounded-lg hover:bg-navy-50 transition-colors">
               Talk to an eSIM Specialist
-            </button>
-            <button className="px-6 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-navy-900 transition-colors">
-              Download Buyer's Guide
-            </button>
+            </Link>
+            <Link href="/developers" className="px-6 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-navy-900 transition-colors">
+              View API Docs
+            </Link>
           </div>
         </motion.div>
 

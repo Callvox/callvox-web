@@ -7,17 +7,17 @@ const features = [
   {
     icon: HardDrive,
     title: 'Direct interconnects',
-    description: '500+ direct peering relationships with terminating carriers. No aggregation middlemen.'
+    description: 'Direct routes with terminating carriers, without aggregation in between.'
   },
   {
     icon: GitBranch,
-    title: 'Geo-redundant PoPs',
-    description: 'Points of presence across 4 continents with automatic failover routing.'
+    title: 'One platform',
+    description: 'Voice, SMS, airtime, eSIM and numbers through one integration and one invoice.'
   },
   {
     icon: ChartLineUp,
-    title: 'Real-time quality scoring',
-    description: 'Every route is scored continuously on ASR, PDD, and ACD. Traffic shifts to the best-performing path automatically.'
+    title: 'Corridor focus',
+    description: 'Built around Latin America, Africa, South Asia and the Middle East, since 2007.'
   }
 ];
 

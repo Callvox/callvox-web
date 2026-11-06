@@ -12,19 +12,19 @@ export default function OperatorCoverageAirtime() {
   const regions = [
     {
       title: 'Africa',
-      operators: 'MTN, Airtel, Glo, 9mobile (Nigeria) · Safaricom (Kenya) · Vodacom (SA) · Orange (multiple) · +120 operators',
+      operators: 'MTN, Airtel, Glo, 9mobile (Nigeria) · Safaricom (Kenya) · Vodacom (SA) · Orange (multiple)',
     },
     {
       title: 'South Asia',
-      operators: 'Jio, Airtel, Vi (India) · Jazz, Telenor (Pakistan) · Banglalink, Robi (BD) · +40 operators',
+      operators: 'Jio, Airtel, Vi (India) · Jazz, Telenor (Pakistan) · Banglalink, Robi (BD)',
     },
     {
       title: 'Latin America',
-      operators: 'Telcel, Movistar (Mexico) · Claro, TIM (Brazil) · +60 operators',
+      operators: 'Telcel, Movistar (Mexico) · Claro, TIM (Brazil)',
     },
     {
       title: 'Middle East & others',
-      operators: 'Etisalat, du (UAE) · STC (Saudi) · Zain (multiple) · +80 operators',
+      operators: 'Etisalat, du (UAE) · STC (Saudi) · Zain (multiple)',
     },
   ]
 
@@ -37,7 +37,7 @@ export default function OperatorCoverageAirtime() {
           transition={{ delay: 0.1 }}
           className="text-3xl md:text-4xl font-bold text-white text-balance mb-12 text-center"
         >
-          Every major corridor. Every major operator.
+          Operators across four regions.
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
@@ -61,7 +61,7 @@ export default function OperatorCoverageAirtime() {
           transition={{ delay: 0.6 }}
           className="text-center text-xs italic text-navy-300 mb-4"
         >
-          Full operator list available on request. AML/KYC daily limits apply as standard.
+          Full operator list available on request.
         </motion.p>
 
         <motion.div

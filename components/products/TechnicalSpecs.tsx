@@ -1,35 +1,29 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ShieldCheck, Lock, Certificate } from '@phosphor-icons/react';
+import Link from 'next/link';
+import { FileText, CurrencyDollar } from '@phosphor-icons/react';
 
 export function TechnicalSpecs() {
   const specs = [
     { label: 'Codecs', value: 'G.711 (a-law / μ-law), G.729, G.722 HD' },
     { label: 'Signalling', value: 'SIP (RFC 3261), TLS + SRTP' },
     { label: 'Transport', value: 'UDP, TCP, TLS' },
-    { label: 'Latency', value: '<150ms one-way (tier-1 routes)' },
     { label: 'DTMF', value: 'RFC 2833, SIP INFO, In-band' },
-    { label: 'Caller ID', value: 'Full CLI delivery, STIR/SHAKEN attestation A/B/C' },
-    { label: 'Billing', value: '6-second increments, real-time CDRs' },
-    { label: 'Failover', value: 'Automatic route failover <3 seconds' },
+    { label: 'Caller ID', value: 'CLI delivery' },
+    { label: 'Billing', value: 'Billing increments and CDR delivery confirmed in your rate deck' },
   ];
 
   const compliance = [
     {
-      icon: ShieldCheck,
-      title: 'STIR/SHAKEN',
-      description: 'FCC-mandated caller ID authentication. All US-bound traffic carries full attestation. Compliant with the TRACED Act.',
+      icon: FileText,
+      title: 'Interconnect details',
+      description: 'Request our technical interconnect details for your traffic profile and corridors.',
     },
     {
-      icon: Lock,
-      title: 'GDPR',
-      description: 'European CDR data processed and stored in compliance with GDPR Article 28. Data processing agreements available.',
-    },
-    {
-      icon: Certificate,
-      title: 'Country licensing',
-      description: 'Active regulatory approvals and local partnerships across Nigeria, Ghana, Kenya, India, Brazil, and Mexico.',
+      icon: CurrencyDollar,
+      title: 'Rate deck',
+      description: 'Destination-level pricing for the routes you need, on request.',
     },
   ];
 
@@ -99,6 +93,9 @@ export function TechnicalSpecs() {
                 </motion.div>
               );
             })}
+            <Link href="/get-started?type=carrier" className="inline-block text-cyan-DEFAULT font-medium hover:underline">
+              Request interconnect details →
+            </Link>
           </motion.div>
         </div>
       </div>

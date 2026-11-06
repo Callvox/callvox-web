@@ -4,17 +4,15 @@ import { motion } from 'framer-motion';
 import { CheckCircle } from '@phosphor-icons/react';
 
 const features = [
+  'One integration for every service',
+  'One invoice',
+  'One support contact',
   'API access',
-  'Real-time CDRs',
-  'Portal access',
-  'Email support',
-  'Status page access',
-  'Standard SLA documentation'
 ];
 
 export default function IncludedFeatures() {
   return (
-    <section className="bg-navy-DEFAULT py-20 md:py-24">
+    <section className="bg-navy-DEFAULT py-20 md:py-24 surface-ink">
       <div className="container">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -23,10 +21,10 @@ export default function IncludedFeatures() {
           viewport={{ once: true }}
           className="text-white font-bold text-4xl md:text-5xl mb-16"
         >
-          Included on every account. No extras.
+          One platform. One account.
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {features.map((feature, idx) => (
             <motion.div
               key={idx}

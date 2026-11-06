@@ -1,28 +1,28 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Phone, ShieldCheck, Clock, Headset } from '@phosphor-icons/react';
+import { Phone, PhoneTransfer, Receipt, Headset } from '@phosphor-icons/react';
 
 const features = [
   {
     icon: Phone,
-    title: 'HD Voice',
-    description: 'G.722 wideband audio. Crystal clear call quality for sales teams, contact centres, and executive communications.'
+    title: 'Business voice',
+    description: 'Voice for sales teams, contact centres and offices, delivered over direct carrier routes.'
   },
   {
-    icon: ShieldCheck,
-    title: 'ISO 27001 Certified',
-    description: 'Certified security posture. Data processing agreements for GDPR compliance. HIPAA guidance available.'
+    icon: PhoneTransfer,
+    title: 'Standard SIP',
+    description: 'Connect the PBX or UCaaS platform you already run over standard SIP trunking.'
   },
   {
-    icon: Clock,
-    title: '99.99% SLA',
-    description: 'Contractual uptime guarantee with financial penalties. 24/7 NOC. Failover routing in under 3 seconds.'
+    icon: Receipt,
+    title: 'One invoice',
+    description: 'Voice and numbers from one provider, on one invoice, with terms agreed up front.'
   },
   {
     icon: Headset,
-    title: 'Named support contact',
-    description: 'Dedicated account manager and priority NOC access. Not a ticket queue.'
+    title: 'One support contact',
+    description: 'A single contact who knows your account. Not a ticket queue.'
   }
 ];
 
@@ -38,7 +38,7 @@ export default function EnterprisesFeatures() {
           className="mb-16"
         >
           <h2 className="text-navy-DEFAULT font-bold text-4xl md:text-5xl">
-            Built for business continuity.
+            One provider for business voice.
           </h2>
         </motion.div>
 

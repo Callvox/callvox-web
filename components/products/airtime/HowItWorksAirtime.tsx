@@ -18,12 +18,12 @@ export default function HowItWorksAirtime() {
     {
       icon: Lightning,
       title: 'Top-Up Execution',
-      description: 'API call dispatches the recharge to the operator\'s system. Retry logic handles transient failures automatically.',
+      description: 'API call dispatches the recharge to the operator\'s system.',
     },
     {
       icon: CheckCircle,
       title: 'Webhook Confirmation',
-      description: 'Delivery confirmed via webhook in real time. Full transaction record with operator reference number.',
+      description: 'Delivery confirmed via webhook, with a transaction record and operator reference number.',
     },
   ]
 
@@ -36,7 +36,7 @@ export default function HowItWorksAirtime() {
           transition={{ delay: 0.1 }}
           className="text-3xl md:text-4xl font-bold text-navy-DEFAULT text-balance mb-12 text-center"
         >
-          One API call. Three seconds. Done.
+          One API call. Confirmed by webhook.
         </motion.h2>
 
         {/* Steps */}

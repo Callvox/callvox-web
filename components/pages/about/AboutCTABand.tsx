@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Button } from '@/components/callvox-ui/Button';
+import Link from 'next/link';
 
 export default function AboutCTABand() {
   return (
@@ -15,7 +15,7 @@ export default function AboutCTABand() {
           className="max-w-2xl mx-auto text-center"
         >
           <h2 className="text-white font-bold text-4xl md:text-5xl mb-6">
-            2 decades of wholesale experience. One platform.
+            Since 2007. One platform.
           </h2>
 
           <p className="text-navy-200 text-lg mb-12 leading-relaxed">
@@ -23,18 +23,18 @@ export default function AboutCTABand() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              variant="white"
-              size="lg"
+            <Link
+              href="/get-started"
+              className="inline-flex h-12 items-center justify-center rounded-sm bg-white px-7 text-[15px] font-medium text-navy-DEFAULT transition-colors hover:bg-signal"
             >
               Get in touch
-            </Button>
-            <Button
-              variant="white-ghost"
-              size="lg"
+            </Link>
+            <Link
+              href="/products/voice"
+              className="inline-flex h-12 items-center justify-center rounded-sm border border-white/30 px-7 text-[15px] font-medium text-white transition-colors hover:border-white hover:bg-white/5"
             >
               View the platform
-            </Button>
+            </Link>
           </div>
         </motion.div>
       </div>

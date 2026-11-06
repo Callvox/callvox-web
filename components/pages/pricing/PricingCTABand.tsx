@@ -1,7 +1,7 @@
 'use client';
 
+import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Button } from '@/components/callvox-ui/Button';
 
 export default function PricingCTABand() {
   return (
@@ -15,20 +15,20 @@ export default function PricingCTABand() {
           className="max-w-3xl mx-auto text-center"
         >
           <h2 className="text-navy-DEFAULT font-bold text-4xl md:text-5xl mb-6">
-            Need a custom quote?
+            Tell us your corridors.
           </h2>
 
           <p className="text-navy-600 text-lg mb-12 leading-relaxed">
-            Rate decks for specific destinations, volume-based pricing, and enterprise contract structures — available within one business day.
+            Rate decks for specific destinations, volume-based pricing and contract structures, quoted for the traffic you actually send.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              variant="primary"
-              size="lg"
+            <Link
+              href="/get-started"
+              className="inline-flex h-12 items-center justify-center rounded-sm bg-navy-DEFAULT px-7 text-[15px] font-medium text-white transition-colors hover:bg-navy-700"
             >
-              Talk to a specialist
-            </Button>
+              Request a rate deck
+            </Link>
           </div>
         </motion.div>
       </div>

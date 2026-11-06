@@ -7,17 +7,17 @@ const useCases = [
   {
     icon: Building,
     title: 'Replace legacy PSTN',
-    description: 'Migrate your on-premise PBX to SIP trunking. Compatibility with Asterisk, Cisco, Avaya, Microsoft Teams Direct Routing, and Zoom Phone.'
+    description: 'Migrate your on-premise PBX to SIP trunking and keep the phone system your team already uses.'
   },
   {
     icon: Globe,
     title: 'Global office numbers',
-    description: 'Virtual numbers in 90+ countries for regional offices. Local presence without local infrastructure. Voice + SMS on each number.'
+    description: 'Virtual numbers for regional offices. Local presence without local infrastructure.'
   },
   {
     icon: Headset,
     title: 'Contact centre infrastructure',
-    description: 'High-capacity SIP trunking for inbound call centres. Real-time CDRs, call recording integration, and CNAM management.'
+    description: 'SIP trunking for inbound and outbound call centres, with call detail records for reporting.'
   }
 ];
 

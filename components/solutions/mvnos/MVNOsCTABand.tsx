@@ -2,7 +2,7 @@
 
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Button } from '@/components/callvox-ui/Button';
+import Link from 'next/link';
 
 export default function MVNOsCTABand() {
   const ref = useRef(null);
@@ -18,25 +18,25 @@ export default function MVNOsCTABand() {
           className="text-center"
         >
           <h2 className="text-navy-DEFAULT font-bold mb-4" style={{ fontSize: 'clamp(28px, 4vw, 36px)' }}>
-            Talk to an MVNO specialist.
+            Talk to our MVNO team.
           </h2>
           <p className="text-navy-600 text-lg mb-8 max-w-2xl mx-auto">
-            We work with MVNOs at every stage — from pre-launch planning to established operators optimising costs. No pitch deck required for the first call.
+            Whether you are planning a launch or running an established operator, tell us what you need and we&apos;ll come back with a plan and rates.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button
-              variant="primary"
-              size="lg"
+            <Link
+              href="/get-started?type=mvno"
+              className="inline-flex h-12 items-center justify-center rounded-sm bg-navy-DEFAULT px-7 text-[15px] font-medium text-white transition-colors hover:bg-navy-700"
             >
-              Talk to an MVNO specialist
-            </Button>
-            <Button
-              variant="ghost"
-              size="lg"
+              Talk to our MVNO team
+            </Link>
+            <Link
+              href="/products/esim"
+              className="inline-flex h-12 items-center justify-center rounded-sm border border-navy-DEFAULT/30 px-7 text-[15px] font-medium text-navy-DEFAULT transition-colors hover:border-navy-DEFAULT hover:bg-navy-DEFAULT/[0.04]"
             >
-              Download MVNO platform guide
-            </Button>
+              Explore eSIM
+            </Link>
           </div>
         </motion.div>
       </div>

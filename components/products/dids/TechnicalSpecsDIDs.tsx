@@ -10,15 +10,11 @@ export default function TechnicalSpecsDIDs() {
   const [activeTab, setActiveTab] = useState('search');
 
   const specs = [
-    { label: 'SIP compatibility', value: 'Asterisk, FreeSWITCH, 3CX, Cisco, Avaya, Zoom Phone' },
     { label: 'Signalling', value: 'SIP (RFC 3261), TLS transport' },
     { label: 'Encryption', value: 'TLS + SRTP' },
-    { label: 'Portability', value: 'LNP (local number portability) — free on all accounts' },
-    { label: 'Voice + SMS', value: 'Same DID supports both channels' },
-    { label: 'CNAM', value: 'Caller name delivery (US/Canada)' },
-    { label: 'E911', value: 'PSAP routing for US numbers (mandatory)' },
-    { label: 'CDRs', value: 'Real-time, API-accessible, exportable CSV/JSON' },
-    { label: 'Provisioning', value: 'Instant via portal or REST API' },
+    { label: 'Portability', value: 'Number porting, with terms confirmed per country' },
+    { label: 'CDRs', value: 'API-accessible, exportable CSV/JSON' },
+    { label: 'Provisioning', value: 'Via portal or REST API' },
   ];
 
   const snippets = {

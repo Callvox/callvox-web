@@ -3,8 +3,8 @@
 import { motion } from 'framer-motion'
 import {
   PhoneCall,
-  ShieldCheck,
-  Certificate,
+  Plugs,
+  Handshake,
   Headset,
   ChartBar,
   CurrencyDollar,
@@ -15,19 +15,19 @@ import { useRef } from 'react'
 const features = [
   {
     icon: PhoneCall,
-    title: '500+ direct routes',
+    title: '500+ direct routes across 190+ countries',
   },
   {
-    icon: ShieldCheck,
-    title: '99.99% uptime SLA with financial penalties',
+    icon: Plugs,
+    title: 'Direct interconnects, not aggregated routes',
   },
   {
-    icon: Certificate,
-    title: 'STIR/SHAKEN compliant',
+    icon: Handshake,
+    title: 'One integration and one invoice',
   },
   {
     icon: Headset,
-    title: '24/7 NOC with carrier-trained engineers',
+    title: 'One support contact who understands carrier infrastructure',
   },
   {
     icon: ChartBar,

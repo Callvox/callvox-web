@@ -1,8 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight } from '@phosphor-icons/react';
-import { Button } from '@/components/callvox-ui/Button';
+import Link from 'next/link';
 
 export default function DIDsCTABand() {
   return (
@@ -16,16 +15,18 @@ export default function DIDsCTABand() {
           className="text-center max-w-2xl mx-auto"
         >
           <h2 className="text-white text-4xl md:text-5xl font-bold mb-4">
-            Provision your first number in under 60 seconds.
+            Tell us which numbers you need.
           </h2>
           <p className="text-navy-200 text-lg mb-10 leading-relaxed">
-            Self-service via portal. API access included on all accounts. Free porting — no lock-in.
+            Talk to us about countries, number types and volumes.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="white" className="group">
+            <Link href="/get-started?type=carrier" className="inline-flex items-center justify-center font-medium rounded-sm transition-colors duration-200 h-10 px-5 text-sm bg-white text-navy-DEFAULT hover:bg-signal">
               Check Number Availability
-            </Button>
-            <Button variant="white-ghost">Get wholesale rates</Button>
+            </Link>
+            <Link href="/get-started?type=carrier" className="inline-flex items-center justify-center font-medium rounded-sm transition-colors duration-200 h-10 px-5 text-sm border border-white/30 text-white hover:border-white hover:bg-white/5">
+              Get wholesale rates
+            </Link>
           </div>
         </motion.div>
       </div>

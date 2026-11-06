@@ -43,7 +43,7 @@ export default function WhiteLabelCapabilities() {
           variants={fadeUpVariants}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          className="font-sans font-bold text-navy-DEFAULT text-4xl mb-16"
+          className="text-navy-DEFAULT text-4xl mb-16"
         >
           Your brand. Our infrastructure.
         </motion.h2>

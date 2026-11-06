@@ -1,22 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
-import { Button } from '@/components/callvox-ui/Button';
+import Link from 'next/link';
 
 export default function RateFinderCTA() {
-  const [email, setEmail] = useState('');
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setEmail('');
-      setSubmitted(false);
-    }, 3000);
-  };
-
   return (
     <section className="bg-navy-DEFAULT py-16 md:py-20">
       <div className="container">
@@ -32,26 +19,15 @@ export default function RateFinderCTA() {
           </h2>
 
           <p className="text-navy-200 text-lg mb-8">
-            Enter your email and target destinations. We'll send a custom rate deck within 4 business hours.
+            Tell us your target destinations and we&apos;ll send a custom rate deck.
           </p>
 
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4">
-            <input
-              type="email"
-              placeholder="your@company.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="flex-1 px-6 py-3 rounded-lg bg-white text-navy-DEFAULT placeholder-navy-400 border-none outline-none"
-            />
-            <Button
-              variant="primary"
-              size="lg"
-              className="bg-white text-navy-DEFAULT hover:bg-gray-100 whitespace-nowrap"
-            >
-              {submitted ? 'Sent!' : 'Send my rate deck'}
-            </Button>
-          </form>
+          <Link
+            href="/get-started?type=carrier"
+            className="inline-flex h-12 items-center justify-center rounded-sm bg-signal px-7 text-[15px] font-semibold text-navy-DEFAULT transition-colors hover:bg-white"
+          >
+            Send my rate deck request
+          </Link>
         </motion.div>
       </div>
     </section>

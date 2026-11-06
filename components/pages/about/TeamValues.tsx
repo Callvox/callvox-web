@@ -1,28 +1,28 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Handshake, Globe, Code, Lock } from '@phosphor-icons/react';
+import { Handshake, Globe, Code, Stack } from '@phosphor-icons/react';
 
 const values = [
   {
     icon: Handshake,
-    title: 'Carrier-grade accountability',
-    description: 'We publish SLAs. We enforce them. Financial penalties for breach aren\'t in the fine print — they\'re in the headline.'
+    title: 'Accountability',
+    description: 'One team to call when it matters. We would rather have a direct conversation about a problem than hide it behind a ticket queue.'
   },
   {
     icon: Globe,
     title: 'Emerging-market depth',
-    description: 'We have carrier engineers who speak the language of every major market we serve. Coverage isn\'t just routes — it\'s relationships.'
+    description: 'We have been building in these corridors since 2007. Coverage isn\'t just routes. It\'s relationships built over time.'
   },
   {
     icon: Code,
-    title: 'API-first always',
-    description: 'Every product is built API-first. If it can\'t be automated, we haven\'t finished building it.'
+    title: 'Built to integrate',
+    description: 'We design products around APIs and automation, so your team can connect once and scale.'
   },
   {
-    icon: Lock,
-    title: 'Compliance by default',
-    description: 'STIR/SHAKEN, 10DLC, GSMA SGP.32, ISO 27001 — compliance is engineered in, not bolted on.'
+    icon: Stack,
+    title: 'One platform',
+    description: 'Voice, SMS, airtime, eSIM and numbers through one integration, on one invoice, with one support contact.'
   }
 ];
 

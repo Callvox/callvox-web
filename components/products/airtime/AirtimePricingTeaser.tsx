@@ -20,7 +20,7 @@ export default function AirtimePricingTeaser() {
           transition={{ delay: 0.1 }}
           className="text-2xl md:text-3xl font-bold text-navy-DEFAULT mb-3"
         >
-          Volume-based pricing, no public commission rates.
+          Rates that follow the market.
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -28,8 +28,8 @@ export default function AirtimePricingTeaser() {
           transition={{ delay: 0.2 }}
           className="text-navy-600 max-w-2xl mx-auto mb-8"
         >
-          Starter, Growth, and Enterprise tiers based on monthly transaction volume — exact
-          commission and FX spreads come in your rate deck.
+          Airtime rates change by corridor and over time, so we quote them on request rather than
+          publishing a fixed list.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -38,7 +38,7 @@ export default function AirtimePricingTeaser() {
         >
           <Link href="/products/airtime/pricing">
             <Button variant="primary">
-              See pricing tiers <ArrowRight size={16} className="ml-2" />
+              See how pricing works <ArrowRight size={16} className="ml-2" />
             </Button>
           </Link>
         </motion.div>

@@ -3,7 +3,8 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { ShieldCheck, Lock } from '@phosphor-icons/react'
+import Link from 'next/link'
+import { FileText } from '@phosphor-icons/react'
 
 export default function TechnicalSpecsAirtime() {
   const ref = useRef(null)
@@ -11,25 +12,18 @@ export default function TechnicalSpecsAirtime() {
 
   const specs = [
     { label: 'Protocol', value: 'REST API (JSON)' },
-    { label: 'Delivery time', value: '<3 seconds (95th percentile)' },
     { label: 'Validation', value: 'MSISDN lookup + operator identification' },
-    { label: 'Retry logic', value: 'Automatic (3 attempts, configurable)' },
     { label: 'Webhook', value: 'Delivery confirmation, failure codes, operator ref' },
-    { label: 'Multi-currency', value: '60+ currencies supported' },
-    { label: 'Daily limits', value: 'AML/KYC compliant (configurable per account)' },
-    { label: 'CDRs', value: 'Real-time transaction log, exportable' },
+    { label: 'CDRs', value: 'Transaction log, exportable' },
   ]
 
   const complianceCards = [
     {
-      icon: ShieldCheck,
-      title: 'AML / KYC compliance',
-      description: 'Daily top-up limits enforced per account as standard AML practice. KYC documentation support available for regulated markets.',
-    },
-    {
-      icon: Lock,
-      title: 'MSISDN privacy',
-      description: 'Destination numbers are never stored beyond transaction completion. GDPR-compliant data handling.',
+      icon: FileText,
+      title: 'Integration details',
+      description: 'Apply for API access and we will share integration documentation and sandbox details.',
+      href: '/products/airtime/apply',
+      cta: 'Get API access →',
     },
   ]
 
@@ -69,7 +63,8 @@ export default function TechnicalSpecsAirtime() {
                     <Icon size={24} weight="bold" className="text-cyan-DEFAULT flex-shrink-0" />
                     <h4 className="font-semibold text-navy-DEFAULT">{card.title}</h4>
                   </div>
-                  <p className="text-sm text-navy-600">{card.description}</p>
+                  <p className="text-sm text-navy-600 mb-3">{card.description}</p>
+                  <Link href={card.href} className="text-sm font-semibold text-cyan-DEFAULT hover:underline">{card.cta}</Link>
                 </div>
               )
             })}

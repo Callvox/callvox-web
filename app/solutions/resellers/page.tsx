@@ -5,12 +5,11 @@ import ResellerAdvantage from '@/components/solutions/resellers/ResellerAdvantag
 import WhiteLabelCapabilities from '@/components/solutions/resellers/WhiteLabelCapabilities';
 import TechnicalIntegration from '@/components/solutions/resellers/TechnicalIntegration';
 import PartnerProgram from '@/components/solutions/resellers/PartnerProgram';
-import ResellerTestimonial from '@/components/solutions/resellers/ResellerTestimonial';
 import ResellersCTABand from '@/components/solutions/resellers/ResellersCTABand';
 
 export const metadata = {
-  title: 'For Resellers & Aggregators | Callvox',
-  description: 'Wholesale voice, SMS, airtime, eSIM, and DIDs with white-label portal and multi-tenant billing.',
+  title: 'For Resellers & Aggregators',
+  description: 'Wholesale voice, SMS, airtime, eSIM and numbers from one partner, with 1700+ operators and 190+ countries. One integration, one invoice, one support contact.',
 };
 
 export default function ResellersPage() {
@@ -22,7 +21,6 @@ export default function ResellersPage() {
       <WhiteLabelCapabilities />
       <TechnicalIntegration />
       <PartnerProgram />
-      <ResellerTestimonial />
       <ResellersCTABand />
       <Footer />
     </main>

@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import Link from 'next/link';
 
 export default function PricingDIDs() {
   const ref = useRef(null);
@@ -10,22 +11,16 @@ export default function PricingDIDs() {
 
   const pricing = [
     {
-      name: 'Local DIDs',
-      price: '$1.50',
-      period: '/number/month',
-      desc: '+$0.01/min inbound',
+      name: 'By country',
+      desc: 'Number pricing is set per country and number type.',
     },
     {
-      name: 'Toll-Free',
-      price: '$3.00',
-      period: '/number/month',
-      desc: '+$0.02/min inbound',
+      name: 'By volume',
+      desc: 'Volume terms are agreed with you and shown in your rate deck.',
     },
     {
-      name: 'Mobile DIDs',
-      price: '$4.00',
-      period: '/number/month',
-      desc: 'Voice + SMS',
+      name: 'On request',
+      desc: 'Tell us the countries and number types you need and we will send pricing.',
     },
   ];
 
@@ -54,7 +49,7 @@ export default function PricingDIDs() {
           transition={{ duration: 0.6 }}
           className="text-navy-DEFAULT text-4xl md:text-5xl font-bold mb-16 text-center"
         >
-          Predictable monthly pricing.
+          Pricing built around your numbers.
         </motion.h2>
 
         <motion.div
@@ -70,10 +65,6 @@ export default function PricingDIDs() {
               className="bg-navy-50 rounded-lg p-8 border border-navy-100"
             >
               <h3 className="font-bold text-navy-DEFAULT text-xl mb-4">{tier.name}</h3>
-              <div className="mb-2">
-                <span className="text-4xl font-bold text-cyan-DEFAULT">from {tier.price}</span>
-                <span className="text-gray-600 ml-2">{tier.period}</span>
-              </div>
               <p className="text-gray-600 text-sm">{tier.desc}</p>
             </motion.div>
           ))}
@@ -85,15 +76,10 @@ export default function PricingDIDs() {
           transition={{ delay: 0.4, duration: 0.6 }}
           className="max-w-2xl mx-auto bg-navy-50 rounded-lg p-6 border border-navy-200 text-center text-sm text-gray-700"
         >
-          <p className="mb-2">
-            <span className="font-semibold">Volume discounts</span> from 100+ numbers.
-          </p>
-          <p className="mb-2">
-            <span className="font-semibold">Custom enterprise pricing</span> for 1,000+ number deployments.
-          </p>
-          <p>
-            <span className="font-semibold">Free porting</span> on all accounts.
-          </p>
+          <p className="mb-4">Tell us your countries, number types and volumes.</p>
+          <Link href="/get-started?type=carrier" className="font-semibold text-cyan-DEFAULT hover:underline">
+            Request wholesale rates →
+          </Link>
         </motion.div>
       </div>
     </section>

@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import {
   ArrowFatDown,
   Clock,
-  Warning,
+  Stack,
   Headset,
 } from '@phosphor-icons/react'
 import { useInView } from 'framer-motion'
@@ -14,22 +14,22 @@ const painPoints = [
   {
     icon: ArrowFatDown,
     title: 'Route quality degradation',
-    description: 'Aggregated routes degrade under load. Our direct interconnects maintain consistent ASR because there are no intermediaries to introduce jitter or drop packets.',
+    description: 'Aggregated routes pass through intermediaries, and every extra hop is another place for quality to slip. Direct interconnects take those hops out.',
   },
   {
     icon: Clock,
-    title: 'Slow procurement cycles',
-    description: 'Tier-1 carriers require 6–12 month procurement cycles. Callvox delivers interconnect agreements in days, not quarters — without compromising on quality.',
+    title: 'Slow onboarding',
+    description: 'Long procurement cycles hold up new routes. We keep it simple: tell us your corridors and we send interconnect details and a rate deck.',
   },
   {
-    icon: Warning,
-    title: 'Fraud exposure',
-    description: 'IRSF, CLI spoofing, and wangiri attacks cost carriers billions annually. We operate active fraud detection on all routes with real-time blocking.',
+    icon: Stack,
+    title: 'Too many suppliers',
+    description: 'A separate supplier for every region means separate contracts, invoices and support lines. One partner replaces that with one integration, one invoice and one team.',
   },
   {
     icon: Headset,
     title: 'Poor support from wholesale providers',
-    description: 'Most wholesale providers offer email tickets. We provide 24/7 NOC access with engineers who understand carrier infrastructure.',
+    description: 'Most wholesale providers send you to a ticket queue. You get one support contact who knows your account and understands carrier infrastructure.',
   },
 ]
 

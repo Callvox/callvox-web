@@ -113,8 +113,8 @@ export function Footer() {
         <div className="border-t border-navy-800/30 pt-10 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-navy-400">
           <p>&copy; 2026 Callvox. All rights reserved.</p>
           <div className="flex gap-6">
-            <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

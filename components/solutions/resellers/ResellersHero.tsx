@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { HeroBackdrop } from '@/components/sections/HeroBackdrop'
 
 const fadeUpVariants = {
@@ -40,7 +41,7 @@ export default function ResellersHero() {
           variants={fadeUpVariants}
           initial="hidden"
           animate="visible"
-          className="font-sans font-bold text-white mb-6"
+          className="text-white mb-6"
           style={{
             fontSize: 'clamp(41px, 10.0vw, 68px)',
             lineHeight: 1.2,
@@ -54,9 +55,9 @@ export default function ResellersHero() {
           variants={fadeUpVariants}
           initial="hidden"
           animate="visible"
-          className="text-navy-200 text-lg max-w-3xl mx-auto mb-8"
+          className="text-navy-200 text-lg max-w-3xl mb-8"
         >
-          Competitive wholesale rates across voice, SMS, airtime, eSIM and DIDs. White-label portal. Multi-tenant billing. Automated provisioning. Everything you need to resell at scale.
+          Voice, SMS, airtime, eSIM and numbers from one wholesale partner, with one integration, one invoice and one support contact. Tell us your corridors and we will send a rate deck.
         </motion.p>
 
         <motion.div
@@ -66,12 +67,18 @@ export default function ResellersHero() {
           animate="visible"
           className="flex gap-4"
         >
-          <button className="bg-white text-navy-DEFAULT px-8 py-3 font-semibold rounded-lg hover:bg-navy-100 transition">
+          <Link
+            href="/get-started?type=reseller"
+            className="bg-white text-navy-DEFAULT px-8 py-3 font-semibold rounded-sm hover:bg-signal transition-colors"
+          >
             Become a Partner
-          </button>
-          <button className="border-2 border-white text-white px-8 py-3 font-semibold rounded-lg hover:bg-white/10 transition">
-            View White-Label Options
-          </button>
+          </Link>
+          <Link
+            href="/pricing"
+            className="border border-white/40 text-white px-8 py-3 font-semibold rounded-sm hover:border-white hover:bg-white/5 transition-colors"
+          >
+            View pricing
+          </Link>
         </motion.div>
       </div>
     </section>

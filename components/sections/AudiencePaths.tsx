@@ -4,26 +4,26 @@ const audiences = [
   {
     name: 'Carriers',
     href: '/get-started?type=carrier',
-    points: ['Direct interconnects, not aggregated routes', '24/7 NOC support'],
+    points: ['Direct interconnects, not aggregated routes', 'One team to call when it matters'],
     cta: 'Request interconnect details',
     primary: true,
   },
   {
     name: 'MVNOs',
     href: '/solutions/mvnos',
-    points: ['Cloud-native, elastic infrastructure', 'White-label ready, no vendor lock-in'],
+    points: ['Voice, SMS, airtime and eSIM on one integration', 'One invoice and one support contact'],
     cta: 'MVNO solutions',
   },
   {
     name: 'Resellers',
     href: '/solutions/resellers',
-    points: ['Wholesale rates built for margin', 'Multi-tenant portal and automated billing'],
+    points: ['Voice, SMS, airtime and numbers from one partner', 'Rates quoted by corridor and volume'],
     cta: 'Become a partner',
   },
   {
     name: 'Enterprises',
     href: '/solutions/enterprises',
-    points: ['HD voice over modern infrastructure', 'A lower-cost alternative to legacy PSTN'],
+    points: ['Voice and numbers from one wholesale partner', 'One integration, one invoice'],
     cta: 'Enterprise solutions',
   },
 ]

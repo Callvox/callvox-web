@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { CaretRight } from '@phosphor-icons/react'
-import { Button } from '@/components/callvox-ui/Button'
+import Link from 'next/link'
 import { HeroBackdrop } from '@/components/sections/HeroBackdrop'
 
 export default function CarriersHero() {
@@ -34,20 +34,23 @@ export default function CarriersHero() {
 
           {/* Headline */}
           <h1 className="text-6xl md:text-7xl font-bold text-white leading-tight text-balance">
-            Carrier-grade infrastructure. Carrier-grade relationships.
+            Direct routes. One team to call.
           </h1>
 
           {/* Subheading */}
           <p className="text-lg text-navy-200 max-w-2xl leading-relaxed">
-            We've been routing carrier traffic for 2 decades. We understand interconnect requirements, SLA expectations, and NOC culture. No learning curve.
+            Callvox has been routing carrier traffic since 2007. Tell us your corridors and we'll come back with direct routes, a rate deck and interconnect details.
           </p>
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <Button variant="white" size="lg">
+            <Link
+              href="/get-started?type=carrier"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-sm bg-white px-7 text-[15px] font-medium text-navy-DEFAULT transition-colors hover:bg-signal"
+            >
               Request Interconnect Details
               <CaretRight size={18} weight="fill" />
-            </Button>
+            </Link>
           </div>
         </motion.div>
       </div>

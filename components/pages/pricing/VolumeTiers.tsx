@@ -2,31 +2,10 @@
 
 import { motion } from 'framer-motion';
 
-const tiers = [
-  {
-    tier: 'Starter',
-    volume: '<$1,000/mo',
-    discount: 'Standard rates',
-    features: 'Self-serve portal + email support'
-  },
-  {
-    tier: 'Growth',
-    volume: '$1,000–$10,000/mo',
-    discount: '10–15% better rates',
-    features: 'Dedicated account manager'
-  },
-  {
-    tier: 'Scale',
-    volume: '$10,000–$50,000/mo',
-    discount: '20–25% better rates',
-    features: 'Priority NOC + custom SLAs'
-  },
-  {
-    tier: 'Enterprise',
-    volume: '$50,000+/mo',
-    discount: 'Custom rates',
-    features: 'Named NOC contact + white-label available'
-  }
+const steps = [
+  { n: '01', title: 'Tell us your corridors', body: 'Which destinations, which services, and roughly how much traffic you expect.' },
+  { n: '02', title: 'Receive a rate deck', body: 'Rates for the corridors you asked about, quoted by destination and volume.' },
+  { n: '03', title: 'Connect and test', body: 'One integration for every service you take, on one invoice with one support contact.' },
 ];
 
 export default function VolumeTiers() {
@@ -40,42 +19,19 @@ export default function VolumeTiers() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h2 className="text-navy-DEFAULT font-bold text-5xl mb-4">
-            Rates improve as you grow.
-          </h2>
-          <p className="text-navy-600 text-lg">
-            Volume tiers apply automatically — no renegotiation required.
-          </p>
+          <h2 className="text-navy-DEFAULT font-bold text-5xl mb-4">How pricing works.</h2>
+          <p className="text-navy-600 text-lg">Wholesale rates move by corridor, so we quote them that way.</p>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          viewport={{ once: true }}
-          className="overflow-x-auto"
-        >
-          <table className="w-full">
-            <thead>
-              <tr className="border-b border-navy-200">
-                <th className="text-left py-4 px-6 font-bold text-navy-DEFAULT">Tier</th>
-                <th className="text-left py-4 px-6 font-bold text-navy-DEFAULT">Monthly Volume</th>
-                <th className="text-left py-4 px-6 font-bold text-navy-DEFAULT">Discount</th>
-                <th className="text-left py-4 px-6 font-bold text-navy-DEFAULT">Features</th>
-              </tr>
-            </thead>
-            <tbody>
-              {tiers.map((tier, idx) => (
-                <tr key={idx} className="border-b border-navy-100 hover:bg-white/50 transition-colors">
-                  <td className="py-4 px-6 font-semibold text-navy-DEFAULT">{tier.tier}</td>
-                  <td className="py-4 px-6 text-navy-600">{tier.volume}</td>
-                  <td className="py-4 px-6 text-navy-600">{tier.discount}</td>
-                  <td className="py-4 px-6 text-navy-600">{tier.features}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </motion.div>
+        <div className="grid gap-px overflow-hidden rounded-md border border-navy-100 bg-navy-100 md:grid-cols-3">
+          {steps.map((s) => (
+            <div key={s.n} className="bg-white p-8">
+              <div className="font-data text-xs text-navy-400">{s.n}</div>
+              <h3 className="mt-3 text-navy-DEFAULT font-bold text-xl">{s.title}</h3>
+              <p className="mt-3 text-navy-600 leading-relaxed">{s.body}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

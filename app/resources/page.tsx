@@ -1,16 +1,14 @@
 import { Metadata } from 'next';
 import Nav from '@/components/Nav';
 import BlogHero from '@/components/pages/blog/BlogHero';
-import FeaturedPost from '@/components/pages/blog/FeaturedPost';
-import CategoryFilter from '@/components/pages/blog/CategoryFilter';
-import ArticleGrid from '@/components/pages/blog/ArticleGrid';
 import ContentUpgradeCTA from '@/components/pages/blog/ContentUpgradeCTA';
-import GatedAssets from '@/components/pages/blog/GatedAssets';
 import { Footer } from '@/components/sections/Footer';
 
 export const metadata: Metadata = {
-  title: 'Resources & Blog | Callvox',
-  description: 'Compliance guides, market intelligence, and technical primers for wholesale telecom operators.',
+  title: 'Resources',
+  description: 'Guides for wholesale telecom buyers are coming soon. In the meantime, request interconnect details, a rate deck or technical documentation.',
+  // Thin page until the library exists
+  robots: { index: false, follow: true },
 };
 
 export default function ResourcesPage() {
@@ -18,11 +16,7 @@ export default function ResourcesPage() {
     <main>
       <Nav />
       <BlogHero />
-      <FeaturedPost />
-      <CategoryFilter />
-      <ArticleGrid />
       <ContentUpgradeCTA />
-      <GatedAssets />
       <Footer />
     </main>
   );

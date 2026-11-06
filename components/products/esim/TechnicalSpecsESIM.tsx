@@ -1,40 +1,25 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export function TechnicalSpecsESIM() {
   const specs = [
-    {
-      label: 'Specification',
-      value: 'GSMA SGP.22 (consumer), SGP.32 (IoT)',
-    },
-    {
-      label: 'Certification',
-      value: 'SAS-SM (Subscription Manager Security)',
-    },
     {
       label: 'Profile delivery',
       value: 'Over-the-air (OTA), no physical shipping',
     },
     {
-      label: 'Multi-profile',
-      value: 'Yes — up to 8 profiles per eUICC',
-    },
-    {
-      label: 'Encryption',
-      value: 'TLS 1.3, HSM-based key management',
-    },
-    {
-      label: 'Device compatibility',
-      value: 'Apple, Samsung, Google Pixel, Qualcomm-based IoT',
-    },
-    {
       label: 'API',
-      value: 'REST + GSMA-standard ES2+ / ES9+ interfaces',
+      value: 'REST API for profile orders and webhooks',
     },
     {
-      label: 'White-label',
-      value: 'Full RSP platform white-labelling available',
+      label: 'Use cases',
+      value: 'MVNOs, travel operators, enterprise IoT',
+    },
+    {
+      label: 'Platform options',
+      value: 'Discuss white-label requirements with our team',
     },
   ];
 
@@ -68,15 +53,15 @@ export function TechnicalSpecsESIM() {
           >
             <div className="bg-navy-DEFAULT text-white rounded-lg p-8">
               <div className="text-xs font-bold uppercase tracking-wider mb-4 opacity-80">
-                Certification
+                Technical details
               </div>
-              <h3 className="text-xl font-bold mb-6">GSMA SAS-SM Certified</h3>
+              <h3 className="text-xl font-bold mb-6">Need more detail?</h3>
               <p className="text-sm text-navy-100 leading-relaxed mb-6">
-                The GSMA Security Accreditation Scheme for Subscription Management is the mandatory certification for operating SM-DP+ platforms. Without it, eSIM provisioning is not possible at commercial scale.
+                Tell us about your use case and we will share technical details for your integration.
               </p>
-              <a href="#" className="text-cyan-DEFAULT text-sm font-semibold hover:opacity-80 transition-opacity">
-                certification details →
-              </a>
+              <Link href="/get-started?type=mvno" className="text-cyan-DEFAULT text-sm font-semibold hover:opacity-80 transition-opacity">
+                Talk to an eSIM specialist →
+              </Link>
             </div>
           </motion.div>
         </div>

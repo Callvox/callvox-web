@@ -23,8 +23,8 @@ const products = [
   { icon: Phone,         name: 'Wholesale Voice',  desc: 'Termination & origination across 500+ routes', href: '/products/voice' },
   { icon: ChatDots,      name: 'SMS / Messaging',  desc: 'A2P SMS, SMPP & REST delivery at scale',        href: '/products/sms' },
   { icon: Lightning,     name: 'Airtime Top-Ups',  desc: 'International mobile recharge via API',          href: '/products/airtime' },
-  { icon: SimCard,       name: 'eSIM',             desc: 'Wholesale eSIM provisioning (SGP.32)',           href: '/products/esim' },
-  { icon: PhoneIncoming, name: 'DIDs / Numbers',   desc: 'Virtual numbers in 90+ countries',              href: '/products/dids' },
+  { icon: SimCard,       name: 'eSIM',             desc: 'Wholesale eSIM provisioning',           href: '/products/esim' },
+  { icon: PhoneIncoming, name: 'DIDs / Numbers',   desc: 'Virtual numbers, provisioned on demand',              href: '/products/dids' },
 ]
 
 const solutions = [

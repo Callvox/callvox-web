@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { CaretRight } from '@phosphor-icons/react'
-import { Button } from '@/components/callvox-ui/Button'
+import Link from 'next/link'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 
@@ -23,13 +23,16 @@ export default function CarriersCTABand() {
             Let's talk interconnect.
           </h2>
           <p className="text-lg text-navy-200 max-w-2xl mx-auto">
-            Request our interconnect details, rate deck, and SLA document. No sales call required to access technical specifications.
+            Tell us your corridors and we'll send interconnect details and a rate deck.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <Button variant="white" size="lg">
+            <Link
+              href="/get-started?type=carrier"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-sm bg-white px-7 text-[15px] font-medium text-navy-DEFAULT transition-colors hover:bg-signal"
+            >
               Request interconnect details
               <CaretRight size={18} weight="fill" />
-            </Button>
+            </Link>
           </div>
         </motion.div>
       </div>

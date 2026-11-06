@@ -116,8 +116,6 @@
     line-height: 1.05;
   }
 
-  /* Inner pages set font-semibold/bold on headings; the serif has one weight. */
-  h1.font-semibold, h1.font-bold, h2.font-semibold, h2.font-bold { font-weight: 400; }
 
   body {
     font-feature-settings: 'ss01', 'cv11';
@@ -319,3 +317,7 @@
   .animate-marquee, .animate-globe, .animate-pulse-dot { animation: none; }
   .reveal-line > span { animation: none; }
 }
+
+/* Unlayered on purpose: beats Tailwind's layered font-bold/semibold utilities,
+   which would otherwise synthesise a fake bold on Instrument Serif (400 only). */
+h1, h2 { font-weight: 400; }
