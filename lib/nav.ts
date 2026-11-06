@@ -18,3 +18,25 @@ export const solutions = [
 export const simpleLinks = [
   { name: 'Developers', href: '/developers' },
 ]
+
+/**
+ * Buyer type pre-selected by the nav "Contact us" button, based on the page you are on.
+ * Mirrors the type each page's closing-band button passes. Pages not listed start neutral.
+ */
+export type NavCtaType = 'carrier' | 'mvno' | 'reseller' | 'enterprise'
+
+const ctaTypeByPath: [string, NavCtaType][] = [
+  ['/solutions/carriers', 'carrier'],
+  ['/solutions/mvnos', 'mvno'],
+  ['/solutions/resellers', 'reseller'],
+  ['/solutions/enterprises', 'enterprise'],
+  ['/products/voice', 'carrier'],
+  ['/products/sms', 'carrier'],
+  ['/products/dids', 'carrier'],
+  ['/products/esim', 'mvno'],
+  ['/products/airtime', 'reseller'],
+]
+
+export function ctaTypeForPath(pathname: string): NavCtaType | undefined {
+  return ctaTypeByPath.find(([path]) => pathname === path || pathname.startsWith(path + '/'))?.[1]
+}

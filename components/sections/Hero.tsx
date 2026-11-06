@@ -27,7 +27,8 @@ export function Hero() {
           <br />
           One integration, one invoice and one support contact, for carriers, MVNOs, resellers and enterprises.
         </p>
-        <div className="hero-fade mt-10 flex flex-col gap-3 sm:flex-row" style={{ '--hero-delay': '0.5s' } as React.CSSProperties}>
+        {/* Phones and tablets only: from lg up the nav button is always visible, so a second one would just duplicate it */}
+        <div className="hero-fade mt-10 flex flex-col gap-3 sm:flex-row lg:hidden" style={{ '--hero-delay': '0.5s' } as React.CSSProperties}>
           <CTA tone="dark" />
         </div>
       </div>

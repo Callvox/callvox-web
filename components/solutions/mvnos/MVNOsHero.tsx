@@ -5,7 +5,7 @@ export default function MVNOsHero() {
     <PageHero
       title="Wholesale services for MVNOs."
       body="One integration, one invoice and one support contact for the wholesale services an MVNO runs on."
-      cta={{ type: 'mvno' }}
+      cta={false}
     />
   )
 }

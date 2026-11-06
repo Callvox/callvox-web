@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Logo } from './Logo'
 import { CTA } from './CTA'
-import { products as navProducts, solutions as navSolutions, simpleLinks as navSimpleLinks } from '@/lib/nav'
+import { products as navProducts, solutions as navSolutions, simpleLinks as navSimpleLinks, ctaTypeForPath } from '@/lib/nav'
 import {
   Phone,
   ChatDots,
@@ -85,6 +85,10 @@ export default function Nav() {
   const openTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   // Home: transparent over the ink hero until the page scrolls
   const overHero = pathname === '/' && !scrolled && !mobileOpen
+  const ctaType = ctaTypeForPath(pathname)
+  // Phones: the homepage hero has its own button, so the header one appears after scrolling. Inner pages have no
+  // hero button, so the header one is there from the start.
+  const showMobileCta = (pathname !== '/' || scrolled) && !mobileOpen
 
   const isCurrentPage = (href: string) => pathname === href || pathname.startsWith(href + '/')
 
@@ -388,20 +392,20 @@ export default function Nav() {
 
         {/* Desktop CTAs */}
         <div className="hidden lg:flex items-center gap-2 flex-shrink-0">
-          <CTA size="sm" tone={overHero ? 'dark' : 'light'} />
+          <CTA size="sm" type={ctaType} tone={overHero ? 'dark' : 'light'} />
         </div>
 
-        {/* Mobile: a compact CTA appears once the hero button has scrolled away, next to the hamburger */}
+        {/* Mobile: compact CTA next to the hamburger (from the start on inner pages, after scrolling on the homepage) */}
         <div className="flex items-center gap-2 lg:hidden">
           <span
-            inert={!(scrolled && !mobileOpen)}
+            inert={!showMobileCta}
             className={`max-[359px]:hidden motion-reduce:transition-none ${
-              scrolled && !mobileOpen
+              showMobileCta
                 ? 'visible translate-y-0 opacity-100 [transition:opacity_200ms_ease-out,transform_200ms_ease-out,visibility_0s_0s]'
                 : 'invisible -translate-y-1 opacity-0 [transition:opacity_200ms_ease-out,transform_200ms_ease-out,visibility_0s_200ms]'
             }`}
           >
-            <CTA size="sm" tone="light" />
+            <CTA size="sm" type={ctaType} tone="light" />
           </span>
 
           {/* Hamburger: the two icons cross-rotate */}
@@ -514,7 +518,7 @@ export default function Nav() {
 
           {/* CTAs */}
           <div className="pt-4 border-t border-navy-100 space-y-3 mt-4">
-            <CTA onClick={() => setMobileOpen(false)} className="w-full" />
+            <CTA type={ctaType} onClick={() => setMobileOpen(false)} className="w-full" />
           </div>
         </div>
       </div>

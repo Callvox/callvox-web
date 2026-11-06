@@ -5,7 +5,7 @@ export default function DIDsHero() {
     <PageHero
       title="Virtual numbers for carriers and platforms."
       body="Wholesale DID numbers for carriers, UCaaS platforms, resellers and enterprises. Local, national, toll-free, mobile and UIFN numbers, with availability varying by country."
-      cta={{ type: 'carrier' }}
+      cta={false}
     />
   )
 }

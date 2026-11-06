@@ -5,7 +5,7 @@ export default function DeveloperHero() {
     <PageHero
       title="Five services, one integration."
       body="Connect by REST API, SMPP, SIP trunk or IP peering, depending on the product."
-      cta={{}}
+      cta={false}
     />
   )
 }
